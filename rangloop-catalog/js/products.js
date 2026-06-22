@@ -43,62 +43,48 @@
 const products = [
   {
     id: 1,
-    name: "Classic Black Tee",
+    name: "Product 1",
     category: "T-Shirts",
     price: 549,
-    description: "Premium 100% cotton tee with a custom RangLoop graphic print. Relaxed fit, pre-shrunk fabric, and double-stitched seams for durability. Available in multiple sizes — perfect for everyday wear.",
+    description: "Premium quality product from RangLoop. Update this description in js/products.js with the real product details — material, fit, and what makes it special.",
     images: [
-      "images/product1-front.jpg",
-      "images/product1-back.jpg",
-      "images/product1-side.jpg"
+      "images/pr1.png"
     ],
     sizes: ["S", "M", "L", "XL", "XXL"]
   },
   {
     id: 2,
-    name: "RangLoop Hoodie",
-    category: "Hoodies",
-    price: 1299,
-    description: "Heavyweight 380 GSM fleece hoodie with embroidered RangLoop logo on the chest. Kangaroo pocket, adjustable drawstring hood, and ribbed cuffs. Built for comfort and built to last.",
+    name: "Product 2",
+    category: "T-Shirts",
+    price: 549,
+    description: "Premium quality product from RangLoop. Update this description in js/products.js with the real product details — material, fit, and what makes it special.",
     images: [
-      "images/product2-front.jpg",
-      "images/product2-back.jpg"
+      "images/pr2.jpg"
     ],
-    sizes: ["M", "L", "XL"]
+    sizes: ["S", "M", "L", "XL", "XXL"]
   },
   {
     id: 3,
-    name: "Minimal Logo Cap",
-    category: "Caps",
-    price: 449,
-    description: "Structured 6-panel cap with a clean embroidered RangLoop wordmark. Adjustable snapback closure fits most heads. One size fits all.",
+    name: "Product 3",
+    category: "T-Shirts",
+    price: 549,
+    description: "Premium quality product from RangLoop. Update this description in js/products.js with the real product details — material, fit, and what makes it special.",
     images: [
-      "images/product3-front.jpg",
-      "images/product3-side.jpg"
+      "images/pr3.png"
     ],
-    sizes: []
+    sizes: ["S", "M", "L", "XL", "XXL"]
   },
   {
     id: 4,
-    name: "Ceramic Mug — Black",
-    category: "Mugs",
-    price: 349,
-    description: "11 oz ceramic mug with a crisp RangLoop print. Microwave and dishwasher safe. Pairs well with early mornings and late nights.",
+    name: "Product 4",
+    category: "T-Shirts",
+    price: 549,
+    description: "Premium quality product from RangLoop. Update this description in js/products.js with the real product details — material, fit, and what makes it special.",
     images: [
-      "images/product4-front.jpg"
+      "images/pr4f.png",
+      "images/pr4b.png"
     ],
-    sizes: []
-  },
-  {
-    id: 5,
-    name: "Cork Coaster Set",
-    category: "Coasters",
-    price: 299,
-    description: "Set of 4 natural cork coasters with laser-engraved RangLoop design. Protects surfaces from heat and moisture. Each coaster is 10cm × 10cm.",
-    images: [
-      "images/product5-front.jpg"
-    ],
-    sizes: []
+    sizes: ["S", "M", "L", "XL", "XXL"]
   }
 
   // ← ADD YOUR NEXT PRODUCT HERE
@@ -106,13 +92,14 @@ const products = [
   // and fill in your details. Remember to add a comma after the } of the previous product.
   //
   // {
-  //   id: 6,
+  //   id: 5,
   //   name: "Your Product Name",
   //   category: "T-Shirts",
   //   price: 000,
   //   description: "Your description here.",
   //   images: [
-  //     "images/product6-front.jpg"
+  //     "images/yourimage-front.jpg",
+  //     "images/yourimage-back.jpg"   // ← remove this line if only 1 image
   //   ],
   //   sizes: ["S", "M", "L"]
   // }

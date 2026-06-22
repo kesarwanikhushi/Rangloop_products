@@ -173,13 +173,13 @@ function renderProductDetail(product) {
                     aria-label="View image ${i + 1}"
                     data-index="${i}"
                     data-src="${src}">
-              ${imgTag(src, `${product.name} view ${i + 1}`)}
+              <img src="${src}" alt="${product.name} view ${i + 1}" loading="lazy">
             </button>`
          ).join('')}
        </div>`
     : '';
 
-  const firstImage = product.images && product.images.length > 0 ? product.images[0] : 'images/placeholder.jpg';
+  const firstImage = product.images && product.images.length > 0 ? product.images[0] : '';
 
   root.innerHTML = `
     <div class="product-detail">
@@ -187,8 +187,8 @@ function renderProductDetail(product) {
       <!-- Left: Image Gallery -->
       <div class="image-gallery">
         <div class="gallery-main">
-          ${imgTag(firstImage, product.name, '')}
           <img src="${firstImage}" alt="${product.name}" id="gallery-main-img" loading="eager"
+               style="width:100%;height:100%;object-fit:cover;"
                onerror="this.style.display='none'">
         </div>
         ${thumbsHTML}

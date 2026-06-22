@@ -393,14 +393,58 @@ h3 { font-size: 1.1rem; font-weight: 600; }
   flex-wrap: wrap;
 }
 
+/* Size chip — selectable button */
 .size-chip {
-  padding: 6px 14px;
-  border: 1px solid var(--border);
+  padding: 7px 16px;
+  border: 1.5px solid var(--border);
   border-radius: 2px;
   font-size: 0.82rem;
   font-weight: 500;
   color: var(--black);
   background: var(--white);
+  cursor: pointer;
+  font-family: var(--font);
+  transition: border-color var(--transition), background-color var(--transition), color var(--transition);
+  user-select: none;
+}
+
+.size-chip:hover {
+  border-color: #999;
+}
+
+.size-chip.selected {
+  background: var(--black);
+  color: var(--white);
+  border-color: var(--black);
+}
+
+.size-chip.selected:hover {
+  background: #333;
+  border-color: #333;
+}
+
+/* Shake animation — plays when user clicks Order without selecting a size */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%       { transform: translateX(-6px); }
+  40%       { transform: translateX(6px); }
+  60%       { transform: translateX(-4px); }
+  80%       { transform: translateX(4px); }
+}
+
+.sizes-row.shake {
+  animation: shake 0.38s ease;
+}
+
+.size-required-hint {
+  font-size: 0.78rem;
+  color: #cc2200;
+  margin-top: 6px;
+  display: none;
+}
+
+.size-required-hint.visible {
+  display: block;
 }
 
 .detail-description {

@@ -153,13 +153,20 @@ function renderProductDetail(product) {
   const root = document.getElementById('detail-root');
   if (!root) return;
 
-  // Sizes section — only shown when product has sizes
-  const sizesHTML = product.sizes && product.sizes.length > 0
+  // Track which size the user has selected
+  let selectedSize = null;
+  const hasSizes = product.sizes && product.sizes.length > 0;
+
+  // Sizes section — renders clickable buttons, only when product has sizes
+  const sizesHTML = hasSizes
     ? `<div class="detail-sizes">
-         <span class="sizes-label">Available in</span>
-         <div class="sizes-row">
-           ${product.sizes.map(s => `<span class="size-chip">${s}</span>`).join('')}
+         <span class="sizes-label">Select size</span>
+         <div class="sizes-row" id="sizes-row">
+           ${product.sizes.map(s =>
+             `<button class="size-chip" data-size="${s}" aria-label="Size ${s}">${s}</button>`
+           ).join('')}
          </div>
+         <p class="size-required-hint" id="size-hint">Please select a size before ordering.</p>
        </div>
        <hr class="detail-divider">`
     : '';
@@ -213,11 +220,27 @@ function renderProductDetail(product) {
           <button class="btn-order" id="btn-order" aria-label="Order ${product.name} via Instagram DM">
             Order via Instagram DM
           </button>
-          <p class="order-note">Opens Instagram chat · Free to message</p>
+          <p class="order-note">Message is auto-copied — just paste in Instagram</p>
         </div>
       </div>
 
     </div>`;
+
+  // Wire up size chip selection
+  if (hasSizes) {
+    document.querySelectorAll('.size-chip').forEach(chip => {
+      chip.addEventListener('click', () => {
+        // Deselect all, then select clicked
+        document.querySelectorAll('.size-chip').forEach(c => c.classList.remove('selected'));
+        chip.classList.add('selected');
+        selectedSize = chip.dataset.size;
+
+        // Hide the hint if it was showing
+        const hint = document.getElementById('size-hint');
+        if (hint) hint.classList.remove('visible');
+      });
+    });
+  }
 
   // Wire up thumbnail clicks
   document.querySelectorAll('.thumb').forEach(thumb => {
@@ -228,7 +251,20 @@ function renderProductDetail(product) {
 
   // Wire up order button
   document.getElementById('btn-order').addEventListener('click', () => {
-    orderViaInstagram(product);
+    // If product has sizes, make sure one is selected
+    if (hasSizes && !selectedSize) {
+      const row  = document.getElementById('sizes-row');
+      const hint = document.getElementById('size-hint');
+      if (row)  {
+        row.classList.remove('shake'); // reset so animation can retrigger
+        void row.offsetWidth;         // force reflow
+        row.classList.add('shake');
+        row.addEventListener('animationend', () => row.classList.remove('shake'), { once: true });
+      }
+      if (hint) hint.classList.add('visible');
+      return; // stop — don't open Instagram yet
+    }
+    orderViaInstagram(product, selectedSize);
   });
 }
 
@@ -256,24 +292,42 @@ function renderNotFound() {
  * Opens the order modal and simultaneously opens Instagram DM in a new tab.
  * @param {Object} product
  */
-function orderViaInstagram(product) {
+/**
+ * Opens the order modal, auto-copies the message, then opens Instagram DM.
+ * @param {Object} product
+ * @param {string|null} selectedSize
+ */
+async function orderViaInstagram(product, selectedSize) {
+  const sizeText = selectedSize ? selectedSize : 'N/A';
   const message =
     `Hi! I want to order:\n` +
     `${product.name}\n` +
-    `Price: ${formatPrice(product.price)}\n` +
-    `Size: ___`;
+    `Size: ${sizeText}\n` +
+    `Price: ${formatPrice(product.price)}`;
 
-  showOrderModal(message);
+  // Auto-copy FIRST before opening Instagram (clipboard needs user gesture context)
+  let autoCopied = false;
+  try {
+    await navigator.clipboard.writeText(message);
+    autoCopied = true;
+  } catch {
+    // Clipboard blocked (e.g. file:// protocol) — user can still copy manually from modal
+  }
 
-  // Open Instagram DM — ig.me/m/ is Instagram's official DM deep link
+  // Show modal
+  showOrderModal(message, autoCopied);
+
+  // Open Instagram DM in new tab — ig.me/m/ is Instagram's official DM deep link
+  // Note: Instagram does not support pre-filled URL text parameters — auto-copy is the solution
   window.open(`https://ig.me/m/${INSTAGRAM_HANDLE}`, '_blank', 'noopener,noreferrer');
 }
 
 /**
- * Creates and displays the order modal with the pre-written message.
- * @param {string} message
+ * Creates and displays the order modal.
+ * @param {string}  message
+ * @param {boolean} autoCopied — whether clipboard was already filled automatically
  */
-function showOrderModal(message) {
+function showOrderModal(message, autoCopied) {
   // Remove any existing modal first
   const existing = document.getElementById('order-modal-overlay');
   if (existing) existing.remove();
@@ -284,6 +338,12 @@ function showOrderModal(message) {
   overlay.setAttribute('role', 'dialog');
   overlay.setAttribute('aria-modal', 'true');
   overlay.setAttribute('aria-label', 'Order via Instagram');
+
+  const copyBtnLabel = autoCopied ? `${ICON_CHECK} Copied!` : `${ICON_COPY} Copy Message`;
+  const copyBtnClass = autoCopied ? 'btn-copy copied' : 'btn-copy';
+  const hintText = autoCopied
+    ? 'Message copied! Just paste it in the Instagram DM that just opened.'
+    : 'Paste this message in the Instagram DM that just opened.';
 
   overlay.innerHTML = `
     <div class="modal-box" id="order-modal-box">
@@ -296,15 +356,25 @@ function showOrderModal(message) {
         <textarea class="modal-message" id="modal-message-text" readonly rows="5">${message}</textarea>
       </div>
 
-      <button class="btn-copy" id="btn-copy-message">
-        ${ICON_COPY}
-        Copy Message
+      <button class="${copyBtnClass}" id="btn-copy-message">
+        ${copyBtnLabel}
       </button>
 
-      <p class="modal-hint">Paste this message in the Instagram DM that just opened.</p>
+      <p class="modal-hint">${hintText}</p>
     </div>`;
 
   document.body.appendChild(overlay);
+
+  // If auto-copy succeeded, reset the button after 3s
+  if (autoCopied) {
+    setTimeout(() => {
+      const btn = document.getElementById('btn-copy-message');
+      if (btn) {
+        btn.classList.remove('copied');
+        btn.innerHTML = `${ICON_COPY} Copy Again`;
+      }
+    }, 3000);
+  }
 
   // Close on × button
   document.getElementById('modal-close-btn').addEventListener('click', closeOrderModal);
@@ -317,7 +387,7 @@ function showOrderModal(message) {
   // Close on Escape key
   document.addEventListener('keydown', handleModalEscape);
 
-  // Copy button
+  // Copy button (manual fallback / re-copy)
   document.getElementById('btn-copy-message').addEventListener('click', copyOrderMessage);
 }
 
@@ -332,7 +402,7 @@ function handleModalEscape(e) {
 }
 
 /**
- * Copies the message text to the clipboard and shows "Copied!" feedback.
+ * Manually copies the message and shows Copied! feedback.
  */
 async function copyOrderMessage() {
   const textarea = document.getElementById('modal-message-text');
@@ -342,22 +412,20 @@ async function copyOrderMessage() {
   const text = textarea.value;
 
   try {
-    // Modern Clipboard API (works on mobile browsers too)
     await navigator.clipboard.writeText(text);
   } catch {
-    // Fallback for older browsers / http:// contexts
+    // Fallback for older browsers / file:// contexts
     textarea.select();
     document.execCommand('copy');
     textarea.blur();
   }
 
-  // Visual feedback
   btn.classList.add('copied');
   btn.innerHTML = `${ICON_CHECK} Copied!`;
 
   setTimeout(() => {
     btn.classList.remove('copied');
-    btn.innerHTML = `${ICON_COPY} Copy Message`;
+    btn.innerHTML = `${ICON_COPY} Copy Again`;
   }, 2000);
 }
 

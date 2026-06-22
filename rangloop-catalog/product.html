@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO — title is updated dynamically by main.js -->
+  <title>Product — RangLoop</title>
+  <meta name="description" content="Product details — RangLoop custom prints. Order via Instagram DM.">
+  <meta name="theme-color" content="#FFFFFF">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="RangLoop">
+  <meta property="og:description" content="Your vibe deserves better than mass production.">
+  <meta property="og:type" content="website">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ======================================================
+       HEADER
+       ====================================================== -->
+  <header class="site-header" role="banner">
+    <div class="header-brand">
+      <a href="index.html" class="wordmark" aria-label="RangLoop — home">RangLoop</a>
+      <p class="tagline">Your vibe deserves better than mass production.</p>
+    </div>
+
+    <div class="header-actions">
+      <a href="https://www.instagram.com/rangloop2026"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="ig-link"
+         aria-label="RangLoop on Instagram">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+             stroke-linejoin="round" aria-hidden="true">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+          <circle cx="12" cy="12" r="4.5"/>
+          <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+        </svg>
+        @rangloop2026
+      </a>
+    </div>
+  </header>
+
+  <!-- ======================================================
+       PRODUCT DETAIL
+       (populated dynamically by main.js)
+       ====================================================== -->
+  <main class="detail-container" role="main">
+
+    <!-- Back to catalog link -->
+    <a href="index.html" class="back-link" aria-label="Back to catalog">
+      ← Back to catalog
+    </a>
+
+    <!-- main.js injects all product detail markup here -->
+    <div id="detail-root"></div>
+
+  </main>
+
+  <!-- ======================================================
+       FOOTER
+       ====================================================== -->
+  <footer class="site-footer" role="contentinfo">
+    <p class="footer-copy">Made with care.</p>
+    <a href="https://www.instagram.com/rangloop2026"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="footer-ig"
+       aria-label="RangLoop on Instagram">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+           stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+           stroke-linejoin="round" aria-hidden="true">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+        <circle cx="12" cy="12" r="4.5"/>
+        <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+      </svg>
+      @rangloop2026
+    </a>
+  </footer>
+
+  <!-- ======================================================
+       SCRIPTS
+       products.js must load before main.js
+       ====================================================== -->
+  <script src="js/products.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>

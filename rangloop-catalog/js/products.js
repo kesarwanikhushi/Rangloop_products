@@ -240,9 +240,9 @@ const products = [
         name: "Purple",
         hex: "#6b21a8",
         images: [
+          "images/tshirts/Bhoota Kola/purple/Front_1_c_26.jpg",
           "images/tshirts/Bhoota Kola/purple/ChatGPT Image Jun 26, 2026, 02_44_53 PM.png",
           "images/tshirts/Bhoota Kola/purple/ChatGPT Image Jun 26, 2026, 02_45_58 PM.png",
-          "images/tshirts/Bhoota Kola/purple/Front_1_c_26.jpg",
           "images/tshirts/Bhoota Kola/purple/Back_2_c_26.jpg"
         ]
       },
@@ -250,9 +250,9 @@ const products = [
         name: "Petrol Blue",
         hex: "#1b4d6e",
         images: [
+          "images/tshirts/Bhoota Kola/petrol blue/Front_1_c_38.jpg",
           "images/tshirts/Bhoota Kola/petrol blue/ChatGPT Image Jun 26, 2026, 02_44_59 PM.png",
-          "images/tshirts/Bhoota Kola/petrol blue/ChatGPT Image Jun 26, 2026, 02_45_26 PM.png",
-          "images/tshirts/Bhoota Kola/petrol blue/Front_1_c_38.jpg"
+          "images/tshirts/Bhoota Kola/petrol blue/ChatGPT Image Jun 26, 2026, 02_45_26 PM.png"
         ]
       },
       {

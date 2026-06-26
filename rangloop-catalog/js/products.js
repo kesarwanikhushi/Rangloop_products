@@ -39,7 +39,7 @@ const products = [
     id: 1,
     name: "Whispers of Earth",
     category: "T-Shirts",
-    price: 549,
+    price: 799,
     description: "Rooted in nature, worn with intention. Whispers of Earth carries the quiet language of the land — earthy tones, organic vibes, and a design that speaks before you do. 100% cotton, comfortable fit.",
     sizes: ["S", "M", "L", "XL", "XXL"],
     colors: [
@@ -108,7 +108,7 @@ const products = [
     id: 2,
     name: "Raw and Rooted",
     category: "T-Shirts",
-    price: 549,
+    price: 799,
     description: "Unfiltered. Unapologetic. Raw and Rooted is for those who are grounded in who they are. Bold graphics, earthy energy — this tee is a statement of identity. Premium soft-touch fabric.",
     sizes: ["S", "M", "L", "XL", "XXL"],
     colors: [
@@ -145,7 +145,7 @@ const products = [
     id: 3,
     name: "Light & Shadow",
     category: "T-Shirts",
-    price: 549,
+    price: 999,
     description: "Where contrast meets culture. Light & Shadow plays with duality — the interplay between what is seen and what is felt. A minimal yet powerful graphic that's rich in meaning. Pure cotton comfort.",
     sizes: ["S", "M", "L", "XL", "XXL"],
     colors: [
@@ -177,7 +177,7 @@ const products = [
     id: 4,
     name: "Ride with the Light",
     category: "T-Shirts",
-    price: 549,
+    price: 999,
     description: "Chase the horizon. Ride with the Light is for the free spirits, the wanderers, the ones who move with purpose. A design that embodies motion and momentum. Breathable, durable fabric.",
     sizes: ["S", "M", "L", "XL", "XXL"],
     colors: [
@@ -219,7 +219,7 @@ const products = [
     id: 5,
     name: "Bhoota Kola",
     category: "T-Shirts",
-    price: 549,
+    price: 899,
     description: "Inspired by the ancient spirit ritual of coastal Karnataka — Bhoota Kola. A tribute to tradition, folklore, and the power of ancestral culture. Wear the myth. Own the legend. Premium graphic tee.",
     sizes: ["S", "M", "L", "XL", "XXL"],
     colors: [
@@ -268,7 +268,7 @@ const products = [
     id: 6,
     name: "Lion",
     category: "T-Shirts",
-    price: 549,
+    price: 749,
     description: "Lead with courage. The Lion tee channels raw power and quiet confidence. A bold, artistic rendition of the king of the jungle — crafted for those who carry their pride with grace. Heavy-weight cotton.",
     sizes: ["S", "M", "L", "XL", "XXL"],
     colors: [

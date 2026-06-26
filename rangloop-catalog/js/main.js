@@ -106,7 +106,7 @@ function renderGrid(list) {
       : '';
 
     return `
-      <a href="product.html?id=${product.id}"
+      <a href="/product.html?id=${product.id}"
          class="product-card"
          id="card-${product.id}"
          data-product-id="${product.id}"
@@ -451,7 +451,7 @@ function renderNotFound() {
       <div class="not-found">
         <h2>Product not found</h2>
         <p>This product may have been removed or the link is broken.</p>
-        <a href="index.html" style="margin-top:16px;font-weight:600;">← Back to catalog</a>
+        <a href="/dashboard/" style="margin-top:16px;font-weight:600;">← Back to catalog</a>
       </div>`;
   }
 }

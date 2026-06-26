@@ -227,6 +227,16 @@ const products = [
     sizes: ["S", "M", "L", "XL", "XXL"],
     colors: [
       {
+        name: "Black",
+        hex: "#1a1a1a",
+        images: [
+          "images/tshirts/Bhoota Kola/black/front.png",
+          "images/tshirts/Bhoota Kola/black/Front_1_c_2.jpg",
+          "images/tshirts/Bhoota Kola/black/ChatGPT Image Jun 26, 2026, 02_44_24 PM.png",
+          "images/tshirts/Bhoota Kola/black/Back_2_c_2.jpg"
+        ]
+      },
+      {
         name: "Yellow",
         hex: "#facc15",
         images: [
@@ -247,12 +257,61 @@ const products = [
         ]
       },
       {
+        name: "Blue",
+        hex: "#2563eb",
+        images: [
+          "images/tshirts/Bhoota Kola/blue/Front_1_c_9.jpg",
+          "images/tshirts/Bhoota Kola/blue/ChatGPT Image Jun 26, 2026, 02_44_39 PM.png",
+          "images/tshirts/Bhoota Kola/blue/ChatGPT Image Jun 26, 2026, 02_45_45 PM.png",
+          "images/tshirts/Bhoota Kola/blue/Back_2_c_9.jpg"
+        ]
+      },
+      {
+        name: "Maroon",
+        hex: "#7f1d1d",
+        images: [
+          "images/tshirts/Bhoota Kola/maroon/Front_1_c_25.jpg",
+          "images/tshirts/Bhoota Kola/maroon/ChatGPT Image Jun 26, 2026, 02_44_46 PM.png",
+          "images/tshirts/Bhoota Kola/maroon/ChatGPT Image Jun 26, 2026, 02_45_51 PM.png",
+          "images/tshirts/Bhoota Kola/maroon/Back_2_c_25.jpg"
+        ]
+      },
+      {
+        name: "Navy",
+        hex: "#1e3a5f",
+        images: [
+          "images/tshirts/Bhoota Kola/navy/Front_1_c_3.jpg",
+          "images/tshirts/Bhoota Kola/navy/ChatGPT Image Jun 26, 2026, 02_44_33 PM.png",
+          "images/tshirts/Bhoota Kola/navy/ChatGPT Image Jun 26, 2026, 02_45_38 PM.png",
+          "images/tshirts/Bhoota Kola/navy/Back_2_c_3.jpg"
+        ]
+      },
+      {
         name: "Petrol Blue",
         hex: "#1b4d6e",
         images: [
           "images/tshirts/Bhoota Kola/petrol blue/Front_1_c_38.jpg",
           "images/tshirts/Bhoota Kola/petrol blue/ChatGPT Image Jun 26, 2026, 02_44_59 PM.png",
-          "images/tshirts/Bhoota Kola/petrol blue/ChatGPT Image Jun 26, 2026, 02_45_26 PM.png"
+          "images/tshirts/Bhoota Kola/petrol blue/ChatGPT Image Jun 26, 2026, 02_45_26 PM.png",
+          "images/tshirts/Bhoota Kola/petrol blue/Back_2_c_38.jpg"
+        ]
+      },
+      {
+        name: "Olive",
+        hex: "#6b7c3a",
+        images: [
+          "images/tshirts/Bhoota Kola/olive/Front_1_c_41.jpg",
+          "images/tshirts/Bhoota Kola/olive/ChatGPT Image Jun 26, 2026, 02_45_06 PM.png",
+          "images/tshirts/Bhoota Kola/olive/ChatGPT Image Jun 26, 2026, 02_45_32 PM.png",
+          "images/tshirts/Bhoota Kola/olive/Back_2_c_41.jpg"
+        ]
+      },
+      {
+        name: "Off White",
+        hex: "#ece8e1",
+        images: [
+          "images/tshirts/Bhoota Kola/off white/Front_1_c_61.jpg",
+          "images/tshirts/Bhoota Kola/off white/Back_2_c_61.jpg"
         ]
       },
       {

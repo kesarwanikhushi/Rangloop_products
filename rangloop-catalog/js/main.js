@@ -451,7 +451,7 @@ function renderNotFound() {
       <div class="not-found">
         <h2>Product not found</h2>
         <p>This product may have been removed or the link is broken.</p>
-        <a href="/dashboard/" style="margin-top:16px;font-weight:600;">← Back to catalog</a>
+        <a href="/shop/" style="margin-top:16px;font-weight:600;">← Back to catalog</a>
       </div>`;
   }
 }

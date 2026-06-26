@@ -330,7 +330,7 @@ const products = [
     id: 6,
     name: "Lion",
     category: "T-Shirts",
-    price: 549,
+    price: 749,
     description: "Lead with courage. The Lion tee channels raw power and quiet confidence. A bold, artistic rendition of the king of the jungle — crafted for those who carry their pride with grace. Heavy-weight cotton.",
     sizes: ["S", "M", "L", "XL", "XXL"],
     colors: [
@@ -351,7 +351,7 @@ const products = [
     id: 7,
     name: "Maa",
     category: "T-Shirts",
-    price: 549,
+    price: 799,
     description: "A love letter to every mother. Maa is more than a word — it's the universe condensed into one. This tee honours the strength, grace, and warmth of motherhood through thoughtful, heart-driven design.",
     sizes: ["S", "M", "L", "XL", "XXL"],
     colors: [

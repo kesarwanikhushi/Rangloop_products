@@ -185,21 +185,21 @@ const products = [
     sizes: ["S", "M", "L", "XL", "XXL"],
     colors: [
       {
-        name: "Blue",
-        hex: "#2563eb",
+        name: "Navy",
+        hex: "#1e3a5f",
         images: [
-          "images/tshirts/Ride with the Light/blue/ChatGPT Image Jun 26, 2026, 01_40_33 PM.png",
-          "images/tshirts/Ride with the Light/blue/ChatGPT Image Jun 26, 2026, 01_42_49 PM.png",
-          "images/tshirts/Ride with the Light/blue/Left_Pocket_3_c_3.jpg",
-          "images/tshirts/Ride with the Light/blue/Back_2_c_3.jpg"
+          "images/tshirts/Ride with the Light/navy/back.png",
+          "images/tshirts/Ride with the Light/navy/ChatGPT Image Jun 26, 2026, 01_40_33 PM.png",
+          "images/tshirts/Ride with the Light/navy/Left_Pocket_3_c_3.jpg",
+          "images/tshirts/Ride with the Light/navy/Back_2_c_3.jpg"
         ]
       },
       {
         name: "Maroon",
         hex: "#7f1d1d",
         images: [
-          "images/tshirts/Ride with the Light/maroon/ChatGPT Image Jun 26, 2026, 01_40_42 PM.png",
           "images/tshirts/Ride with the Light/maroon/ChatGPT Image Jun 26, 2026, 01_42_36 PM.png",
+          "images/tshirts/Ride with the Light/maroon/ChatGPT Image Jun 26, 2026, 01_40_42 PM.png",
           "images/tshirts/Ride with the Light/maroon/Left_Pocket_3_c_25.jpg",
           "images/tshirts/Ride with the Light/maroon/Back_2_c_25.jpg"
         ]
@@ -208,8 +208,8 @@ const products = [
         name: "Black",
         hex: "#1a1a1a",
         images: [
-          "images/tshirts/Ride with the Light/black/ChatGPT Image Jun 26, 2026, 01_40_22 PM.png",
           "images/tshirts/Ride with the Light/black/ChatGPT Image Jun 26, 2026, 01_40_52 PM.png",
+          "images/tshirts/Ride with the Light/black/ChatGPT Image Jun 26, 2026, 01_40_22 PM.png",
           "images/tshirts/Ride with the Light/black/Left_Pocket_3_c_2.jpg",
           "images/tshirts/Ride with the Light/black/Back_2_c_2.jpg"
         ]

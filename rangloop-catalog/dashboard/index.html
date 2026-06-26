@@ -5,6 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- BASE: makes all relative URLs resolve from site root -->
+  <base href="/">
+
   <!-- SEO -->
   <title>RangLoop — Your vibe deserves better than mass production</title>
   <meta name="description"
@@ -16,7 +19,7 @@
   <meta property="og:description" content="Your vibe deserves better than mass production.">
   <meta property="og:type" content="website">
 
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -27,7 +30,7 @@
   <header class="site-header" role="banner">
     <div class="header-brand">
       <a href="/dashboard/" class="wordmark" aria-label="RangLoop — home">
-        <img src="../images/logo/logo.png" alt="RangLoop" class="site-logo">
+        <img src="images/logo/logo.png" alt="RangLoop" class="site-logo">
       </a>
       <p class="tagline">Your vibe deserves better than mass production.</p>
     </div>
@@ -80,8 +83,8 @@
        SCRIPTS
        Load products.js first so products[] is available to main.js
        ====================================================== -->
-  <script src="../js/products.js"></script>
-  <script src="../js/main.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/main.js"></script>
 
 </body>
 

@@ -33,6 +33,26 @@ function imgTag(src, alt, cls = '') {
 }
 
 // ============================================================
+// Utility: preload images silently into browser cache
+// ============================================================
+const _preloaded = new Set();
+function preloadImages(urls) {
+  urls.forEach(url => {
+    if (!url || _preloaded.has(url)) return;
+    _preloaded.add(url);
+    const img = new Image();
+    img.src = url;
+  });
+}
+
+// Preload ALL images for every colour of a product (background download)
+function preloadAllProductImages(product) {
+  if (!product.colors) return;
+  const urls = product.colors.flatMap(c => c.images || []);
+  preloadImages(urls);
+}
+
+// ============================================================
 // Utility: get the first available image for a product
 // (works with both old "images" array and new "colors" array)
 // ============================================================
@@ -89,6 +109,7 @@ function renderGrid(list) {
       <a href="product.html?id=${product.id}"
          class="product-card"
          id="card-${product.id}"
+         data-product-id="${product.id}"
          aria-label="${product.name} — ${formatPrice(product.price)}">
         ${imageHTML}
         <div class="card-body">
@@ -99,6 +120,19 @@ function renderGrid(list) {
         </div>
       </a>`;
   }).join('');
+
+  // Preload each product's images when the user hovers the card
+  grid.querySelectorAll('.product-card').forEach(card => {
+    const pid = parseInt(card.dataset.productId, 10);
+    const product = products.find(p => p.id === pid);
+    if (!product) return;
+    let hoverTimer;
+    card.addEventListener('mouseenter', () => {
+      // Small delay so rapid mouse-overs don't trigger unnecessary fetches
+      hoverTimer = setTimeout(() => preloadAllProductImages(product), 120);
+    });
+    card.addEventListener('mouseleave', () => clearTimeout(hoverTimer));
+  });
 }
 
 /**
@@ -152,13 +186,33 @@ function getQueryParam(name) {
 function switchMainImage(src, thumbIndex) {
   const mainImg = document.getElementById('gallery-main-img');
   const thumbs  = document.querySelectorAll('.thumb');
+  const loader  = document.getElementById('gallery-loading');
 
   if (mainImg) {
-    mainImg.classList.add('fading');
-    setTimeout(() => {
-      mainImg.src = src;
-      mainImg.classList.remove('fading');
-    }, 180);
+    // If already cached, swap instantly — otherwise show loader
+    const probe = new Image();
+    probe.onload = () => {
+      if (loader) loader.style.display = 'none';
+      mainImg.classList.add('fading');
+      setTimeout(() => {
+        mainImg.src = src;
+        mainImg.classList.remove('fading');
+      }, 120);
+    };
+    // Show loader only if image isn't cached yet (takes > 50ms)
+    const loaderTimer = setTimeout(() => {
+      if (loader) loader.style.display = 'flex';
+    }, 50);
+    probe.onload = () => {
+      clearTimeout(loaderTimer);
+      if (loader) loader.style.display = 'none';
+      mainImg.classList.add('fading');
+      setTimeout(() => {
+        mainImg.src = src;
+        mainImg.classList.remove('fading');
+      }, 120);
+    };
+    probe.src = src;
   }
 
   thumbs.forEach((t, i) => t.classList.toggle('active', i === thumbIndex));
@@ -296,10 +350,12 @@ function renderProductDetail(product) {
 
       <!-- Left: Image Gallery -->
       <div class="image-gallery">
-        <div class="gallery-main">
+        <div class="gallery-main" id="gallery-main-wrap">
           <img src="${firstImage}" alt="${product.name}" id="gallery-main-img" loading="eager"
                style="width:100%;height:100%;object-fit:cover;"
                onerror="this.style.display='none'">
+          <div class="gallery-loading" id="gallery-loading" style="display:none;"
+               aria-label="Loading image"></div>
         </div>
         ${thumbsHTML}
       </div>
@@ -330,9 +386,14 @@ function renderProductDetail(product) {
 
     </div>`;
 
-  // ── Wire colour swatch clicks ──
+  // ── Preload ALL color images immediately in the background ──
+  preloadAllProductImages(product);
+
+  // ── Wire colour swatch clicks + hover preloading ──
   if (hasColors) {
     document.querySelectorAll('.color-swatch-btn').forEach((btn, i) => {
+      // Preload on hover so images are cached before click
+      btn.addEventListener('mouseenter', () => preloadImages(product.colors[i].images || []));
       btn.addEventListener('click', () => switchColor(product.colors[i], i));
     });
   }

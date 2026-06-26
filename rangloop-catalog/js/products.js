@@ -29,6 +29,9 @@
 //   olive      → #6b7c3a    green      → #16a34a
 //   grey       → #9ca3af    yellow     → #facc15
 //
+// NOTE: The FIRST colour in the list shows on the catalog card.
+//       Put your most eye-catching colour first!
+//
 // EVERY id MUST BE UNIQUE (1, 2, 3 … 10)
 // ============================================================
 
@@ -44,26 +47,6 @@ const products = [
     sizes: ["S", "M", "L", "XL", "XXL"],
     colors: [
       {
-        name: "Black",
-        hex: "#1a1a1a",
-        images: [
-          "images/tshirts/Whispers of Earth/black/ChatGPT Image Jun 26, 2026, 03_05_06 PM.png",
-          "images/tshirts/Whispers of Earth/black/ChatGPT Image Jun 26, 2026, 03_05_36 PM.png",
-          "images/tshirts/Whispers of Earth/black/Front_1_c_2.jpg",
-          "images/tshirts/Whispers of Earth/black/Back_2_c_2.jpg"
-        ]
-      },
-      {
-        name: "Cream",
-        hex: "#f5efe0",
-        images: [
-          "images/tshirts/Whispers of Earth/cream/ChatGPT Image Jun 26, 2026, 03_05_41 PM.png",
-          "images/tshirts/Whispers of Earth/cream/ChatGPT Image Jun 26, 2026, 03_06_10 PM.png",
-          "images/tshirts/Whispers of Earth/cream/Front_1_c_48.jpg",
-          "images/tshirts/Whispers of Earth/cream/Back_2_c_48.jpg"
-        ]
-      },
-      {
         name: "Green",
         hex: "#16a34a",
         images: [
@@ -71,16 +54,6 @@ const products = [
           "images/tshirts/Whispers of Earth/green/ChatGPT Image Jun 26, 2026, 03_05_57 PM.png",
           "images/tshirts/Whispers of Earth/green/Front_1_c_57.jpg",
           "images/tshirts/Whispers of Earth/green/Back_2_c_57.jpg"
-        ]
-      },
-      {
-        name: "Off White",
-        hex: "#ece8e1",
-        images: [
-          "images/tshirts/Whispers of Earth/off white/ChatGPT Image Jun 26, 2026, 03_05_27 PM.png",
-          "images/tshirts/Whispers of Earth/off white/ChatGPT Image Jun 26, 2026, 03_06_03 PM.png",
-          "images/tshirts/Whispers of Earth/off white/Front_1_c_61.jpg",
-          "images/tshirts/Whispers of Earth/off white/Back_2_c_61.jpg"
         ]
       },
       {
@@ -94,10 +67,40 @@ const products = [
         ]
       },
       {
+        name: "Cream",
+        hex: "#f5efe0",
+        images: [
+          "images/tshirts/Whispers of Earth/cream/ChatGPT Image Jun 26, 2026, 03_05_41 PM.png",
+          "images/tshirts/Whispers of Earth/cream/ChatGPT Image Jun 26, 2026, 03_06_10 PM.png",
+          "images/tshirts/Whispers of Earth/cream/Front_1_c_48.jpg",
+          "images/tshirts/Whispers of Earth/cream/Back_2_c_48.jpg"
+        ]
+      },
+      {
+        name: "Off White",
+        hex: "#ece8e1",
+        images: [
+          "images/tshirts/Whispers of Earth/off white/ChatGPT Image Jun 26, 2026, 03_05_27 PM.png",
+          "images/tshirts/Whispers of Earth/off white/ChatGPT Image Jun 26, 2026, 03_06_03 PM.png",
+          "images/tshirts/Whispers of Earth/off white/Front_1_c_61.jpg",
+          "images/tshirts/Whispers of Earth/off white/Back_2_c_61.jpg"
+        ]
+      },
+      {
         name: "White",
         hex: "#f5f5f5",
         images: [
           "images/tshirts/Whispers of Earth/white/Front_1_c_1.jpg"
+        ]
+      },
+      {
+        name: "Black",
+        hex: "#1a1a1a",
+        images: [
+          "images/tshirts/Whispers of Earth/black/ChatGPT Image Jun 26, 2026, 03_05_06 PM.png",
+          "images/tshirts/Whispers of Earth/black/ChatGPT Image Jun 26, 2026, 03_05_36 PM.png",
+          "images/tshirts/Whispers of Earth/black/Front_1_c_2.jpg",
+          "images/tshirts/Whispers of Earth/black/Back_2_c_2.jpg"
         ]
       }
     ]
@@ -113,12 +116,11 @@ const products = [
     sizes: ["S", "M", "L", "XL", "XXL"],
     colors: [
       {
-        name: "Black",
-        hex: "#1a1a1a",
+        name: "Purple",
+        hex: "#6b21a8",
         images: [
-          "images/tshirts/Raw and Rooted/black/ChatGPT Image Jun 26, 2026, 01_18_02 PM.png",
-          "images/tshirts/Raw and Rooted/black/ChatGPT Image Jun 26, 2026, 01_18_36 PM.png",
-          "images/tshirts/Raw and Rooted/black/pr3.png"
+          "images/tshirts/Raw and Rooted/purple/ChatGPT Image Jun 26, 2026, 01_18_16 PM.png",
+          "images/tshirts/Raw and Rooted/purple/ChatGPT Image Jun 26, 2026, 01_18_49 PM.png"
         ]
       },
       {
@@ -130,11 +132,12 @@ const products = [
         ]
       },
       {
-        name: "Purple",
-        hex: "#6b21a8",
+        name: "Black",
+        hex: "#1a1a1a",
         images: [
-          "images/tshirts/Raw and Rooted/purple/ChatGPT Image Jun 26, 2026, 01_18_16 PM.png",
-          "images/tshirts/Raw and Rooted/purple/ChatGPT Image Jun 26, 2026, 01_18_49 PM.png"
+          "images/tshirts/Raw and Rooted/black/ChatGPT Image Jun 26, 2026, 01_18_02 PM.png",
+          "images/tshirts/Raw and Rooted/black/ChatGPT Image Jun 26, 2026, 01_18_36 PM.png",
+          "images/tshirts/Raw and Rooted/black/pr3.png"
         ]
       }
     ]
@@ -150,16 +153,6 @@ const products = [
     sizes: ["S", "M", "L", "XL", "XXL"],
     colors: [
       {
-        name: "Black",
-        hex: "#1a1a1a",
-        images: [
-          "images/tshirts/Light & Shadow/black/ChatGPT Image Jun 26, 2026, 01_26_59 PM.png",
-          "images/tshirts/Light & Shadow/black/ChatGPT Image Jun 26, 2026, 01_27_24 PM.png",
-          "images/tshirts/Light & Shadow/black/Left_Pocket_3_c_2.jpg",
-          "images/tshirts/Light & Shadow/black/Back_2_c_2.jpg"
-        ]
-      },
-      {
         name: "Navy",
         hex: "#1e3a5f",
         images: [
@@ -167,6 +160,16 @@ const products = [
           "images/tshirts/Light & Shadow/navy/ChatGPT Image Jun 26, 2026, 01_27_35 PM.png",
           "images/tshirts/Light & Shadow/navy/Left_Pocket_3_c_3.jpg",
           "images/tshirts/Light & Shadow/navy/Back_2_c_3.jpg"
+        ]
+      },
+      {
+        name: "Black",
+        hex: "#1a1a1a",
+        images: [
+          "images/tshirts/Light & Shadow/black/ChatGPT Image Jun 26, 2026, 01_26_59 PM.png",
+          "images/tshirts/Light & Shadow/black/ChatGPT Image Jun 26, 2026, 01_27_24 PM.png",
+          "images/tshirts/Light & Shadow/black/Left_Pocket_3_c_2.jpg",
+          "images/tshirts/Light & Shadow/black/Back_2_c_2.jpg"
         ]
       }
     ]
@@ -181,16 +184,6 @@ const products = [
     description: "Chase the horizon. Ride with the Light is for the free spirits, the wanderers, the ones who move with purpose. A design that embodies motion and momentum. Breathable, durable fabric.",
     sizes: ["S", "M", "L", "XL", "XXL"],
     colors: [
-      {
-        name: "Black",
-        hex: "#1a1a1a",
-        images: [
-          "images/tshirts/Ride with the Light/black/ChatGPT Image Jun 26, 2026, 01_40_22 PM.png",
-          "images/tshirts/Ride with the Light/black/ChatGPT Image Jun 26, 2026, 01_40_52 PM.png",
-          "images/tshirts/Ride with the Light/black/Left_Pocket_3_c_2.jpg",
-          "images/tshirts/Ride with the Light/black/Back_2_c_2.jpg"
-        ]
-      },
       {
         name: "Blue",
         hex: "#2563eb",
@@ -210,6 +203,16 @@ const products = [
           "images/tshirts/Ride with the Light/maroon/Left_Pocket_3_c_25.jpg",
           "images/tshirts/Ride with the Light/maroon/Back_2_c_25.jpg"
         ]
+      },
+      {
+        name: "Black",
+        hex: "#1a1a1a",
+        images: [
+          "images/tshirts/Ride with the Light/black/ChatGPT Image Jun 26, 2026, 01_40_22 PM.png",
+          "images/tshirts/Ride with the Light/black/ChatGPT Image Jun 26, 2026, 01_40_52 PM.png",
+          "images/tshirts/Ride with the Light/black/Left_Pocket_3_c_2.jpg",
+          "images/tshirts/Ride with the Light/black/Back_2_c_2.jpg"
+        ]
       }
     ]
   },
@@ -224,12 +227,13 @@ const products = [
     sizes: ["S", "M", "L", "XL", "XXL"],
     colors: [
       {
-        name: "Petrol Blue",
-        hex: "#1b4d6e",
+        name: "Yellow",
+        hex: "#facc15",
         images: [
-          "images/tshirts/Bhoota Kola/petrol blue/ChatGPT Image Jun 26, 2026, 02_44_59 PM.png",
-          "images/tshirts/Bhoota Kola/petrol blue/ChatGPT Image Jun 26, 2026, 02_45_26 PM.png",
-          "images/tshirts/Bhoota Kola/petrol blue/Front_1_c_38.jpg"
+          "images/tshirts/Bhoota Kola/yellow/ChatGPT Image Jun 26, 2026, 02_44_11 PM.png",
+          "images/tshirts/Bhoota Kola/yellow/ChatGPT Image Jun 26, 2026, 02_45_13 PM.png",
+          "images/tshirts/Bhoota Kola/yellow/Front_1_c_43.jpg",
+          "images/tshirts/Bhoota Kola/yellow/Back_2_c_43.jpg"
         ]
       },
       {
@@ -243,21 +247,20 @@ const products = [
         ]
       },
       {
+        name: "Petrol Blue",
+        hex: "#1b4d6e",
+        images: [
+          "images/tshirts/Bhoota Kola/petrol blue/ChatGPT Image Jun 26, 2026, 02_44_59 PM.png",
+          "images/tshirts/Bhoota Kola/petrol blue/ChatGPT Image Jun 26, 2026, 02_45_26 PM.png",
+          "images/tshirts/Bhoota Kola/petrol blue/Front_1_c_38.jpg"
+        ]
+      },
+      {
         name: "White",
         hex: "#f5f5f5",
         images: [
           "images/tshirts/Bhoota Kola/white/Front_1_c_1.jpg",
           "images/tshirts/Bhoota Kola/white/Back_2_c_1.jpg"
-        ]
-      },
-      {
-        name: "Yellow",
-        hex: "#facc15",
-        images: [
-          "images/tshirts/Bhoota Kola/yellow/ChatGPT Image Jun 26, 2026, 02_44_11 PM.png",
-          "images/tshirts/Bhoota Kola/yellow/ChatGPT Image Jun 26, 2026, 02_45_13 PM.png",
-          "images/tshirts/Bhoota Kola/yellow/Front_1_c_43.jpg",
-          "images/tshirts/Bhoota Kola/yellow/Back_2_c_43.jpg"
         ]
       }
     ]
@@ -268,7 +271,7 @@ const products = [
     id: 6,
     name: "Lion",
     category: "T-Shirts",
-    price: 749,
+    price: 549,
     description: "Lead with courage. The Lion tee channels raw power and quiet confidence. A bold, artistic rendition of the king of the jungle — crafted for those who carry their pride with grace. Heavy-weight cotton.",
     sizes: ["S", "M", "L", "XL", "XXL"],
     colors: [
@@ -294,41 +297,13 @@ const products = [
     sizes: ["S", "M", "L", "XL", "XXL"],
     colors: [
       {
-        name: "Black",
-        hex: "#1a1a1a",
+        name: "Purple",
+        hex: "#6b21a8",
         images: [
-          "images/tshirts/Maa/black/ChatGPT Image Jun 26, 2026, 03_52_11 PM.png",
-          "images/tshirts/Maa/black/ChatGPT Image Jun 26, 2026, 03_52_38 PM.png",
-          "images/tshirts/Maa/black/Front_1_c_2.jpg",
-          "images/tshirts/Maa/black/Back_2_c_2.jpg"
-        ]
-      },
-      {
-        name: "Maroon",
-        hex: "#7f1d1d",
-        images: [
-          "images/tshirts/Maa/maroon/ChatGPT Image Jun 26, 2026, 03_52_15 PM.png",
-          "images/tshirts/Maa/maroon/ChatGPT Image Jun 26, 2026, 03_52_42 PM.png",
-          "images/tshirts/Maa/maroon/Front_1_c_25.jpg",
-          "images/tshirts/Maa/maroon/Back_2_c_25.jpg"
-        ]
-      },
-      {
-        name: "Navy Blue",
-        hex: "#1a2a4a",
-        images: [
-          "images/tshirts/Maa/navy blue/Front_1_c_3.jpg",
-          "images/tshirts/Maa/navy blue/Back_2_c_3.jpg"
-        ]
-      },
-      {
-        name: "Olive",
-        hex: "#6b7c3a",
-        images: [
-          "images/tshirts/Maa/olive/ChatGPT Image Jun 26, 2026, 03_52_19 PM.png",
-          "images/tshirts/Maa/olive/ChatGPT Image Jun 26, 2026, 03_52_45 PM.png",
-          "images/tshirts/Maa/olive/Front_1_c_41.jpg",
-          "images/tshirts/Maa/olive/Back_2_c_41.jpg"
+          "images/tshirts/Maa/purple/ChatGPT Image Jun 26, 2026, 03_52_28 PM.png",
+          "images/tshirts/Maa/purple/ChatGPT Image Jun 26, 2026, 03_52_58 PM.png",
+          "images/tshirts/Maa/purple/Front_1_c_26.jpg",
+          "images/tshirts/Maa/purple/Back_2_c_26.jpg"
         ]
       },
       {
@@ -342,13 +317,23 @@ const products = [
         ]
       },
       {
-        name: "Purple",
-        hex: "#6b21a8",
+        name: "Olive",
+        hex: "#6b7c3a",
         images: [
-          "images/tshirts/Maa/purple/ChatGPT Image Jun 26, 2026, 03_52_28 PM.png",
-          "images/tshirts/Maa/purple/ChatGPT Image Jun 26, 2026, 03_52_58 PM.png",
-          "images/tshirts/Maa/purple/Front_1_c_26.jpg",
-          "images/tshirts/Maa/purple/Back_2_c_26.jpg"
+          "images/tshirts/Maa/olive/ChatGPT Image Jun 26, 2026, 03_52_19 PM.png",
+          "images/tshirts/Maa/olive/ChatGPT Image Jun 26, 2026, 03_52_45 PM.png",
+          "images/tshirts/Maa/olive/Front_1_c_41.jpg",
+          "images/tshirts/Maa/olive/Back_2_c_41.jpg"
+        ]
+      },
+      {
+        name: "Maroon",
+        hex: "#7f1d1d",
+        images: [
+          "images/tshirts/Maa/maroon/ChatGPT Image Jun 26, 2026, 03_52_15 PM.png",
+          "images/tshirts/Maa/maroon/ChatGPT Image Jun 26, 2026, 03_52_42 PM.png",
+          "images/tshirts/Maa/maroon/Front_1_c_25.jpg",
+          "images/tshirts/Maa/maroon/Back_2_c_25.jpg"
         ]
       },
       {
@@ -360,6 +345,24 @@ const products = [
           "images/tshirts/Maa/white/Front_1_c_1.jpg",
           "images/tshirts/Maa/white/Back_2_c_1.jpg"
         ]
+      },
+      {
+        name: "Navy Blue",
+        hex: "#1a2a4a",
+        images: [
+          "images/tshirts/Maa/navy blue/Front_1_c_3.jpg",
+          "images/tshirts/Maa/navy blue/Back_2_c_3.jpg"
+        ]
+      },
+      {
+        name: "Black",
+        hex: "#1a1a1a",
+        images: [
+          "images/tshirts/Maa/black/ChatGPT Image Jun 26, 2026, 03_52_11 PM.png",
+          "images/tshirts/Maa/black/ChatGPT Image Jun 26, 2026, 03_52_38 PM.png",
+          "images/tshirts/Maa/black/Front_1_c_2.jpg",
+          "images/tshirts/Maa/black/Back_2_c_2.jpg"
+        ]
       }
     ]
   },
@@ -369,35 +372,10 @@ const products = [
     id: 8,
     name: "Aham Agni",
     category: "T-Shirts",
-    price: 549,
+    price: 999,
     description: "\"I am fire.\" Aham Agni is drawn from Sanskrit — a declaration of inner flame, creative force, and transformative energy. For those who burn bright and create with passion. Premium oversized fit.",
     sizes: ["S", "M", "L", "XL", "XXL"],
     colors: [
-      {
-        name: "Black",
-        hex: "#1a1a1a",
-        images: [
-          "images/tshirts/Aham Agni/black/ChatGPT Image Jun 26, 2026, 03_41_04 PM.png",
-          "images/tshirts/Aham Agni/black/ChatGPT Image Jun 26, 2026, 03_41_19 PM.png",
-          "images/tshirts/Aham Agni/black/Left_Pocket_3_c_2.jpg",
-          "images/tshirts/Aham Agni/black/Back_2_c_2.jpg"
-        ]
-      },
-      {
-        name: "Cream",
-        hex: "#f5efe0",
-        images: [
-          "images/tshirts/Aham Agni/cream/ChatGPT Image Jun 26, 2026, 03_40_48 PM.png",
-          "images/tshirts/Aham Agni/cream/Back_2_c_61.jpg"
-        ]
-      },
-      {
-        name: "Grey",
-        hex: "#9ca3af",
-        images: [
-          "images/tshirts/Aham Agni/grey/Back_2_c_4.jpg"
-        ]
-      },
       {
         name: "Maroon",
         hex: "#7f1d1d",
@@ -427,6 +405,14 @@ const products = [
         ]
       },
       {
+        name: "Cream",
+        hex: "#f5efe0",
+        images: [
+          "images/tshirts/Aham Agni/cream/ChatGPT Image Jun 26, 2026, 03_40_48 PM.png",
+          "images/tshirts/Aham Agni/cream/Back_2_c_61.jpg"
+        ]
+      },
+      {
         name: "White",
         hex: "#f5f5f5",
         images: [
@@ -434,6 +420,23 @@ const products = [
           "images/tshirts/Aham Agni/white/ChatGPT Image Jun 26, 2026, 03_41_13 PM.png",
           "images/tshirts/Aham Agni/white/Left_Pocket_3_c_1.jpg",
           "images/tshirts/Aham Agni/white/Back_2_c_1.jpg"
+        ]
+      },
+      {
+        name: "Grey",
+        hex: "#9ca3af",
+        images: [
+          "images/tshirts/Aham Agni/grey/Back_2_c_4.jpg"
+        ]
+      },
+      {
+        name: "Black",
+        hex: "#1a1a1a",
+        images: [
+          "images/tshirts/Aham Agni/black/ChatGPT Image Jun 26, 2026, 03_41_04 PM.png",
+          "images/tshirts/Aham Agni/black/ChatGPT Image Jun 26, 2026, 03_41_19 PM.png",
+          "images/tshirts/Aham Agni/black/Left_Pocket_3_c_2.jpg",
+          "images/tshirts/Aham Agni/black/Back_2_c_2.jpg"
         ]
       }
     ]
@@ -444,20 +447,10 @@ const products = [
     id: 9,
     name: "Surya Namaskar",
     category: "T-Shirts",
-    price: 549,
+    price: 749,
     description: "Greet the sun. Surya Namaskar channels the ancient practice of sun salutation — a ritual of gratitude, movement, and connection with life's energy. Wear your morning ritual. Breathable, soft cotton.",
     sizes: ["S", "M", "L", "XL", "XXL"],
     colors: [
-      {
-        name: "White",
-        hex: "#f5f5f5",
-        images: [
-          "images/tshirts/Surya namaskar/white/ChatGPT Image Jun 26, 2026, 04_20_59 PM.png",
-          "images/tshirts/Surya namaskar/white/ChatGPT Image Jun 26, 2026, 04_21_24 PM.png",
-          "images/tshirts/Surya namaskar/white/Front_1_c_1.jpg",
-          "images/tshirts/Surya namaskar/white/Back_2_c_1.jpg"
-        ]
-      },
       {
         name: "Cream",
         hex: "#f5efe0",
@@ -466,6 +459,16 @@ const products = [
           "images/tshirts/Surya namaskar/cream/ChatGPT Image Jun 26, 2026, 04_21_20 PM.png",
           "images/tshirts/Surya namaskar/cream/Back_2_c_61.jpg",
           "images/tshirts/Surya namaskar/cream/default.jpg"
+        ]
+      },
+      {
+        name: "White",
+        hex: "#f5f5f5",
+        images: [
+          "images/tshirts/Surya namaskar/white/ChatGPT Image Jun 26, 2026, 04_20_59 PM.png",
+          "images/tshirts/Surya namaskar/white/ChatGPT Image Jun 26, 2026, 04_21_24 PM.png",
+          "images/tshirts/Surya namaskar/white/Front_1_c_1.jpg",
+          "images/tshirts/Surya namaskar/white/Back_2_c_1.jpg"
         ]
       }
     ]
@@ -476,18 +479,17 @@ const products = [
     id: 10,
     name: "Different Path Same Roots",
     category: "T-Shirts",
-    price: 549,
+    price: 899,
     description: "We may take different paths in life, but we share the same roots. A design celebrating diversity, connection, and the invisible threads that bind us. For friends, families, and communities. Unisex fit.",
     sizes: ["S", "M", "L", "XL", "XXL"],
     colors: [
       {
-        name: "White",
-        hex: "#f5f5f5",
+        name: "Grey",
+        hex: "#9ca3af",
         images: [
-          "images/tshirts/Different path Same roots/white/ChatGPT Image Jun 26, 2026, 04_19_50 PM.png",
-          "images/tshirts/Different path Same roots/white/ChatGPT Image Jun 26, 2026, 04_20_07 PM.png",
-          "images/tshirts/Different path Same roots/white/Front_1_c_1.jpg",
-          "images/tshirts/Different path Same roots/white/Back_2_c_1.jpg"
+          "images/tshirts/Different path Same roots/grey/ChatGPT Image Jun 26, 2026, 04_19_54 PM.png",
+          "images/tshirts/Different path Same roots/grey/ChatGPT Image Jun 26, 2026, 04_20_13 PM.png",
+          "images/tshirts/Different path Same roots/grey/Back_2_c_4.jpg"
         ]
       },
       {
@@ -501,12 +503,13 @@ const products = [
         ]
       },
       {
-        name: "Grey",
-        hex: "#9ca3af",
+        name: "White",
+        hex: "#f5f5f5",
         images: [
-          "images/tshirts/Different path Same roots/grey/ChatGPT Image Jun 26, 2026, 04_19_54 PM.png",
-          "images/tshirts/Different path Same roots/grey/ChatGPT Image Jun 26, 2026, 04_20_13 PM.png",
-          "images/tshirts/Different path Same roots/grey/Back_2_c_4.jpg"
+          "images/tshirts/Different path Same roots/white/ChatGPT Image Jun 26, 2026, 04_19_50 PM.png",
+          "images/tshirts/Different path Same roots/white/ChatGPT Image Jun 26, 2026, 04_20_07 PM.png",
+          "images/tshirts/Different path Same roots/white/Front_1_c_1.jpg",
+          "images/tshirts/Different path Same roots/white/Back_2_c_1.jpg"
         ]
       }
     ]

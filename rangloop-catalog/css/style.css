@@ -128,11 +128,15 @@ h3 { font-size: 1.1rem; font-weight: 600; }
 }
 
 .header-brand .wordmark {
-  font-size: 1.5rem;
-  font-weight: 700;
-  letter-spacing: -0.5px;
-  color: var(--black);
+  display: inline-block;
   line-height: 1;
+}
+
+.site-logo {
+  height: 44px;   /* adjust to make logo bigger or smaller */
+  width: auto;
+  display: block;
+  object-fit: contain;
 }
 
 .header-brand .tagline {

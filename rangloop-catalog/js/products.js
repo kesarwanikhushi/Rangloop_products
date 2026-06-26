@@ -230,9 +230,9 @@ const products = [
         name: "Yellow",
         hex: "#facc15",
         images: [
+          "images/tshirts/Bhoota Kola/yellow/Front_1_c_43.jpg",
           "images/tshirts/Bhoota Kola/yellow/ChatGPT Image Jun 26, 2026, 02_44_11 PM.png",
           "images/tshirts/Bhoota Kola/yellow/ChatGPT Image Jun 26, 2026, 02_45_13 PM.png",
-          "images/tshirts/Bhoota Kola/yellow/Front_1_c_43.jpg",
           "images/tshirts/Bhoota Kola/yellow/Back_2_c_43.jpg"
         ]
       },

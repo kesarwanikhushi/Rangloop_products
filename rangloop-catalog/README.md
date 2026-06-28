@@ -89,7 +89,7 @@ The handle appears in three places. The easiest way:
 
 1. Open **`index.html`** and **`product.html`** in Notepad.
 2. Press `Ctrl + H` (Find & Replace).
-3. Find: `rangloop2026`
+3. Find: `rangloop.shop`
 4. Replace with: `your_actual_handle`
 5. Click "Replace All".
 6. Save both files.
@@ -97,10 +97,10 @@ The handle appears in three places. The easiest way:
 Also open `js/main.js` and change this line near the top:
 
 ```js
-const INSTAGRAM_HANDLE = 'rangloop2026';
+const INSTAGRAM_HANDLE = 'rangloop.shop';
 ```
 
-Replace `rangloop2026` with your real handle (no `@` symbol).
+Replace `rangloop.shop` with your real handle (no `@` symbol).
 
 ---
 

@@ -14,7 +14,7 @@ const ICON_CHECK = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="1
 // ============================================================
 // Instagram handle — update this one place to change globally
 // ============================================================
-const INSTAGRAM_HANDLE = 'rangloop2026';
+const INSTAGRAM_HANDLE = 'rangloop.shop';
 
 // ============================================================
 // Utility: format price with Indian ₹ symbol

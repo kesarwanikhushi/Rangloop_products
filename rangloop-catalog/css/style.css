@@ -458,6 +458,74 @@ h3 { font-size: 1.1rem; font-weight: 600; }
   margin-bottom: var(--space-md);
 }
 
+/* Product Specs Accordion */
+.detail-specs {
+  margin: var(--space-xs) 0;
+}
+
+.specs-trigger {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: var(--space-xs) 0;
+  background: none;
+  border: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--black);
+  cursor: pointer;
+  transition: color var(--transition);
+}
+
+.specs-trigger:hover {
+  color: var(--orange);
+}
+
+.specs-trigger .chevron-icon {
+  width: 18px;
+  height: 18px;
+  color: var(--grey);
+  transition: transform 0.25s ease, color var(--transition);
+}
+
+.specs-trigger:hover .chevron-icon {
+  color: var(--orange);
+}
+
+.specs-trigger.active .chevron-icon {
+  transform: rotate(180deg);
+}
+
+.specs-content {
+  margin-top: var(--space-xs);
+}
+
+.specs-list {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-bottom: var(--space-sm);
+}
+
+.specs-list li {
+  font-size: 0.88rem;
+  color: #555;
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.care-instructions {
+  font-size: 0.82rem;
+  color: #666;
+  background-color: var(--bg-subtle);
+  border-left: 3px solid var(--border);
+  padding: 8px 12px;
+  border-radius: 2px;
+  line-height: 1.5;
+}
+
 /* Order section */
 .order-section {
   margin-top: var(--space-md);

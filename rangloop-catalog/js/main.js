@@ -276,6 +276,120 @@ function switchColor(colorObj, colorIndex) {
 }
 
 /**
+ * Fallback specifications based on product category.
+ */
+function getDefaultDetails(category) {
+  const cat = (category || '').toLowerCase();
+  if (cat.includes('shirt') || cat.includes('tee')) {
+    return [
+      "100% Premium Cotton fabric",
+      "240 GSM heavyweight / premium weight style",
+      "Super combed & bio-washed for ultimate softness",
+      "Double-stitched neck and sleeve hems",
+      "Unisex fit, pre-shrunk to prevent shrinking"
+    ];
+  } else if (cat.includes('hoodie') || cat.includes('sweatshirt')) {
+    return [
+      "100% Premium Cotton fleece fabric",
+      "320 GSM heavy-duty material for warmth and comfort",
+      "Front pouch pocket and double-lined hood",
+      "Ribbed cuffs and waistband with spandex",
+      "Unisex relaxed fit, pre-shrunk"
+    ];
+  } else if (cat.includes('cap') || cat.includes('hat')) {
+    return [
+      "100% Premium Cotton Twill",
+      "Structured 6-panel profile with ventilation eyelets",
+      "Adjustable strap closure for a custom fit",
+      "Curved visor with multi-row stitching",
+      "One size fits most"
+    ];
+  } else if (cat.includes('mug')) {
+    return [
+      "Premium quality Ceramic (11 oz / 325 ml)",
+      "High-definition wrap-around print",
+      "Microwave and dishwasher safe",
+      "Easy-grip C-shaped handle",
+      "Glossy finish"
+    ];
+  } else if (cat.includes('coaster')) {
+    return [
+      "High-density eco-friendly MDF wood or Acrylic",
+      "Size: 3.5 x 3.5 inches with rounded corners",
+      "Glossy heat-resistant & water-repellent top coating",
+      "Anti-slip cork backing to protect surfaces",
+      "Easy to wipe clean with a damp cloth"
+    ];
+  }
+  return [
+    "Premium quality material and craftsmanship",
+    "High-definition custom-printed design",
+    "Made with care and attention to detail"
+  ];
+}
+
+/**
+ * Fallback care instructions based on product category.
+ */
+function getCareInstructions(category) {
+  const cat = (category || '').toLowerCase();
+  if (cat.includes('shirt') || cat.includes('tee') || cat.includes('hoodie') || cat.includes('sweatshirt')) {
+    return "Machine wash cold, inside out, gentle cycle. Do not iron directly on print. Tumble dry low.";
+  } else if (cat.includes('mug')) {
+    return "Dishwasher & microwave safe. Avoid using abrasive scrubbers on the printed design.";
+  } else if (cat.includes('coaster')) {
+    return "Wipe clean with a damp cloth. Do not submerge in water or place in dishwasher.";
+  }
+  return "Handle with care to preserve print quality.";
+}
+
+/**
+ * Resolves specific details and care guidelines for a product.
+ */
+function getProductSpecs(product) {
+  const name = (product.name || '').toLowerCase();
+  const cat = (product.category || '').toLowerCase();
+  
+  if (cat.includes('shirt') || cat.includes('tee') || cat.includes('hoodie') || cat.includes('sweatshirt') || cat === '') {
+    if (name.includes('raw and rooted')) {
+      return {
+        details: [
+          "<strong>Fabric:</strong> 100% cotton with 180 GSM for lightweight comfort.",
+          "<strong>Fit:</strong> Perfect unisex regular fit – your go-to everyday tee."
+        ],
+        care: "Wash inside-out in cold water, dry on low heat. Flip it inside out before ironing."
+      };
+    }
+    
+    if (name.includes('lion')) {
+      return {
+        details: [
+          "<strong>Fabric:</strong> Crafted from 100% cotton with a 180 GSM weight, offering a soft, breathable feel ideal for everyday wear. Finished with a bio-wash for enhanced smoothness and lasting comfort.",
+          "<strong>Fit:</strong> Designed in a versatile unisex fit that delivers a relaxed, easy-to-style silhouette for all body types.",
+          "<strong>Details:</strong> Features a classic ribbed neck and neatly finished self-turned sleeves, adding a refined touch to the retro-inspired design.",
+          "<strong>Perfect For:</strong> Casual everyday styling, streetwear layering, or effortless vintage-inspired looks."
+        ],
+        care: "Machine wash cold, dry on low heat, and iron inside out if needed."
+      };
+    }
+    
+    // For rest of the designs (apparel)
+    return {
+      details: [
+        "<strong>Fabric:</strong> 100% cotton with 240 GSM heavyweight yet breathable for that perfect oversized drape.",
+        "<strong>Fit:</strong> Unisex oversized fit – designed with extra length and sleeve drop for a stylish slouch."
+      ],
+      care: "Wash inside-out in cold water, dry on low heat. Flip it inside out before ironing."
+    };
+  }
+  
+  return {
+    details: product.details || getDefaultDetails(product.category),
+    care: product.care || getCareInstructions(product.category)
+  };
+}
+
+/**
  * Builds and mounts the product detail view into #detail-root.
  */
 function renderProductDetail(product) {
@@ -308,8 +422,8 @@ function renderProductDetail(product) {
                       aria-label="${c.name}"
                       aria-pressed="${i === 0 ? 'true' : 'false'}"
                       title="${c.name}">
-                <span class="swatch-dot" style="background:${c.hex}"></span>
-              </button>`
+                 <span class="swatch-dot" style="background:${c.hex}"></span>
+               </button>`
            ).join('')}
          </div>
        </div>
@@ -345,6 +459,30 @@ function renderProductDetail(product) {
        </div>`
     : `<div class="gallery-thumbs" id="gallery-thumbs" style="display:none;"></div>`;
 
+  // ── Product Details section (Accordion) ──
+  const productSpecsObj = getProductSpecs(product);
+  const specs = productSpecsObj.details;
+  const care = productSpecsObj.care;
+  const specsHTML = `
+    <div class="detail-specs">
+      <button class="specs-trigger" id="specs-trigger" aria-expanded="false" aria-controls="specs-content">
+        <span>Product Details & Care</span>
+        <svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </button>
+      <div class="specs-content" id="specs-content" aria-hidden="true" style="max-height: 0px; overflow: hidden; transition: max-height 0.25s ease-out;">
+        <ul class="specs-list">
+          ${specs.map(s => `<li>${s}</li>`).join('')}
+        </ul>
+        <div class="care-instructions">
+          <strong>Care Instructions:</strong> ${care}
+        </div>
+      </div>
+    </div>
+    <hr class="detail-divider">
+  `;
+
   root.innerHTML = `
     <div class="product-detail">
 
@@ -374,6 +512,8 @@ function renderProductDetail(product) {
         <p class="detail-description">${product.description}</p>
 
         <hr class="detail-divider">
+
+        ${specsHTML}
 
         <div class="order-section">
           <p class="order-heading">Want this?</p>
@@ -417,6 +557,25 @@ function renderProductDetail(product) {
       switchMainImage(thumb.dataset.src, parseInt(thumb.dataset.index, 10));
     });
   });
+
+  // ── Wire specs accordion toggle ──
+  const trigger = document.getElementById('specs-trigger');
+  const content = document.getElementById('specs-content');
+  if (trigger && content) {
+    trigger.addEventListener('click', () => {
+      const expanded = trigger.getAttribute('aria-expanded') === 'true';
+      trigger.setAttribute('aria-expanded', !expanded);
+      content.setAttribute('aria-hidden', expanded);
+      
+      if (!expanded) {
+        content.style.maxHeight = content.scrollHeight + 'px';
+        trigger.classList.add('active');
+      } else {
+        content.style.maxHeight = '0px';
+        trigger.classList.remove('active');
+      }
+    });
+  }
 
   // ── Wire order button ──
   document.getElementById('btn-order').addEventListener('click', () => {

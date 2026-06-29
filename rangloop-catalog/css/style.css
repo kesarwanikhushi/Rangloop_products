@@ -133,7 +133,7 @@ h3 { font-size: 1.1rem; font-weight: 600; }
 }
 
 .site-logo {
-  height: 44px;   /* adjust to make logo bigger or smaller */
+  height: 64px;   /* adjust to make logo bigger or smaller */
   width: auto;
   display: block;
   object-fit: contain;

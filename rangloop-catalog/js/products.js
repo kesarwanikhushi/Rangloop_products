@@ -148,7 +148,7 @@ const products = [
     id: 3,
     name: "Light & Shadow",
     category: "T-Shirts",
-    price: 799,
+    price: 699,
     description: "Where contrast meets culture. Light & Shadow plays with duality — the interplay between what is seen and what is felt. A minimal yet powerful graphic that's rich in meaning. Pure cotton comfort.",
     sizes: ["S", "M", "L", "XL", "XXL"],
     colors: [
@@ -180,7 +180,7 @@ const products = [
     id: 4,
     name: "Ride with the Light",
     category: "T-Shirts",
-    price: 799,
+    price: 699,
     description: "Chase the horizon. Ride with the Light is for the free spirits, the wanderers, the ones who move with purpose. A design that embodies motion and momentum. Breathable, durable fabric.",
     sizes: ["S", "M", "L", "XL", "XXL"],
     colors: [
@@ -222,7 +222,7 @@ const products = [
     id: 5,
     name: "Bhoota Kola",
     category: "T-Shirts",
-    price: 699,
+    price: 649,
     description: "Inspired by the ancient spirit ritual of coastal Karnataka — Bhoota Kola. A tribute to tradition, folklore, and the power of ancestral culture. Wear the myth. Own the legend. Premium graphic tee.",
     sizes: ["S", "M", "L", "XL", "XXL"],
     colors: [
@@ -431,7 +431,7 @@ const products = [
     id: 8,
     name: "Aham Agni",
     category: "T-Shirts",
-    price: 799,
+    price: 699,
     description: "\"I am fire.\" Aham Agni is drawn from Sanskrit — a declaration of inner flame, creative force, and transformative energy. For those who burn bright and create with passion. Premium oversized fit.",
     sizes: ["S", "M", "L", "XL", "XXL"],
     colors: [
@@ -538,7 +538,7 @@ const products = [
     id: 10,
     name: "Different Path Same Roots",
     category: "T-Shirts",
-    price: 699,
+    price: 649,
     description: "We may take different paths in life, but we share the same roots. A design celebrating diversity, connection, and the invisible threads that bind us. For friends, families, and communities. Unisex fit.",
     sizes: ["S", "M", "L", "XL", "XXL"],
     colors: [

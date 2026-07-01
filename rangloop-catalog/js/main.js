@@ -180,41 +180,51 @@ function getQueryParam(name) {
   return new URLSearchParams(window.location.search).get(name);
 }
 
-/**
- * Switches the main gallery image with a fade animation.
- */
-function switchMainImage(src, thumbIndex) {
-  const mainImg = document.getElementById('gallery-main-img');
-  const thumbs  = document.querySelectorAll('.thumb');
-  const loader  = document.getElementById('gallery-loading');
+function renderGallerySlides(images, productName) {
+  if (!images || images.length === 0) {
+    return `<div class="gallery-slide-placeholder"><span class="img-placeholder">${ICON_IMG}</span></div>`;
+  }
+  return images.map((src, i) => `
+    <div class="gallery-slide" data-index="${i}">
+      <img src="${src}" alt="${productName} view ${i + 1}" loading="${i === 0 ? 'eager' : 'lazy'}"
+           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <span class="img-placeholder" style="display:none;">${ICON_IMG}</span>
+    </div>
+  `).join('');
+}
 
-  if (mainImg) {
-    // If already cached, swap instantly — otherwise show loader
-    const probe = new Image();
-    probe.onload = () => {
-      if (loader) loader.style.display = 'none';
-      mainImg.classList.add('fading');
-      setTimeout(() => {
-        mainImg.src = src;
-        mainImg.classList.remove('fading');
-      }, 120);
-    };
-    // Show loader only if image isn't cached yet (takes > 50ms)
-    const loaderTimer = setTimeout(() => {
-      if (loader) loader.style.display = 'flex';
-    }, 50);
-    probe.onload = () => {
-      clearTimeout(loaderTimer);
-      if (loader) loader.style.display = 'none';
-      mainImg.classList.add('fading');
-      setTimeout(() => {
-        mainImg.src = src;
-        mainImg.classList.remove('fading');
-      }, 120);
-    };
-    probe.src = src;
+function initGalleryScrollListener() {
+  const container = document.getElementById('gallery-main-scroll');
+  if (!container) return;
+
+  let scrollTimeout;
+  container.addEventListener('scroll', () => {
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(() => {
+      const activeIndex = Math.round(container.scrollLeft / container.clientWidth);
+      const thumbs = document.querySelectorAll('.thumb');
+      thumbs.forEach((t, i) => t.classList.toggle('active', i === activeIndex));
+    }, 60);
+  });
+}
+
+/**
+ * Scrolls the main gallery to the selected slide.
+ */
+function switchMainImage(thumbIndex) {
+  const container = document.getElementById('gallery-main-scroll');
+  if (container) {
+    const slides = container.querySelectorAll('.gallery-slide');
+    const slide = slides[thumbIndex];
+    if (slide) {
+      container.scrollTo({
+        left: slide.offsetLeft,
+        behavior: 'smooth'
+      });
+    }
   }
 
+  const thumbs = document.querySelectorAll('.thumb');
   thumbs.forEach((t, i) => t.classList.toggle('active', i === thumbIndex));
 }
 
@@ -222,10 +232,11 @@ function switchMainImage(src, thumbIndex) {
  * Switches the displayed colour variant on the detail page.
  * Updates the gallery (main image + thumbnails) and marks the
  * selected swatch button as active.
+ * @param {Object} product    — parent product object
  * @param {Object} colorObj   — one entry from product.colors[]
  * @param {number} colorIndex — index in product.colors[]
  */
-function switchColor(colorObj, colorIndex) {
+function switchColor(product, colorObj, colorIndex) {
   // Update swatch buttons
   document.querySelectorAll('.color-swatch-btn').forEach((btn, i) => {
     btn.classList.toggle('active', i === colorIndex);
@@ -236,9 +247,17 @@ function switchColor(colorObj, colorIndex) {
   const label = document.getElementById('selected-color-label');
   if (label) label.textContent = colorObj.name;
 
+  const images = colorObj.images || [];
+
+  // Rebuild main gallery slides
+  const mainScroll = document.getElementById('gallery-main-scroll');
+  if (mainScroll) {
+    mainScroll.innerHTML = renderGallerySlides(images, product.name);
+    mainScroll.scrollLeft = 0;
+  }
+
   // Rebuild thumbnails
   const thumbsContainer = document.getElementById('gallery-thumbs');
-  const images = colorObj.images || [];
 
   if (thumbsContainer) {
     if (images.length > 1) {
@@ -246,8 +265,7 @@ function switchColor(colorObj, colorIndex) {
       thumbsContainer.innerHTML = images.map((src, i) =>
         `<button class="thumb ${i === 0 ? 'active' : ''}"
                  aria-label="View image ${i + 1}"
-                 data-index="${i}"
-                 data-src="${src}">
+                 data-index="${i}">
            <img src="${src}" alt="view ${i + 1}" loading="lazy">
          </button>`
       ).join('');
@@ -255,23 +273,13 @@ function switchColor(colorObj, colorIndex) {
       // Re-wire thumbnail clicks
       thumbsContainer.querySelectorAll('.thumb').forEach(thumb => {
         thumb.addEventListener('click', () => {
-          switchMainImage(thumb.dataset.src, parseInt(thumb.dataset.index, 10));
+          switchMainImage(parseInt(thumb.dataset.index, 10));
         });
       });
     } else {
       thumbsContainer.style.display = 'none';
       thumbsContainer.innerHTML = '';
     }
-  }
-
-  // Switch main image to first image of this colour
-  const mainImg = document.getElementById('gallery-main-img');
-  if (mainImg && images.length > 0) {
-    mainImg.classList.add('fading');
-    setTimeout(() => {
-      mainImg.src = images[0];
-      mainImg.classList.remove('fading');
-    }, 180);
   }
 }
 
@@ -485,36 +493,34 @@ function renderProductDetail(product) {
 
   root.innerHTML = `
     <div class="product-detail">
-
+ 
       <!-- Left: Image Gallery -->
       <div class="image-gallery">
         <div class="gallery-main" id="gallery-main-wrap">
-          <img src="${firstImage}" alt="${product.name}" id="gallery-main-img" loading="eager"
-               style="width:100%;height:100%;object-fit:cover;"
-               onerror="this.style.display='none'">
-          <div class="gallery-loading" id="gallery-loading" style="display:none;"
-               aria-label="Loading image"></div>
+          <div class="gallery-main-scroll" id="gallery-main-scroll">
+            ${renderGallerySlides(initialImages, product.name)}
+          </div>
         </div>
         ${thumbsHTML}
       </div>
-
+ 
       <!-- Right: Product Info -->
       <div class="product-info">
         <span class="tag detail-category">${product.category}</span>
         <h1 class="detail-name">${product.name}</h1>
         <p class="detail-price">${formatPrice(product.price)}</p>
-
+ 
         <hr class="detail-divider">
-
+ 
         ${colorsHTML}
         ${sizesHTML}
-
+ 
         <p class="detail-description">${product.description}</p>
-
+ 
         <hr class="detail-divider">
-
+ 
         ${specsHTML}
-
+ 
         <div class="order-section">
           <p class="order-heading">Want this?</p>
           <button class="btn-order" id="btn-order" aria-label="Order ${product.name} via Instagram DM">
@@ -523,21 +529,21 @@ function renderProductDetail(product) {
           <p class="order-note">A message will be ready to copy — then open Instagram DM</p>
         </div>
       </div>
-
+ 
     </div>`;
-
+ 
   // ── Preload ALL color images immediately in the background ──
   preloadAllProductImages(product);
-
+ 
   // ── Wire colour swatch clicks + hover preloading ──
   if (hasColors) {
     document.querySelectorAll('.color-swatch-btn').forEach((btn, i) => {
       // Preload on hover so images are cached before click
       btn.addEventListener('mouseenter', () => preloadImages(product.colors[i].images || []));
-      btn.addEventListener('click', () => switchColor(product.colors[i], i));
+      btn.addEventListener('click', () => switchColor(product, product.colors[i], i));
     });
   }
-
+ 
   // ── Wire size chip selection ──
   if (hasSizes) {
     document.querySelectorAll('.size-chip').forEach(chip => {
@@ -550,13 +556,16 @@ function renderProductDetail(product) {
       });
     });
   }
-
+ 
   // ── Wire thumbnail clicks (initial colour) ──
   document.querySelectorAll('.thumb').forEach(thumb => {
     thumb.addEventListener('click', () => {
-      switchMainImage(thumb.dataset.src, parseInt(thumb.dataset.index, 10));
+      switchMainImage(parseInt(thumb.dataset.index, 10));
     });
   });
+
+  // ── Initialize scroll listener ──
+  initGalleryScrollListener();
 
   // ── Wire specs accordion toggle ──
   const trigger = document.getElementById('specs-trigger');

@@ -125,7 +125,7 @@ function renderCatalog(category) {
   catalogGrid.classList.remove('empty');
   catalogGrid.innerHTML = filteredProducts.map(product => {
     // Get first image
-    let firstImage = "images/logo/logo.png"; // fallback
+    let firstImage = "images/logo/logo.webp"; // fallback
     if (product.colors && product.colors.length > 0 && product.colors[0].images && product.colors[0].images.length > 0) {
       firstImage = product.colors[0].images[0];
     }
@@ -211,7 +211,7 @@ function renderProductDetail(product) {
   const hasColors = product.colors && product.colors.length > 0;
   activeColorObj = hasColors ? product.colors[0] : null;
   const initialImages = activeColorObj ? activeColorObj.images : [];
-  const mainImage = initialImages.length > 0 ? initialImages[0] : "images/logo/logo.png";
+  const mainImage = initialImages.length > 0 ? initialImages[0] : "images/logo/logo.webp";
 
   // Gallery section HTML
   const galleryHTML = `

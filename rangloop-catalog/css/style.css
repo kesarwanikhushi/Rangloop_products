@@ -420,10 +420,11 @@ img {
   padding: 120px 80px;
   display: flex;
   gap: 80px;
+  align-items: center; /* Vertically center image and text */
 }
 
 .story-left {
-  flex: 1;
+  flex: 0 0 380px; /* Limit image column width */
 }
 
 .story-right {
@@ -1635,6 +1636,13 @@ img {
   .brand-story {
     flex-direction: column;
     padding: 60px 24px;
+  }
+
+  .story-left {
+    flex: none;
+    width: 100%;
+    max-width: 380px;
+    margin: 0 auto 32px auto; /* Center on mobile and add space below */
   }
   
   .story-heading {

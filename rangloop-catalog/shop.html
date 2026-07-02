@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Product Details — RangLoop</title>
-  <meta name="description" content="View product details, choose your color and size, and order via Instagram DM.">
+  <title>Shop Our Designs — RangLoop</title>
+  <meta name="description" content="Browse RangLoop's original T-shirt designs. Every piece made by us. Premium quality, original art.">
   <meta name="theme-color" content="#5E3A4E">
   
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -23,7 +23,7 @@
     </div>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
-      <li><a href="shop.html">Shop</a></li>
+      <li><a href="shop.html" class="active">Shop</a></li>
       <li><a href="custom.html">Custom Orders</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
@@ -53,38 +53,35 @@
   </div>
 
   <!-- ==========================================
-       PRODUCT DETAIL CONTAINER
+       PAGE HEADER
        ========================================== -->
-  <main class="detail-main" role="main">
-    <!-- Breadcrumbs -->
-    <div class="breadcrumb" id="product-breadcrumb">
-      <a href="index.html">Home</a> / <a href="shop.html">Shop</a> / <span id="breadcrumb-current">Product Name</span>
+  <header class="catalog-header">
+    <div class="catalog-header-content">
+      <span class="catalog-label">OUR COLLECTION</span>
+      <h1>Shop Our Designs</h1>
+      <p style="font-family: var(--font-sans); font-weight: 300; color: rgba(255,255,255,0.7); font-size: 0.95rem; margin-top: 12px; max-width: 400px; margin-left: auto; margin-right: auto; line-height: 1.6;">Original designs by RangLoop. Every piece made by us.</p>
+      <span class="dec-line"></span>
     </div>
-
-    <!-- Detail Layout -->
-    <div class="detail-layout" id="detail-layout-root">
-      <!-- Injected Dynamically by main.js to avoid flashes and ensure robust state handling -->
-      <div style="flex: 1; text-align: center; font-family: var(--font-sans); color: var(--text-muted); padding: 80px 0;">
-        Loading product details...
-      </div>
-    </div>
-  </main>
+  </header>
 
   <!-- ==========================================
-       INSTAGRAM DM MODAL
+       FILTER BAR (Sticky)
        ========================================== -->
-  <div class="modal-overlay" id="order-modal">
-    <div class="modal-box">
-      <button class="modal-close" id="modal-close-btn" aria-label="Close modal">&times;</button>
-      <h2 class="modal-title">Opening Instagram...</h2>
-      <p class="modal-subtext">Copy this message and paste it in our Instagram DM:</p>
-      
-      <textarea class="modal-textarea" id="modal-text-content" readonly></textarea>
-      
-      <button class="btn-modal-copy" id="btn-modal-copy-action">Copy Message</button>
-      <div class="modal-toast" id="modal-copy-toast">Copied! ✓</div>
-    </div>
+  <div class="filter-bar" id="sticky-filter-bar">
+    <ul class="filter-pills" id="filter-pills-list">
+      <li class="filter-pill active" data-category="all">All</li>
+      <li class="filter-pill inactive" data-category="T-Shirts">T-Shirts</li>
+    </ul>
   </div>
+
+  <!-- ==========================================
+       PRODUCT GRID SECTION
+       ========================================== -->
+  <main class="catalog-container" role="main">
+    <div class="catalog-grid" id="catalog-grid" aria-label="Product listing">
+      <!-- Generated dynamically by main.js -->
+    </div>
+  </main>
 
   <!-- ==========================================
        FOOTER
@@ -112,7 +109,7 @@
           <a href="mailto:contact@rangloop.shop">contact@rangloop.shop</a>
           <a href="mailto:founders@rangloop.shop">founders@rangloop.shop</a>
           <a href="https://www.rangloop.shop" target="_blank" rel="noopener noreferrer">www.rangloop.shop</a>
-          <a href="https://instagram.com/rangloop.official" target="_blank" rel="noopener noreferrer">@rangloop.official</a>
+          <a href="https://instagram.com/rangloop.shop" target="_blank" rel="noopener noreferrer">@rangloop.shop</a>
         </div>
       </div>
     </div>

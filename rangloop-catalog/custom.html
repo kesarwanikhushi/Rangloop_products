@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Orders — RangLoop</title>
+  <meta name="description" content="RangLoop custom print orders. Get your logo or design printed on premium T-shirts for businesses, teams, and events.">
+  <meta name="theme-color" content="#5E3A4E">
+
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Custom Orders Page Styles */
+    .custom-page-header {
+      background: var(--burgundy);
+      padding: 60px 24px;
+      text-align: center;
+    }
+    .custom-page-header-label {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      text-transform: uppercase;
+      color: var(--gold);
+      letter-spacing: 3px;
+      margin-bottom: 16px;
+      display: block;
+    }
+    .custom-page-header h1 {
+      font-family: var(--font-serif);
+      font-size: 48px;
+      color: var(--cream);
+      font-weight: 400;
+      margin-bottom: 16px;
+    }
+    .custom-page-header-sub {
+      font-family: var(--font-sans);
+      font-weight: 300;
+      font-size: 16px;
+      color: rgba(246, 242, 236, 0.7);
+      max-width: 520px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* Section 1 — Intro */
+    .custom-intro {
+      background: var(--cream);
+      padding: 60px 24px;
+    }
+    .custom-intro-inner {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .custom-intro h2 {
+      font-family: var(--font-serif);
+      font-size: 36px;
+      color: var(--burgundy);
+      margin-bottom: 20px;
+    }
+    .custom-intro p {
+      font-family: var(--font-sans);
+      font-weight: 300;
+      font-size: 17px;
+      line-height: 1.8;
+      color: var(--text-secondary);
+    }
+
+    /* Section 2 — Who is this for */
+    .custom-who {
+      background: #FFFFFF;
+      padding: 80px 24px;
+    }
+    .custom-who-grid {
+      max-width: 960px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .custom-who-card {
+      background: var(--cream);
+      border: 1px solid var(--tan);
+      border-left: 3px solid var(--terracotta);
+      padding: 28px 24px;
+    }
+    .custom-who-card-icon {
+      font-size: 1.2rem;
+      color: var(--terracotta);
+      margin-bottom: 12px;
+    }
+    .custom-who-card h3 {
+      font-family: var(--font-serif);
+      color: var(--burgundy);
+      font-size: 1.15rem;
+      margin-bottom: 8px;
+      font-weight: 400;
+    }
+    .custom-who-card p {
+      font-family: var(--font-sans);
+      font-weight: 300;
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* Section 3 — How it works */
+    .custom-how {
+      background: var(--burgundy);
+      padding: 80px 24px;
+      text-align: center;
+    }
+    .custom-how h2 {
+      font-family: var(--font-serif);
+      font-size: 40px;
+      color: var(--cream);
+      margin-bottom: 12px;
+      font-weight: 400;
+    }
+    .custom-how-line {
+      width: 50px;
+      height: 2px;
+      background: var(--gold);
+      margin: 0 auto 48px;
+    }
+    .custom-how-grid {
+      max-width: 960px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+    }
+    .custom-how-step {
+      text-align: center;
+      position: relative;
+    }
+    .custom-how-step-num {
+      font-family: var(--font-serif);
+      font-size: 64px;
+      color: var(--gold);
+      opacity: 0.15;
+      line-height: 1;
+      margin-bottom: -8px;
+    }
+    .custom-how-step h3 {
+      font-family: var(--font-serif);
+      color: var(--cream);
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+      font-weight: 400;
+    }
+    .custom-how-step p {
+      font-family: var(--font-sans);
+      font-weight: 300;
+      font-size: 14px;
+      color: rgba(246, 242, 236, 0.6);
+      line-height: 1.6;
+    }
+
+    /* Section 4 — What we offer */
+    .custom-offer {
+      background: var(--cream);
+      padding: 80px 24px;
+      text-align: center;
+    }
+    .custom-offer h2 {
+      font-family: var(--font-serif);
+      color: var(--burgundy);
+      font-size: 32px;
+      margin-bottom: 32px;
+      font-weight: 400;
+    }
+    .custom-offer-card {
+      background: #FFFFFF;
+      border: 1px solid var(--tan);
+      padding: 40px;
+      max-width: 480px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .custom-offer-card-icon {
+      font-size: 3rem;
+      margin-bottom: 16px;
+    }
+    .custom-offer-card h3 {
+      font-family: var(--font-serif);
+      color: var(--burgundy);
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+      font-weight: 400;
+    }
+    .custom-offer-card p {
+      font-family: var(--font-sans);
+      font-weight: 300;
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+    .custom-offer-note {
+      font-family: var(--font-sans);
+      font-weight: 300;
+      font-size: 13px;
+      color: var(--text-muted);
+      font-style: italic;
+      margin-top: 20px;
+    }
+
+    /* Section 5 — CTA */
+    .custom-cta {
+      background: var(--tan);
+      padding: 80px 24px;
+      text-align: center;
+    }
+    .custom-cta h2 {
+      font-family: var(--font-serif);
+      font-size: 40px;
+      color: var(--burgundy);
+      margin-bottom: 12px;
+      font-weight: 400;
+    }
+    .custom-cta-sub {
+      font-family: var(--font-sans);
+      font-weight: 300;
+      font-size: 17px;
+      color: var(--burgundy);
+      opacity: 0.7;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+    .custom-cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+    .custom-cta-btn-primary {
+      display: inline-block;
+      background: var(--burgundy);
+      color: var(--cream);
+      font-family: var(--font-sans);
+      font-weight: 500;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      padding: 14px 32px;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    .custom-cta-btn-primary:hover {
+      opacity: 0.9;
+    }
+    .custom-cta-btn-secondary {
+      display: inline-block;
+      background: transparent;
+      color: var(--burgundy);
+      border: 1.5px solid var(--burgundy);
+      font-family: var(--font-sans);
+      font-weight: 500;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      padding: 13px 32px;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    .custom-cta-btn-secondary:hover {
+      background: var(--burgundy);
+      color: var(--cream);
+    }
+    .custom-cta-note {
+      font-family: var(--font-sans);
+      font-weight: 300;
+      font-size: 13px;
+      color: var(--burgundy);
+      opacity: 0.5;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .custom-page-header h1 {
+        font-size: 36px;
+      }
+      .custom-who-grid {
+        grid-template-columns: 1fr;
+      }
+      .custom-how-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .custom-how h2 {
+        font-size: 32px;
+      }
+      .custom-cta h2 {
+        font-size: 32px;
+      }
+    }
+    @media (max-width: 480px) {
+      .custom-how-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body class="bg-pattern">
+
+  <!-- ==========================================
+       NAVBAR
+       ========================================== -->
+  <nav class="navbar" role="navigation">
+    <div class="nav-logo">
+      <a href="index.html" aria-label="RangLoop home">
+        <img src="images/logo/logo.png" alt="RangLoop Logo">
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="custom.html" class="active" style="font-weight: 600;">Custom Orders</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="https://instagram.com/rangloop.shop" target="_blank" rel="noopener noreferrer" style="font-family: var(--font-sans); font-weight: 500; font-size: 14px; color: var(--terracotta); text-decoration: none; transition: var(--transition);">@rangloop.shop</a>
+    </div>
+
+    <button class="nav-hamburger" aria-label="Open mobile menu" id="hamburger-btn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Overlay Menu -->
+  <div class="mobile-nav-overlay" id="mobile-menu">
+    <button class="mobile-nav-close" id="menu-close-btn" aria-label="Close mobile menu">&times;</button>
+    <ul class="mobile-nav-links">
+      <li><a href="index.html" id="m-link-home">Home</a></li>
+      <li><a href="shop.html" id="m-link-shop">Shop</a></li>
+      <li><a href="custom.html" id="m-link-custom">Custom Orders</a></li>
+      <li><a href="contact.html" id="m-link-contact">Contact</a></li>
+    </ul>
+    <div class="mobile-nav-cta">
+      <a href="https://instagram.com/rangloop.shop" target="_blank" rel="noopener noreferrer" style="font-family: var(--font-sans); font-weight: 500; font-size: 16px; color: var(--terracotta); text-decoration: none;">@rangloop.shop</a>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       PAGE HEADER
+       ========================================== -->
+  <header class="custom-page-header">
+    <span class="custom-page-header-label">CUSTOM ORDERS</span>
+    <h1>Your Brand. Our Print.</h1>
+    <p class="custom-page-header-sub">Alongside our own designs, we also print custom orders for businesses and individuals.</p>
+  </header>
+
+  <!-- ==========================================
+       SECTION 1 — INTRO
+       ========================================== -->
+  <section class="custom-intro">
+    <div class="custom-intro-inner">
+      <h2>We print your ideas too.</h2>
+      <p>While RangLoop is primarily a clothing brand with our own designs, we also accept custom print orders for businesses, teams, and events. Got a logo you want on a tee? Running a corporate event? Need matching jerseys for your team? We've got you.</p>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SECTION 2 — WHO IS THIS FOR
+       ========================================== -->
+  <section class="custom-who">
+    <div class="custom-who-grid">
+      <div class="custom-who-card">
+        <div class="custom-who-card-icon">✦</div>
+        <h3>Businesses & Brands</h3>
+        <p>Gyms, restaurants, coaching institutes, salons — get your logo printed on t-shirts for your staff or customers.</p>
+      </div>
+      <div class="custom-who-card">
+        <div class="custom-who-card-icon">✦</div>
+        <h3>Events & Teams</h3>
+        <p>Sports teams, college fests, corporate events — bulk custom printing with your design and branding.</p>
+      </div>
+      <div class="custom-who-card">
+        <div class="custom-who-card-icon">✦</div>
+        <h3>Personal Orders</h3>
+        <p>A gift, a personal design, or just something you've always wanted to wear. Even single pieces, no minimum.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SECTION 3 — HOW IT WORKS
+       ========================================== -->
+  <section class="custom-how">
+    <h2>How Custom Orders Work</h2>
+    <div class="custom-how-line"></div>
+    <div class="custom-how-grid">
+      <div class="custom-how-step">
+        <div class="custom-how-step-num">01</div>
+        <h3>DM or Email Us</h3>
+        <p>Tell us what you need — product type, quantity, and your design idea.</p>
+      </div>
+      <div class="custom-how-step">
+        <div class="custom-how-step-num">02</div>
+        <h3>Free Mockup</h3>
+        <p>We design a mockup and send it to you. No charges until you approve.</p>
+      </div>
+      <div class="custom-how-step">
+        <div class="custom-how-step-num">03</div>
+        <h3>Confirm & Pay</h3>
+        <p>Happy with the mockup? Confirm your order and we'll move to production.</p>
+      </div>
+      <div class="custom-how-step">
+        <div class="custom-how-step-num">04</div>
+        <h3>Delivered</h3>
+        <p>Your custom order, printed and delivered to your doorstep.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       SECTION 4 — WHAT WE OFFER
+       ========================================== -->
+  <section class="custom-offer">
+    <h2>Currently Available for Custom Printing</h2>
+    <div class="custom-offer-card">
+      <div class="custom-offer-card-icon">🧵</div>
+      <h3>Custom T-Shirts</h3>
+      <p>Premium quality tees with your design, logo or artwork. Any colour. Any size. Any quantity.</p>
+    </div>
+    <p class="custom-offer-note">More products coming soon — hoodies, mugs, caps and more.</p>
+  </section>
+
+  <!-- ==========================================
+       SECTION 5 — CTA
+       ========================================== -->
+  <section class="custom-cta">
+    <h2>Ready to start?</h2>
+    <p class="custom-cta-sub">Reach us on Instagram for the fastest response, or send us an email.</p>
+    <div class="custom-cta-buttons">
+      <a href="https://ig.me/m/rangloop.shop" target="_blank" rel="noopener noreferrer" class="custom-cta-btn-primary">DM on Instagram</a>
+      <a href="mailto:contact@rangloop.shop" class="custom-cta-btn-secondary">Send an Email</a>
+    </div>
+    <p class="custom-cta-note">Free mockup. No minimum order. We respond within 24 hours.</p>
+  </section>
+
+  <!-- ==========================================
+       FOOTER
+       ========================================== -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-columns">
+      <div class="footer-col">
+        <img src="images/logo/logo.png" alt="RangLoop Logo White" class="footer-logo">
+        <p class="footer-tagline">Wear Your Color</p>
+        <p class="footer-copy">&copy; 2026 RangLoop</p>
+        <p class="footer-note">Randomly started. Seriously built.</p>
+      </div>
+      <div class="footer-col">
+        <h3 class="footer-col-title">Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="custom.html">Custom Orders</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3 class="footer-col-title">Connect</h3>
+        <div class="footer-connect">
+          <a href="mailto:contact@rangloop.shop">contact@rangloop.shop</a>
+          <a href="mailto:founders@rangloop.shop">founders@rangloop.shop</a>
+          <a href="https://www.rangloop.shop" target="_blank" rel="noopener noreferrer">www.rangloop.shop</a>
+          <a href="https://instagram.com/rangloop.shop" target="_blank" rel="noopener noreferrer">@rangloop.shop</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-label-quote">Made with passion. Made for you.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,14 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0; url=/shop/">
-  <title>RangLoop</title>
-  <script>window.location.replace('/shop/');</script>
-  <script>
-    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-  </script>
-  <script defer src="/_vercel/insights/script.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RangLoop — Wear Your Color</title>
+  <meta name="description"
+    content="RangLoop is a homegrown Indian clothing brand. Original designs on premium quality tees. Shop our collection.">
+  <meta name="theme-color" content="#5E3A4E">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<body></body>
+
+<body class="bg-pattern">
+
+  <!-- ==========================================
+       NAVBAR
+       ========================================== -->
+  <nav class="navbar" role="navigation">
+    <div class="nav-logo">
+      <a href="index.html" aria-label="RangLoop home">
+        <img src="images/logo/logo.png" alt="RangLoop Logo">
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="custom.html">Custom Orders</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="https://instagram.com/rangloop.shop" target="_blank" rel="noopener noreferrer" class="nav-ig-link" style="font-family: var(--font-sans); font-weight: 500; font-size: 14px; color: var(--terracotta); text-decoration: none; transition: var(--transition);">@rangloop.shop</a>
+    </div>
+
+    <button class="nav-hamburger" aria-label="Open mobile menu" id="hamburger-btn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Overlay Menu -->
+  <div class="mobile-nav-overlay" id="mobile-menu">
+    <button class="mobile-nav-close" id="menu-close-btn" aria-label="Close mobile menu">&times;</button>
+    <ul class="mobile-nav-links">
+      <li><a href="index.html" id="m-link-home">Home</a></li>
+      <li><a href="shop.html" id="m-link-shop">Shop</a></li>
+      <li><a href="custom.html" id="m-link-custom">Custom Orders</a></li>
+      <li><a href="contact.html" id="m-link-contact">Contact</a></li>
+    </ul>
+    <div class="mobile-nav-cta">
+      <a href="https://instagram.com/rangloop.shop" target="_blank" rel="noopener noreferrer" style="font-family: var(--font-sans); font-weight: 500; font-size: 16px; color: var(--terracotta); text-decoration: none;">@rangloop.shop</a>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       HERO SECTION
+       ========================================== -->
+  <header class="hero">
+    <div class="hero-left">
+      <div class="eyebrow-container">
+        <span class="dec-line"></span>
+        <span class="eyebrow">ORIGINAL DESIGNS • LIMITED DROPS</span>
+      </div>
+      <h1 class="hero-title">Wear Your<br><span class="accent">Color.</span></h1>
+      <p class="hero-subheading">RangLoop is a homegrown clothing brand. Every design you see here was made by us — printed on premium quality tees, made for people who want to stand out.</p>
+      <div class="hero-ctas">
+        <a href="shop.html" class="btn-primary">Shop Our Designs</a>
+        <a href="custom.html" class="btn-secondary">Custom Orders</a>
+      </div>
+      <p class="hero-badge-text">Original designs. Premium quality. No two people wearing the same thing.</p>
+    </div>
+    <div class="hero-right">
+      <img src="images/hero/hero-image.png" alt="RangLoop Hero Image" class="hero-logo-img">
+    </div>
+  </header>
+
+  <!-- ==========================================
+       MARQUEE STRIP
+       ========================================== -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-content">
+      <span>ORIGINAL DESIGNS</span> <span class="sep">·</span>
+      <span>PREMIUM TEES</span> <span class="sep">·</span>
+      <span>MADE IN INDIA</span> <span class="sep">·</span>
+      <span>LIMITED DROPS</span> <span class="sep">·</span>
+      <span>WEAR YOUR COLOR</span> <span class="sep">·</span>
+      <span>RANGLOOP</span> <span class="sep">·</span>
+      <!-- Loop duplicate -->
+      <span>ORIGINAL DESIGNS</span> <span class="sep">·</span>
+      <span>PREMIUM TEES</span> <span class="sep">·</span>
+      <span>MADE IN INDIA</span> <span class="sep">·</span>
+      <span>LIMITED DROPS</span> <span class="sep">·</span>
+      <span>WEAR YOUR COLOR</span> <span class="sep">·</span>
+      <span>RANGLOOP</span> <span class="sep">·</span>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       BRAND STORY SECTION
+       ========================================== -->
+  <section class="brand-story" id="about">
+    <div class="story-left">
+      <div class="story-image-box">
+        <img src="images/brand/brand-photo.png" alt="Khushi Kesarwani and Abhirab Datrye" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+      <p class="story-caption"
+        style="font-family: var(--font-sans); font-weight: 300; font-size: 13px; color: var(--text-muted); font-style: italic; line-height: 1.6;">
+        Khushi Kesarwani, Founder<br>Abhirab Datrye, Co-Founder</p>
+    </div>
+    <div class="story-right">
+      <div class="story-label-container">
+        <span class="dec-line"></span>
+        <span class="eyebrow">OUR STORY</span>
+      </div>
+      <h2 class="story-heading">We make clothes we actually want to wear.</h2>
+      <p class="story-text">RangLoop is a homegrown Indian clothing brand started by Khushi Kesarwani and Abhirab Datrye. Two unserious people who decided to do something seriously this time — design clothes that actually mean something. Every design on this site was made by us.</p>
+      <p class="story-text">We started with zero. No investment, no factory, no plan B. Just designs, a lot of chai, and the belief that your wardrobe deserves something original.</p>
+      <a href="shop.html" class="story-link">Shop our designs &rarr;</a>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       OUR DESIGNS SECTION
+       ========================================== -->
+  <section class="categories-section">
+    <div class="section-header-center">
+      <h2>Our Designs</h2>
+      <p
+        style="font-family: var(--font-sans); font-weight: 300; color: var(--text-secondary); max-width: 540px; margin: 0 auto; font-size: 1rem; line-height: 1.7;">
+        Every piece you see here was designed by us. Pick your favourite, choose your size — we'll deliver it to your door.</p>
+    </div>
+    <div style="text-align: center; padding: 20px 24px 0;">
+      <a href="shop.html"
+        style="display: inline-block; background: var(--burgundy); color: var(--cream); font-family: var(--font-sans); font-weight: 500; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1.5px; padding: 14px 32px; text-decoration: none; transition: var(--transition);">Browse All Designs</a>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       BRAND VALUES SECTION
+       ========================================== -->
+  <section class="brand-values">
+    <div class="values-container">
+      <div class="value-item">
+        <span class="value-dec"></span>
+        <div class="value-icon">∞</div>
+        <h4 class="value-title">Timeless Design</h4>
+        <p class="value-desc">Styles that last, beyond trends.</p>
+      </div>
+      <div class="value-item">
+        <span class="value-dec"></span>
+        <div class="value-icon">✦</div>
+        <h4 class="value-title">Vibrant Expression</h4>
+        <p class="value-desc">Celebrate individuality through every color.</p>
+      </div>
+      <div class="value-item">
+        <span class="value-dec"></span>
+        <div class="value-icon">◈</div>
+        <h4 class="value-title">Premium Quality</h4>
+        <p class="value-desc">Thoughtfully crafted for everyday luxury.</p>
+      </div>
+      <div class="value-item">
+        <span class="value-dec"></span>
+        <div class="value-icon">🌱</div>
+        <h4 class="value-title">Made Responsibly</h4>
+        <p class="value-desc">Ethical choices for a better tomorrow.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       WHO WE SERVE SECTION
+       ========================================== -->
+  <section class="who-we-serve">
+    <h2>Worn By.</h2>
+    <div class="serve-grid">
+      <div class="serve-card">
+        <h3 class="serve-title">Individuals</h3>
+        <p class="serve-desc">People who want original, meaningful designs.</p>
+      </div>
+      <div class="serve-card">
+        <h3 class="serve-title">Gym & Fitness</h3>
+        <p class="serve-desc">Bold tees for bold people.</p>
+      </div>
+      <div class="serve-card">
+        <h3 class="serve-title">College Crowds</h3>
+        <p class="serve-desc">Stand out on campus.</p>
+      </div>
+      <div class="serve-card">
+        <h3 class="serve-title">Anyone Who Cares</h3>
+        <p class="serve-desc">If you care what you wear, you're our people.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================
+       FOOTER
+       ========================================== -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-columns">
+      <div class="footer-col">
+        <img src="images/logo/logo.png" alt="RangLoop Logo White" class="footer-logo">
+        <p class="footer-tagline">Wear Your Color</p>
+        <p class="footer-copy">&copy; 2026 RangLoop</p>
+        <p class="footer-note">Randomly started. Seriously built.</p>
+      </div>
+      <div class="footer-col">
+        <h3 class="footer-col-title">Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="custom.html">Custom Orders</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3 class="footer-col-title">Connect</h3>
+        <div class="footer-connect">
+          <a href="mailto:contact@rangloop.shop">contact@rangloop.shop</a>
+          <a href="mailto:founders@rangloop.shop">founders@rangloop.shop</a>
+          <a href="https://www.rangloop.shop" target="_blank" rel="noopener noreferrer">www.rangloop.shop</a>
+          <a href="https://instagram.com/rangloop.shop" target="_blank"
+            rel="noopener noreferrer">@rangloop.shop</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-label-quote">Made with passion. Made for you.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+</body>
+
 </html>

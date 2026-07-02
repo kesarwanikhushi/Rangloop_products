@@ -1,792 +1,449 @@
 /* ============================================================
    RangLoop — Main JavaScript
-   Handles: index.html catalog + product.html detail page
    ============================================================ */
 
-// ============================================================
-// SVG Icons (inline, no external dependency)
-// ============================================================
-const ICON_IG    = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>`;
-const ICON_IMG   = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>`;
-const ICON_COPY  = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>`;
-const ICON_CHECK = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>`;
+const INSTAGRAM_URL = "https://ig.me/m/rangloop.official";
 
-// ============================================================
-// Instagram handle — update this one place to change globally
-// ============================================================
-const INSTAGRAM_HANDLE = 'rangloop.shop';
-
-// ============================================================
 // Utility: format price with Indian ₹ symbol
-// ============================================================
 function formatPrice(amount) {
   return '₹' + amount.toLocaleString('en-IN');
 }
 
-// ============================================================
-// Utility: resolve image with fallback placeholder
-// ============================================================
-function imgTag(src, alt, cls = '') {
-  return `<img src="${src}" alt="${alt}" class="${cls}" loading="lazy"
-    onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-    <span class="img-placeholder" style="display:none;">${ICON_IMG}</span>`;
-}
+document.addEventListener('DOMContentLoaded', () => {
+  initMobileMenu();
+  
+  // Check which page we are on
+  const isCatalogPage = document.getElementById('catalog-grid') !== null;
+  const isDetailPage = document.getElementById('detail-layout-root') !== null;
 
-// ============================================================
-// Utility: preload images silently into browser cache
-// ============================================================
-const _preloaded = new Set();
-function preloadImages(urls) {
-  urls.forEach(url => {
-    if (!url || _preloaded.has(url)) return;
-    _preloaded.add(url);
-    const img = new Image();
-    img.src = url;
+  if (isCatalogPage) {
+    initCatalogPage();
+  } else if (isDetailPage) {
+    initDetailPage();
+  }
+});
+
+/* ============================================================
+   MOBILE HAMBURGER MENU
+   ============================================================ */
+function initMobileMenu() {
+  const hamburgerBtn = document.getElementById('hamburger-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuCloseBtn = document.getElementById('menu-close-btn');
+
+  if (!hamburgerBtn || !mobileMenu) return;
+
+  function openMenu() {
+    mobileMenu.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+  }
+
+  function closeMenu() {
+    mobileMenu.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  hamburgerBtn.addEventListener('click', openMenu);
+  if (menuCloseBtn) {
+    menuCloseBtn.addEventListener('click', closeMenu);
+  }
+
+  // Close menu when clicking overlay links
+  const overlayLinks = mobileMenu.querySelectorAll('.mobile-nav-links a');
+  overlayLinks.forEach(link => {
+    link.addEventListener('click', closeMenu);
   });
-}
-
-// Preload ALL images for every colour of a product (background download)
-function preloadAllProductImages(product) {
-  if (!product.colors) return;
-  const urls = product.colors.flatMap(c => c.images || []);
-  preloadImages(urls);
-}
-
-// ============================================================
-// Utility: get the first available image for a product
-// (works with both old "images" array and new "colors" array)
-// ============================================================
-function getFirstImage(product) {
-  if (product.colors && product.colors.length > 0) {
-    const firstColor = product.colors[0];
-    if (firstColor.images && firstColor.images.length > 0) {
-      return firstColor.images[0];
-    }
-  }
-  // Legacy fallback: old products with a plain "images" array
-  if (product.images && product.images.length > 0) {
-    return product.images[0];
-  }
-  return null;
 }
 
 /* ============================================================
-   INDEX PAGE LOGIC (catalog grid + category filter)
+   CATALOG PAGE LOGIC
    ============================================================ */
+function initCatalogPage() {
+  const catalogGrid = document.getElementById('catalog-grid');
+  const filterPills = document.querySelectorAll('.filter-pill');
+  if (!catalogGrid) return;
 
-/**
- * Renders product cards into #product-grid.
- * @param {Array} list — filtered array of product objects
- */
-function renderGrid(list) {
-  const grid = document.getElementById('product-grid');
-  if (!grid) return;
+  // Read URL query parameter for category
+  const urlParams = new URLSearchParams(window.location.search);
+  const initialCategory = urlParams.get('category');
 
-  if (list.length === 0) {
-    grid.classList.add('empty');
-    grid.innerHTML = `<p class="empty-state">No products in this category yet.</p>`;
+  // Initial render
+  let activeCategory = 'all';
+  if (initialCategory) {
+    const validPill = Array.from(filterPills).find(pill => pill.getAttribute('data-category').toLowerCase() === initialCategory.toLowerCase());
+    if (validPill) {
+      activeCategory = validPill.getAttribute('data-category');
+    }
+  }
+
+  updateFilterPills(activeCategory);
+  renderCatalog(activeCategory);
+
+  // Wire up filter pill clicks
+  filterPills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      const category = pill.getAttribute('data-category');
+      updateFilterPills(category);
+      renderCatalog(category);
+      
+      // Update URL without reloading page
+      const newUrl = category === 'all' ? 'shop.html' : `shop.html?category=${encodeURIComponent(category)}`;
+      window.history.pushState({ path: newUrl }, '', newUrl);
+    });
+  });
+}
+
+function updateFilterPills(activeCategory) {
+  const filterPills = document.querySelectorAll('.filter-pill');
+  filterPills.forEach(pill => {
+    const cat = pill.getAttribute('data-category');
+    if (cat.toLowerCase() === activeCategory.toLowerCase()) {
+      pill.classList.remove('inactive');
+      pill.classList.add('active');
+    } else {
+      pill.classList.remove('active');
+      pill.classList.add('inactive');
+    }
+  });
+}
+
+function renderCatalog(category) {
+  const catalogGrid = document.getElementById('catalog-grid');
+  if (!catalogGrid) return;
+
+  // Filter products list
+  const filteredProducts = category === 'all' 
+    ? products 
+    : products.filter(p => p.category.toLowerCase() === category.toLowerCase());
+
+  if (filteredProducts.length === 0) {
+    catalogGrid.classList.add('empty');
+    catalogGrid.innerHTML = `<p class="empty-state">No products found in this category.</p>`;
     return;
   }
 
-  grid.classList.remove('empty');
-  grid.innerHTML = list.map(product => {
-    const firstImage = getFirstImage(product);
-    const imageHTML = firstImage
-      ? `<div class="card-image-wrap">${imgTag(firstImage, product.name)}</div>`
-      : `<div class="card-image-wrap"><span class="img-placeholder">${ICON_IMG}</span></div>`;
-
-    // Colour swatches on catalog card (up to 5)
-    const swatchesHTML = (product.colors && product.colors.length > 0)
-      ? `<div class="card-swatches" aria-label="Available colours">
-          ${product.colors.slice(0, 5).map(c =>
-            `<span class="card-swatch" style="background:${c.hex}" title="${c.name}" aria-label="${c.name}"></span>`
-          ).join('')}
-          ${product.colors.length > 5 ? `<span class="card-swatch-more">+${product.colors.length - 5}</span>` : ''}
-         </div>`
-      : '';
+  catalogGrid.classList.remove('empty');
+  catalogGrid.innerHTML = filteredProducts.map(product => {
+    // Get first image
+    let firstImage = "images/logo/logo.png"; // fallback
+    if (product.colors && product.colors.length > 0 && product.colors[0].images && product.colors[0].images.length > 0) {
+      firstImage = product.colors[0].images[0];
+    }
 
     return `
-      <a href="/product.html?id=${product.id}"
-         class="product-card"
-         id="card-${product.id}"
-         data-product-id="${product.id}"
-         aria-label="${product.name} — ${formatPrice(product.price)}">
-        ${imageHTML}
+      <div class="product-card" data-id="${product.id}">
+        <a href="product.html?id=${product.id}" class="card-img-wrap-link">
+          <div class="card-img-wrap">
+            <img src="${firstImage}" alt="${product.name}" loading="lazy">
+          </div>
+        </a>
         <div class="card-body">
-          <span class="tag card-category">${product.category}</span>
-          <p class="card-name">${product.name}</p>
-          ${swatchesHTML}
+          <span class="card-category">${product.category}</span>
+          <h3 class="card-name"><a href="product.html?id=${product.id}">${product.name}</a></h3>
           <p class="card-price">${formatPrice(product.price)}</p>
+          <button class="btn-card-order" onclick="triggerDirectOrder(${product.id})">Order via Instagram</button>
         </div>
-      </a>`;
+      </div>
+    `;
   }).join('');
-
-  // Preload each product's images when the user hovers the card
-  grid.querySelectorAll('.product-card').forEach(card => {
-    const pid = parseInt(card.dataset.productId, 10);
-    const product = products.find(p => p.id === pid);
-    if (!product) return;
-    let hoverTimer;
-    card.addEventListener('mouseenter', () => {
-      // Small delay so rapid mouse-overs don't trigger unnecessary fetches
-      hoverTimer = setTimeout(() => preloadAllProductImages(product), 120);
-    });
-    card.addEventListener('mouseleave', () => clearTimeout(hoverTimer));
-  });
 }
 
-/**
- * Sets up category filter buttons.
- */
-function initCategoryFilter() {
-  const buttons = document.querySelectorAll('.filter-btn');
-  if (!buttons.length) return;
-
-  buttons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      buttons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
-      const selected = btn.dataset.category;
-      const filtered = selected === 'all'
-        ? products
-        : products.filter(p => p.category === selected);
-
-      renderGrid(filtered);
-    });
-  });
-}
-
-/**
- * Entry point for index.html
- */
-function initCatalogPage() {
-  const grid = document.getElementById('product-grid');
-  if (!grid) return;
-
-  renderGrid(products);
-  initCategoryFilter();
-}
-
+// Global scope function for card direct order triggers
+window.triggerDirectOrder = function(productId) {
+  const product = products.find(p => p.id === productId);
+  if (!product) return;
+  
+  // Construct dynamic order message (no size specified for general catalog card click)
+  const message = `Hi RangLoop! I want to order:\n${product.name}\nPrice: ${formatPrice(product.price)}\nSize: ___\nPlease send me a design mockup.`;
+  
+  openInstagramModal(message);
+};
 
 /* ============================================================
    PRODUCT DETAIL PAGE LOGIC
    ============================================================ */
+let activeDetailProduct = null;
+let selectedSize = null;
+let activeColorObj = null;
 
-/**
- * Gets a query parameter value from the current URL.
- */
-function getQueryParam(name) {
-  return new URLSearchParams(window.location.search).get(name);
+function initDetailPage() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const productId = parseInt(urlParams.get('id'));
+  
+  if (!productId || isNaN(productId)) {
+    renderDetailNotFound();
+    return;
+  }
+
+  const product = products.find(p => p.id === productId);
+  if (!product) {
+    renderDetailNotFound();
+    return;
+  }
+
+  activeDetailProduct = product;
+  renderProductDetail(product);
 }
 
-function renderGallerySlides(images, productName) {
-  if (!images || images.length === 0) {
-    return `<div class="gallery-slide-placeholder"><span class="img-placeholder">${ICON_IMG}</span></div>`;
+function renderDetailNotFound() {
+  const root = document.getElementById('detail-layout-root');
+  if (root) {
+    root.innerHTML = `
+      <div style="flex: 1; text-align: center; padding: 80px 0;">
+        <h2 style="font-size: 2rem; margin-bottom: 16px;">Product Not Found</h2>
+        <p style="font-family: var(--font-sans); color: var(--text-muted); margin-bottom: 24px;">The product you are looking for does not exist or has been removed.</p>
+        <a href="shop.html" class="btn-primary">Back to Shop</a>
+      </div>
+    `;
   }
-  return images.map((src, i) => `
-    <div class="gallery-slide" data-index="${i}">
-      <img src="${src}" alt="${productName} view ${i + 1}" loading="${i === 0 ? 'eager' : 'lazy'}"
-           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-      <span class="img-placeholder" style="display:none;">${ICON_IMG}</span>
+}
+
+function renderProductDetail(product) {
+  const root = document.getElementById('detail-layout-root');
+  const breadcrumbCurrent = document.getElementById('breadcrumb-current');
+  if (!root) return;
+
+  if (breadcrumbCurrent) {
+    breadcrumbCurrent.textContent = product.name;
+  }
+
+  // Pre-select first color variant if available
+  const hasColors = product.colors && product.colors.length > 0;
+  activeColorObj = hasColors ? product.colors[0] : null;
+  const initialImages = activeColorObj ? activeColorObj.images : [];
+  const mainImage = initialImages.length > 0 ? initialImages[0] : "images/logo/logo.png";
+
+  // Gallery section HTML
+  const galleryHTML = `
+    <div class="detail-gallery-wrap">
+      <div class="main-image-box">
+        <img id="detail-main-img" src="${mainImage}" alt="${product.name}">
+      </div>
+      <div class="thumb-gallery" id="detail-thumbs">
+        ${initialImages.map((img, index) => `
+          <div class="thumb-item ${index === 0 ? 'active' : ''}" data-index="${index}" onclick="switchDetailThumbnail(${index})">
+            <img src="${img}" alt="${product.name} thumbnail ${index + 1}">
+          </div>
+        `).join('')}
+      </div>
     </div>
-  `).join('');
-}
+  `;
 
-function initGalleryScrollListener() {
-  const container = document.getElementById('gallery-main-scroll');
-  if (!container) return;
-
-  let scrollTimeout;
-  container.addEventListener('scroll', () => {
-    clearTimeout(scrollTimeout);
-    scrollTimeout = setTimeout(() => {
-      const activeIndex = Math.round(container.scrollLeft / container.clientWidth);
-      const thumbs = document.querySelectorAll('.thumb');
-      thumbs.forEach((t, i) => t.classList.toggle('active', i === activeIndex));
-    }, 60);
-  });
-}
-
-/**
- * Scrolls the main gallery to the selected slide.
- */
-function switchMainImage(thumbIndex) {
-  const container = document.getElementById('gallery-main-scroll');
-  if (container) {
-    const slides = container.querySelectorAll('.gallery-slide');
-    const slide = slides[thumbIndex];
-    if (slide) {
-      container.scrollTo({
-        left: slide.offsetLeft,
-        behavior: 'smooth'
-      });
-    }
+  // Colors list HTML
+  let colorsHTML = "";
+  if (hasColors) {
+    colorsHTML = `
+      <div class="detail-colors-label">COLOR: <span id="active-color-name" style="font-weight: 600; color: var(--burgundy);">${activeColorObj.name}</span></div>
+      <div class="detail-colors-row">
+        ${product.colors.map((color, index) => `
+          <div class="color-swatch-wrap ${index === 0 ? 'active' : ''}" data-index="${index}" onclick="switchDetailColor(${index})" title="${color.name}">
+            <div class="color-dot" style="background-color: ${color.hex};"></div>
+          </div>
+        `).join('')}
+      </div>
+    `;
   }
 
-  const thumbs = document.querySelectorAll('.thumb');
-  thumbs.forEach((t, i) => t.classList.toggle('active', i === thumbIndex));
-}
-
-/**
- * Switches the displayed colour variant on the detail page.
- * Updates the gallery (main image + thumbnails) and marks the
- * selected swatch button as active.
- * @param {Object} product    — parent product object
- * @param {Object} colorObj   — one entry from product.colors[]
- * @param {number} colorIndex — index in product.colors[]
- */
-function switchColor(product, colorObj, colorIndex) {
-  // Update swatch buttons
-  document.querySelectorAll('.color-swatch-btn').forEach((btn, i) => {
-    btn.classList.toggle('active', i === colorIndex);
-    btn.setAttribute('aria-pressed', i === colorIndex ? 'true' : 'false');
-  });
-
-  // Update colour label
-  const label = document.getElementById('selected-color-label');
-  if (label) label.textContent = colorObj.name;
-
-  const images = colorObj.images || [];
-
-  // Rebuild main gallery slides
-  const mainScroll = document.getElementById('gallery-main-scroll');
-  if (mainScroll) {
-    mainScroll.innerHTML = renderGallerySlides(images, product.name);
-    mainScroll.scrollLeft = 0;
+  // Sizes list HTML
+  let sizesHTML = "";
+  if (product.sizes && product.sizes.length > 0) {
+    sizesHTML = `
+      <div class="detail-sizes-label">SIZES AVAILABLE</div>
+      <div class="detail-sizes-row" id="detail-sizes-row">
+        ${product.sizes.map(size => `
+          <button class="detail-size-pill inactive" data-size="${size}" onclick="selectDetailSize(this, '${size}')">${size}</button>
+        `).join('')}
+      </div>
+    `;
   }
 
-  // Rebuild thumbnails
-  const thumbsContainer = document.getElementById('gallery-thumbs');
+  // Instagram SVG Icon
+  const igIcon = `<svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>`;
 
-  if (thumbsContainer) {
-    if (images.length > 1) {
-      thumbsContainer.style.display = '';
-      thumbsContainer.innerHTML = images.map((src, i) =>
-        `<button class="thumb ${i === 0 ? 'active' : ''}"
-                 aria-label="View image ${i + 1}"
-                 data-index="${i}">
-           <img src="${src}" alt="view ${i + 1}" loading="lazy">
-         </button>`
-      ).join('');
+  // Details Info Section HTML
+  const infoHTML = `
+    <div class="detail-info-wrap">
+      <span class="detail-category">${product.category}</span>
+      <h1 class="detail-name">${product.name}</h1>
+      <span class="dec-line"></span>
+      <p class="detail-price">${formatPrice(product.price)}</p>
+      
+      <hr class="detail-divider">
+      
+      ${colorsHTML}
+      ${sizesHTML}
+      
+      <p class="detail-description">${product.description}</p>
+      
+      <button class="btn-detail-order" onclick="triggerDetailOrder()">
+        ${igIcon} ORDER VIA INSTAGRAM
+      </button>
+      <p class="detail-order-hint">We'll send a free design mockup within 24 hours of your message.</p>
+    </div>
+  `;
 
-      // Re-wire thumbnail clicks
-      thumbsContainer.querySelectorAll('.thumb').forEach(thumb => {
-        thumb.addEventListener('click', () => {
-          switchMainImage(parseInt(thumb.dataset.index, 10));
-        });
-      });
+  root.innerHTML = galleryHTML + infoHTML;
+}
+
+// Global functions for detail interactions
+window.switchDetailThumbnail = function(index) {
+  if (!activeColorObj || !activeColorObj.images) return;
+  
+  const mainImg = document.getElementById('detail-main-img');
+  if (mainImg) {
+    mainImg.src = activeColorObj.images[index];
+  }
+
+  const thumbs = document.querySelectorAll('.thumb-item');
+  thumbs.forEach((thumb, idx) => {
+    if (idx === index) {
+      thumb.classList.add('active');
     } else {
-      thumbsContainer.style.display = 'none';
-      thumbsContainer.innerHTML = '';
+      thumb.classList.remove('active');
     }
-  }
-}
+  });
+};
 
-/**
- * Fallback specifications based on product category.
- */
-function getDefaultDetails(category) {
-  const cat = (category || '').toLowerCase();
-  if (cat.includes('shirt') || cat.includes('tee')) {
-    return [
-      "100% Premium Cotton fabric",
-      "240 GSM heavyweight / premium weight style",
-      "Super combed & bio-washed for ultimate softness",
-      "Double-stitched neck and sleeve hems",
-      "Unisex fit, pre-shrunk to prevent shrinking"
-    ];
-  } else if (cat.includes('hoodie') || cat.includes('sweatshirt')) {
-    return [
-      "100% Premium Cotton fleece fabric",
-      "320 GSM heavy-duty material for warmth and comfort",
-      "Front pouch pocket and double-lined hood",
-      "Ribbed cuffs and waistband with spandex",
-      "Unisex relaxed fit, pre-shrunk"
-    ];
-  } else if (cat.includes('cap') || cat.includes('hat')) {
-    return [
-      "100% Premium Cotton Twill",
-      "Structured 6-panel profile with ventilation eyelets",
-      "Adjustable strap closure for a custom fit",
-      "Curved visor with multi-row stitching",
-      "One size fits most"
-    ];
-  } else if (cat.includes('mug')) {
-    return [
-      "Premium quality Ceramic (11 oz / 325 ml)",
-      "High-definition wrap-around print",
-      "Microwave and dishwasher safe",
-      "Easy-grip C-shaped handle",
-      "Glossy finish"
-    ];
-  } else if (cat.includes('coaster')) {
-    return [
-      "High-density eco-friendly MDF wood or Acrylic",
-      "Size: 3.5 x 3.5 inches with rounded corners",
-      "Glossy heat-resistant & water-repellent top coating",
-      "Anti-slip cork backing to protect surfaces",
-      "Easy to wipe clean with a damp cloth"
-    ];
-  }
-  return [
-    "Premium quality material and craftsmanship",
-    "High-definition custom-printed design",
-    "Made with care and attention to detail"
-  ];
-}
-
-/**
- * Fallback care instructions based on product category.
- */
-function getCareInstructions(category) {
-  const cat = (category || '').toLowerCase();
-  if (cat.includes('shirt') || cat.includes('tee') || cat.includes('hoodie') || cat.includes('sweatshirt')) {
-    return "Machine wash cold, inside out, gentle cycle. Do not iron directly on print. Tumble dry low.";
-  } else if (cat.includes('mug')) {
-    return "Dishwasher & microwave safe. Avoid using abrasive scrubbers on the printed design.";
-  } else if (cat.includes('coaster')) {
-    return "Wipe clean with a damp cloth. Do not submerge in water or place in dishwasher.";
-  }
-  return "Handle with care to preserve print quality.";
-}
-
-/**
- * Resolves specific details and care guidelines for a product.
- */
-function getProductSpecs(product) {
-  const name = (product.name || '').toLowerCase();
-  const cat = (product.category || '').toLowerCase();
+window.switchDetailColor = function(colorIndex) {
+  if (!activeDetailProduct || !activeDetailProduct.colors) return;
   
-  if (cat.includes('shirt') || cat.includes('tee') || cat.includes('hoodie') || cat.includes('sweatshirt') || cat === '') {
-    if (name.includes('raw and rooted')) {
-      return {
-        details: [
-          "<strong>Fabric:</strong> 100% cotton with 180 GSM for lightweight comfort.",
-          "<strong>Fit:</strong> Perfect unisex regular fit – your go-to everyday tee."
-        ],
-        care: "Wash inside-out in cold water, dry on low heat. Flip it inside out before ironing."
-      };
+  activeColorObj = activeDetailProduct.colors[colorIndex];
+  
+  // Update color text label
+  const colorLabel = document.getElementById('active-color-name');
+  if (colorLabel) {
+    colorLabel.textContent = activeColorObj.name;
+  }
+
+  // Update swatches active ring
+  const swatches = document.querySelectorAll('.color-swatch-wrap');
+  swatches.forEach((swatch, idx) => {
+    if (idx === colorIndex) {
+      swatch.classList.add('active');
+    } else {
+      swatch.classList.remove('active');
+    }
+  });
+
+  // Re-render thumbnails and main image
+  const mainImg = document.getElementById('detail-main-img');
+  const thumbsContainer = document.getElementById('detail-thumbs');
+  
+  if (activeColorObj.images && activeColorObj.images.length > 0) {
+    if (mainImg) {
+      mainImg.src = activeColorObj.images[0];
     }
     
-    if (name.includes('lion')) {
-      return {
-        details: [
-          "<strong>Fabric:</strong> Crafted from 100% cotton with a 180 GSM weight, offering a soft, breathable feel ideal for everyday wear. Finished with a bio-wash for enhanced smoothness and lasting comfort.",
-          "<strong>Fit:</strong> Designed in a versatile unisex fit that delivers a relaxed, easy-to-style silhouette for all body types.",
-          "<strong>Details:</strong> Features a classic ribbed neck and neatly finished self-turned sleeves, adding a refined touch to the retro-inspired design.",
-          "<strong>Perfect For:</strong> Casual everyday styling, streetwear layering, or effortless vintage-inspired looks."
-        ],
-        care: "Machine wash cold, dry on low heat, and iron inside out if needed."
-      };
+    if (thumbsContainer) {
+      thumbsContainer.innerHTML = activeColorObj.images.map((img, index) => `
+        <div class="thumb-item ${index === 0 ? 'active' : ''}" data-index="${index}" onclick="switchDetailThumbnail(${index})">
+          <img src="${img}" alt="${activeDetailProduct.name} thumbnail ${index + 1}">
+        </div>
+      `).join('');
     }
-    
-    // For rest of the designs (apparel)
-    return {
-      details: [
-        "<strong>Fabric:</strong> 100% cotton with 240 GSM heavyweight yet breathable for that perfect oversized drape.",
-        "<strong>Fit:</strong> Unisex oversized fit – designed with extra length and sleeve drop for a stylish slouch."
-      ],
-      care: "Wash inside-out in cold water, dry on low heat. Flip it inside out before ironing."
-    };
   }
+};
+
+window.selectDetailSize = function(button, size) {
+  selectedSize = size;
   
-  return {
-    details: product.details || getDefaultDetails(product.category),
-    care: product.care || getCareInstructions(product.category)
+  const sizePills = document.querySelectorAll('.detail-size-pill');
+  sizePills.forEach(pill => {
+    if (pill === button) {
+      pill.classList.remove('inactive');
+      pill.classList.add('active');
+    } else {
+      pill.classList.remove('active');
+      pill.classList.add('inactive');
+    }
+  });
+};
+
+window.triggerDetailOrder = function() {
+  if (!activeDetailProduct) return;
+  
+  // Verify size selection if size exists
+  const hasSizes = activeDetailProduct.sizes && activeDetailProduct.sizes.length > 0;
+  if (hasSizes && !selectedSize) {
+    alert("Please select a size first.");
+    const sizeRow = document.getElementById('detail-sizes-row');
+    if (sizeRow) {
+      sizeRow.style.outline = "2px solid var(--terracotta)";
+      setTimeout(() => {
+        sizeRow.style.outline = "none";
+      }, 1500);
+    }
+    return;
+  }
+
+  const colorPart = activeColorObj ? `\nColor: ${activeColorObj.name}` : "";
+  const sizePart = selectedSize ? `\nSize: ${selectedSize}` : "";
+
+  const message = `Hi RangLoop! I want to order:\n${activeDetailProduct.name}${colorPart}${sizePart}\nPrice: ${formatPrice(activeDetailProduct.price)}\nPlease send me a design mockup.`;
+
+  openInstagramModal(message);
+};
+
+/* ============================================================
+   ORDER MODAL
+   ============================================================ */
+function openInstagramModal(messageText) {
+  const modal = document.getElementById('order-modal');
+  const textarea = document.getElementById('modal-text-content');
+  const copyBtn = document.getElementById('btn-modal-copy-action');
+  const closeBtn = document.getElementById('modal-close-btn');
+
+  if (!modal || !textarea) return;
+
+  textarea.value = messageText;
+  modal.classList.add('visible');
+
+  // Trigger redirection immediately in a new tab
+  window.open(INSTAGRAM_URL, '_blank', 'noopener,noreferrer');
+
+  // Wire up close operations
+  function closeModal() {
+    modal.classList.remove('visible');
+  }
+
+  closeBtn.onclick = closeModal;
+  modal.onclick = function(e) {
+    if (e.target === modal) {
+      closeModal();
+    }
+  };
+
+  // Copy functionality
+  copyBtn.onclick = function() {
+    textarea.select();
+    textarea.setSelectionRange(0, 99999); // For mobile devices
+    
+    try {
+      navigator.clipboard.writeText(textarea.value).then(() => {
+        showCopyToast();
+      });
+    } catch (err) {
+      // Fallback
+      document.execCommand('copy');
+      showCopyToast();
+    }
   };
 }
 
-/**
- * Builds and mounts the product detail view into #detail-root.
- */
-function renderProductDetail(product) {
-  const root = document.getElementById('detail-root');
-  if (!root) return;
+function showCopyToast() {
+  const toast = document.getElementById('modal-copy-toast');
+  const copyBtn = document.getElementById('btn-modal-copy-action');
+  if (!toast) return;
 
-  let selectedSize = null;
-  const hasSizes = product.sizes && product.sizes.length > 0;
-
-  // ── Handle both old (images[]) and new (colors[]) data shapes ──
-  const hasColors = product.colors && product.colors.length > 0;
-  const activeColor = hasColors ? product.colors[0] : null;
-
-  // Initial images: first colour's images, or legacy images[]
-  const initialImages = hasColors
-    ? (activeColor.images || [])
-    : (product.images || []);
-
-  const firstImage = initialImages.length > 0 ? initialImages[0] : '';
-
-  // ── Colour swatches section ──
-  const colorsHTML = hasColors
-    ? `<div class="detail-colors">
-         <span class="colors-label">Colour: <strong id="selected-color-label">${activeColor.name}</strong></span>
-         <div class="color-swatches-row" id="color-swatches-row">
-           ${product.colors.map((c, i) =>
-             `<button class="color-swatch-btn ${i === 0 ? 'active' : ''}"
-                      data-color-index="${i}"
-                      style="--swatch-color:${c.hex}"
-                      aria-label="${c.name}"
-                      aria-pressed="${i === 0 ? 'true' : 'false'}"
-                      title="${c.name}">
-                 <span class="swatch-dot" style="background:${c.hex}"></span>
-               </button>`
-           ).join('')}
-         </div>
-       </div>
-       <hr class="detail-divider">`
-    : '';
-
-  // ── Sizes section ──
-  const sizesHTML = hasSizes
-    ? `<div class="detail-sizes">
-         <span class="sizes-label">Select size</span>
-         <div class="sizes-row" id="sizes-row">
-           ${product.sizes.map(s =>
-             `<button class="size-chip" data-size="${s}" aria-label="Size ${s}">${s}</button>`
-           ).join('')}
-         </div>
-         <p class="size-required-hint" id="size-hint">Please select a size before ordering.</p>
-       </div>
-       <hr class="detail-divider">`
-    : '';
-
-  // ── Thumbnails (initial render) ──
-  const hasThumbs = initialImages.length > 1;
-  const thumbsHTML = hasThumbs
-    ? `<div class="gallery-thumbs" id="gallery-thumbs">
-         ${initialImages.map((src, i) =>
-           `<button class="thumb ${i === 0 ? 'active' : ''}"
-                    aria-label="View image ${i + 1}"
-                    data-index="${i}"
-                    data-src="${src}">
-              <img src="${src}" alt="${product.name} view ${i + 1}" loading="lazy">
-            </button>`
-         ).join('')}
-       </div>`
-    : `<div class="gallery-thumbs" id="gallery-thumbs" style="display:none;"></div>`;
-
-  // ── Product Details section (Accordion) ──
-  const productSpecsObj = getProductSpecs(product);
-  const specs = productSpecsObj.details;
-  const care = productSpecsObj.care;
-  const specsHTML = `
-    <div class="detail-specs">
-      <button class="specs-trigger" id="specs-trigger" aria-expanded="false" aria-controls="specs-content">
-        <span>Product Details & Care</span>
-        <svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <polyline points="6 9 12 15 18 9"></polyline>
-        </svg>
-      </button>
-      <div class="specs-content" id="specs-content" aria-hidden="true" style="max-height: 0px; overflow: hidden; transition: max-height 0.25s ease-out;">
-        <ul class="specs-list">
-          ${specs.map(s => `<li>${s}</li>`).join('')}
-        </ul>
-        <div class="care-instructions">
-          <strong>Care Instructions:</strong> ${care}
-        </div>
-      </div>
-    </div>
-    <hr class="detail-divider">
-  `;
-
-  root.innerHTML = `
-    <div class="product-detail">
- 
-      <!-- Left: Image Gallery -->
-      <div class="image-gallery">
-        <div class="gallery-main" id="gallery-main-wrap">
-          <div class="gallery-main-scroll" id="gallery-main-scroll">
-            ${renderGallerySlides(initialImages, product.name)}
-          </div>
-        </div>
-        ${thumbsHTML}
-      </div>
- 
-      <!-- Right: Product Info -->
-      <div class="product-info">
-        <span class="tag detail-category">${product.category}</span>
-        <h1 class="detail-name">${product.name}</h1>
-        <p class="detail-price">${formatPrice(product.price)}</p>
- 
-        <hr class="detail-divider">
- 
-        ${colorsHTML}
-        ${sizesHTML}
- 
-        <p class="detail-description">${product.description}</p>
- 
-        <hr class="detail-divider">
- 
-        ${specsHTML}
- 
-        <div class="order-section">
-          <p class="order-heading">Want this?</p>
-          <button class="btn-order" id="btn-order" aria-label="Order ${product.name} via Instagram DM">
-            Order via Instagram DM
-          </button>
-          <p class="order-note">A message will be ready to copy — then open Instagram DM</p>
-        </div>
-      </div>
- 
-    </div>`;
- 
-  // ── Preload ALL color images immediately in the background ──
-  preloadAllProductImages(product);
- 
-  // ── Wire colour swatch clicks + hover preloading ──
-  if (hasColors) {
-    document.querySelectorAll('.color-swatch-btn').forEach((btn, i) => {
-      // Preload on hover so images are cached before click
-      btn.addEventListener('mouseenter', () => preloadImages(product.colors[i].images || []));
-      btn.addEventListener('click', () => switchColor(product, product.colors[i], i));
-    });
-  }
- 
-  // ── Wire size chip selection ──
-  if (hasSizes) {
-    document.querySelectorAll('.size-chip').forEach(chip => {
-      chip.addEventListener('click', () => {
-        document.querySelectorAll('.size-chip').forEach(c => c.classList.remove('selected'));
-        chip.classList.add('selected');
-        selectedSize = chip.dataset.size;
-        const hint = document.getElementById('size-hint');
-        if (hint) hint.classList.remove('visible');
-      });
-    });
-  }
- 
-  // ── Wire thumbnail clicks (initial colour) ──
-  document.querySelectorAll('.thumb').forEach(thumb => {
-    thumb.addEventListener('click', () => {
-      switchMainImage(parseInt(thumb.dataset.index, 10));
-    });
-  });
-
-  // ── Initialize scroll listener ──
-  initGalleryScrollListener();
-
-  // ── Wire specs accordion toggle ──
-  const trigger = document.getElementById('specs-trigger');
-  const content = document.getElementById('specs-content');
-  if (trigger && content) {
-    trigger.addEventListener('click', () => {
-      const expanded = trigger.getAttribute('aria-expanded') === 'true';
-      trigger.setAttribute('aria-expanded', !expanded);
-      content.setAttribute('aria-hidden', expanded);
-      
-      if (!expanded) {
-        content.style.maxHeight = content.scrollHeight + 'px';
-        trigger.classList.add('active');
-      } else {
-        content.style.maxHeight = '0px';
-        trigger.classList.remove('active');
-      }
-    });
+  toast.classList.add('show');
+  if (copyBtn) {
+    copyBtn.textContent = "Copied! ✓";
   }
 
-  // ── Wire order button ──
-  document.getElementById('btn-order').addEventListener('click', () => {
-    if (hasSizes && !selectedSize) {
-      const row  = document.getElementById('sizes-row');
-      const hint = document.getElementById('size-hint');
-      if (row) {
-        row.classList.remove('shake');
-        void row.offsetWidth;
-        row.classList.add('shake');
-        row.addEventListener('animationend', () => row.classList.remove('shake'), { once: true });
-      }
-      if (hint) hint.classList.add('visible');
-      return;
-    }
-
-    // Include selected colour in the order message
-    const colorLabel = hasColors
-      ? (document.getElementById('selected-color-label')?.textContent || '')
-      : '';
-    orderViaInstagram(product, selectedSize, colorLabel);
-  });
-}
-
-/**
- * Renders a "product not found" message.
- */
-function renderNotFound() {
-  const root = document.getElementById('detail-root');
-  if (root) {
-    root.innerHTML = `
-      <div class="not-found">
-        <h2>Product not found</h2>
-        <p>This product may have been removed or the link is broken.</p>
-        <a href="/shop/" style="margin-top:16px;font-weight:600;">← Back to catalog</a>
-      </div>`;
-  }
-}
-
-
-/* ============================================================
-   INSTAGRAM DM / ORDER MODAL
-   ============================================================ */
-
-/**
- * Builds the order message and opens the modal.
- * Instagram DM only opens when user clicks the button inside the modal.
- * @param {Object}      product
- * @param {string|null} selectedSize
- * @param {string}      selectedColor
- */
-async function orderViaInstagram(product, selectedSize, selectedColor) {
-  const sizeText  = selectedSize  ? selectedSize  : 'N/A';
-  const colorText = selectedColor ? selectedColor : '';
-
-  let message =
-    `Hi! I want to order:\n` +
-    `${product.name}\n`;
-  if (colorText) message += `Colour: ${colorText}\n`;
-  message +=
-    `Size: ${sizeText}\n` +
-    `Price: ${formatPrice(product.price)}`;
-
-  // Show modal first — Instagram opens only when user clicks the button inside
-  showOrderModal(message);
-}
-
-/**
- * Creates and displays the two-step order modal.
- * Step 1 — user copies the message.
- * Step 2 — user clicks "Open Instagram DM" to go to Instagram.
- */
-function showOrderModal(message) {
-  const existing = document.getElementById('order-modal-overlay');
-  if (existing) existing.remove();
-
-  const overlay = document.createElement('div');
-  overlay.className = 'modal-overlay visible';
-  overlay.id = 'order-modal-overlay';
-  overlay.setAttribute('role', 'dialog');
-  overlay.setAttribute('aria-modal', 'true');
-  overlay.setAttribute('aria-label', 'Order via Instagram');
-
-  overlay.innerHTML = `
-    <div class="modal-box" id="order-modal-box">
-      <button class="modal-close" id="modal-close-btn" aria-label="Close modal">×</button>
-
-      <!-- Step indicator -->
-      <div class="modal-steps">
-        <div class="modal-step active" id="modal-step-1">
-          <span class="step-num">1</span>
-          <span class="step-label">Copy message</span>
-        </div>
-        <div class="modal-step-arrow">→</div>
-        <div class="modal-step" id="modal-step-2">
-          <span class="step-num">2</span>
-          <span class="step-label">Open Instagram</span>
-        </div>
-      </div>
-
-      <p class="modal-title">Your order message</p>
-      <p class="modal-subtitle">Copy this message, then open Instagram DM to send it.</p>
-
-      <div class="modal-message-wrap">
-        <textarea class="modal-message" id="modal-message-text" readonly rows="5">${message}</textarea>
-      </div>
-
-      <!-- Step 1: Copy button -->
-      <button class="btn-copy" id="btn-copy-message">
-        ${ICON_COPY} Copy Message
-      </button>
-
-      <!-- Step 2: Open Instagram (disabled until copied) -->
-      <button class="btn-open-ig" id="btn-open-ig" disabled aria-label="Open Instagram DM">
-        ${ICON_IG} Open Instagram DM
-      </button>
-
-      <p class="modal-hint" id="modal-hint-text">👆 Copy the message first, then open Instagram DM</p>
-    </div>`;
-
-  document.body.appendChild(overlay);
-
-  document.getElementById('modal-close-btn').addEventListener('click', closeOrderModal);
-  overlay.addEventListener('click', e => { if (e.target === overlay) closeOrderModal(); });
-  document.addEventListener('keydown', handleModalEscape);
-  document.getElementById('btn-copy-message').addEventListener('click', copyOrderMessage);
-
-  // "Open Instagram DM" button — only available after copying
-  document.getElementById('btn-open-ig').addEventListener('click', () => {
-    window.open(`https://ig.me/m/${INSTAGRAM_HANDLE}`, '_blank', 'noopener,noreferrer');
-    closeOrderModal();
-  });
-}
-
-function closeOrderModal() {
-  const overlay = document.getElementById('order-modal-overlay');
-  if (overlay) overlay.remove();
-  document.removeEventListener('keydown', handleModalEscape);
-}
-
-function handleModalEscape(e) {
-  if (e.key === 'Escape') closeOrderModal();
-}
-
-async function copyOrderMessage() {
-  const textarea = document.getElementById('modal-message-text');
-  const copyBtn  = document.getElementById('btn-copy-message');
-  const igBtn    = document.getElementById('btn-open-ig');
-  const hint     = document.getElementById('modal-hint-text');
-  const step1    = document.getElementById('modal-step-1');
-  const step2    = document.getElementById('modal-step-2');
-  if (!textarea || !copyBtn) return;
-
-  try {
-    await navigator.clipboard.writeText(textarea.value);
-  } catch {
-    textarea.select();
-    document.execCommand('copy');
-    textarea.blur();
-  }
-
-  // Mark step 1 done, activate step 2
-  copyBtn.classList.add('copied');
-  copyBtn.innerHTML = `${ICON_CHECK} Copied!`;
-  if (step1) { step1.classList.remove('active'); step1.classList.add('done'); }
-  if (step2) { step2.classList.add('active'); }
-
-  // Enable the Instagram button
-  if (igBtn) igBtn.removeAttribute('disabled');
-
-  // Update hint
-  if (hint) hint.textContent = '✅ Message copied! Now click "Open Instagram DM" below.';
-
-  // Reset copy button label after a delay
   setTimeout(() => {
-    copyBtn.classList.remove('copied');
-    copyBtn.innerHTML = `${ICON_COPY} Copy Again`;
-  }, 2500);
-}
-
-
-/* ============================================================
-   ENTRY POINT — runs on every page
-   ============================================================ */
-document.addEventListener('DOMContentLoaded', () => {
-  // ----- Index page -----
-  initCatalogPage();
-
-  // ----- Detail page -----
-  const detailRoot = document.getElementById('detail-root');
-  if (detailRoot) {
-    const idParam = getQueryParam('id');
-    if (!idParam) { renderNotFound(); return; }
-
-    const productId = parseInt(idParam, 10);
-    const product   = products.find(p => p.id === productId);
-
-    if (product) {
-      renderProductDetail(product);
-      document.title = `${product.name} — RangLoop`;
-    } else {
-      renderNotFound();
+    toast.classList.remove('show');
+    if (copyBtn) {
+      copyBtn.textContent = "Copy Message";
     }
-  }
-});
+  }, 2000);
+}

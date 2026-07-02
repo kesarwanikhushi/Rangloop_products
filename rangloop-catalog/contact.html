@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us — RangLoop</title>
+  <meta name="description" content="Get in touch with RangLoop. Reach us on Instagram DM for the fastest response, or email us directly.">
+  <meta name="theme-color" content="#5E3A4E">
+
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Contact Page Specific Styles */
+    .contact-header {
+      background: var(--burgundy);
+      height: 180px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .contact-header-label {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      text-transform: uppercase;
+      color: var(--gold);
+      letter-spacing: 3px;
+      margin-bottom: 12px;
+    }
+
+    .contact-header h1 {
+      font-family: var(--font-serif);
+      font-size: 48px;
+      color: var(--cream);
+      font-weight: 400;
+    }
+
+    .contact-main {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 80px 24px;
+    }
+
+    .contact-intro {
+      font-family: var(--font-sans);
+      font-weight: 300;
+      font-size: 17px;
+      line-height: 1.8;
+      color: var(--text-secondary);
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .contact-card {
+      background: #FFFFFF;
+      border: 1px solid var(--tan);
+      padding: 28px 32px;
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      text-decoration: none;
+      color: inherit;
+      transition: var(--transition);
+      cursor: pointer;
+      margin-bottom: 16px;
+    }
+
+    .contact-card:hover {
+      border-color: var(--terracotta);
+      box-shadow: 0 4px 20px rgba(208, 128, 95, 0.12);
+    }
+
+    .contact-card-icon {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      margin-top: 4px;
+    }
+
+    .contact-card-icon svg {
+      width: 32px;
+      height: 32px;
+    }
+
+    .contact-card-body {
+      flex: 1;
+    }
+
+    .contact-card-label {
+      font-family: var(--font-sans);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--terracotta);
+      margin-bottom: 6px;
+    }
+
+    .contact-card-label.burgundy-label {
+      color: var(--burgundy);
+    }
+
+    .contact-card-label.gold-label {
+      color: var(--gold);
+    }
+
+    .contact-card-title {
+      font-family: var(--font-serif);
+      font-size: 22px;
+      color: var(--burgundy);
+      font-weight: 400;
+      margin-bottom: 6px;
+    }
+
+    .contact-card-title.small {
+      font-size: 20px;
+    }
+
+    .contact-card-subtext {
+      font-family: var(--font-sans);
+      font-weight: 300;
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .contact-card-btn {
+      display: inline-block;
+      padding: 10px 24px;
+      font-family: var(--font-sans);
+      font-weight: 500;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--cream);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .contact-card-btn.terracotta-btn {
+      background: var(--terracotta);
+    }
+
+    .contact-card-btn.burgundy-btn {
+      background: var(--burgundy);
+    }
+
+    .contact-card-btn:hover {
+      opacity: 0.9;
+    }
+
+    .contact-divider {
+      border: none;
+      border-top: 1px solid var(--tan);
+      margin: 40px 0;
+    }
+
+    .contact-footer-note {
+      font-family: var(--font-sans);
+      font-weight: 300;
+      font-size: 13px;
+      color: var(--text-muted);
+      text-align: center;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 600px) {
+      .contact-header h1 {
+        font-size: 36px;
+      }
+      .contact-main {
+        padding: 48px 16px;
+      }
+      .contact-card {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 24px 20px;
+      }
+      .contact-card-title {
+        font-size: 18px;
+      }
+      .contact-card-title.small {
+        font-size: 17px;
+      }
+    }
+  </style>
+</head>
+<body class="bg-pattern">
+
+  <!-- ==========================================
+       NAVBAR
+       ========================================== -->
+  <nav class="navbar" role="navigation">
+    <div class="nav-logo">
+      <a href="index.html" aria-label="RangLoop home">
+        <img src="images/logo/logo.png" alt="RangLoop Logo">
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="custom.html">Custom Orders</a></li>
+      <li><a href="contact.html" class="active" style="font-weight: 600;">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="https://instagram.com/rangloop.shop" target="_blank" rel="noopener noreferrer" style="font-family: var(--font-sans); font-weight: 500; font-size: 14px; color: var(--terracotta); text-decoration: none; transition: var(--transition);">@rangloop.shop</a>
+    </div>
+
+    <button class="nav-hamburger" aria-label="Open mobile menu" id="hamburger-btn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Overlay Menu -->
+  <div class="mobile-nav-overlay" id="mobile-menu">
+    <button class="mobile-nav-close" id="menu-close-btn" aria-label="Close mobile menu">&times;</button>
+    <ul class="mobile-nav-links">
+      <li><a href="index.html" id="m-link-home">Home</a></li>
+      <li><a href="shop.html" id="m-link-shop">Shop</a></li>
+      <li><a href="custom.html" id="m-link-custom">Custom Orders</a></li>
+      <li><a href="contact.html" id="m-link-contact">Contact</a></li>
+    </ul>
+    <div class="mobile-nav-cta">
+      <a href="https://instagram.com/rangloop.shop" target="_blank" rel="noopener noreferrer" style="font-family: var(--font-sans); font-weight: 500; font-size: 16px; color: var(--terracotta); text-decoration: none;">@rangloop.shop</a>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       PAGE HEADER
+       ========================================== -->
+  <header class="contact-header">
+    <span class="contact-header-label">GET IN TOUCH</span>
+    <h1>Contact Us</h1>
+  </header>
+
+  <!-- ==========================================
+       MAIN CONTENT
+       ========================================== -->
+  <main class="contact-main" role="main">
+    <p class="contact-intro">Have a custom order? A question? Or just want to say hi? Reach us on Instagram for the fastest response, or drop us an email.</p>
+
+    <!-- Card 1 — Instagram DM -->
+    <a href="https://ig.me/m/rangloop.shop" target="_blank" rel="noopener noreferrer" class="contact-card" id="contact-instagram-card">
+      <div class="contact-card-icon">
+        <svg viewBox="0 0 24 24" fill="var(--terracotta)"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+      </div>
+      <div class="contact-card-body">
+        <div class="contact-card-label">INSTAGRAM</div>
+        <div class="contact-card-title">@rangloop.shop</div>
+        <p class="contact-card-subtext">Fastest response. DM us for orders, mockups, or anything.</p>
+        <span class="contact-card-btn terracotta-btn">Open Instagram DM →</span>
+      </div>
+    </a>
+
+    <!-- Card 2 — General Email -->
+    <a href="mailto:contact@rangloop.shop" class="contact-card" id="contact-email-card">
+      <div class="contact-card-icon">
+        <svg viewBox="0 0 24 24" fill="var(--burgundy)"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+      </div>
+      <div class="contact-card-body">
+        <div class="contact-card-label burgundy-label">GENERAL ENQUIRIES</div>
+        <div class="contact-card-title small">contact@rangloop.shop</div>
+        <p class="contact-card-subtext">For general questions, partnerships or anything else.</p>
+        <span class="contact-card-btn burgundy-btn">Send Email →</span>
+      </div>
+    </a>
+
+    <!-- Card 3 — Founders Email -->
+    <a href="mailto:founders@rangloop.shop" class="contact-card" id="contact-founders-card">
+      <div class="contact-card-icon">
+        <svg viewBox="0 0 24 24" fill="var(--gold)"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+      </div>
+      <div class="contact-card-body">
+        <div class="contact-card-label gold-label">FOUNDERS</div>
+        <div class="contact-card-title small">founders@rangloop.shop</div>
+        <p class="contact-card-subtext">Reach Khushi & Abhirab directly. For serious conversations.</p>
+        <span class="contact-card-btn burgundy-btn">Send Email →</span>
+      </div>
+    </a>
+
+    <hr class="contact-divider">
+
+    <p class="contact-footer-note">We're a small team. We read every message personally and respond within 24 hours.</p>
+  </main>
+
+  <!-- ==========================================
+       FOOTER
+       ========================================== -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-columns">
+      <div class="footer-col">
+        <img src="images/logo/logo.png" alt="RangLoop Logo White" class="footer-logo">
+        <p class="footer-tagline">Wear Your Color</p>
+        <p class="footer-copy">&copy; 2026 RangLoop</p>
+        <p class="footer-note">Randomly started. Seriously built.</p>
+      </div>
+      <div class="footer-col">
+        <h3 class="footer-col-title">Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="custom.html">Custom Orders</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3 class="footer-col-title">Connect</h3>
+        <div class="footer-connect">
+          <a href="mailto:contact@rangloop.shop">contact@rangloop.shop</a>
+          <a href="mailto:founders@rangloop.shop">founders@rangloop.shop</a>
+          <a href="https://www.rangloop.shop" target="_blank" rel="noopener noreferrer">www.rangloop.shop</a>
+          <a href="https://instagram.com/rangloop.shop" target="_blank" rel="noopener noreferrer">@rangloop.shop</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-label-quote">Made with passion. Made for you.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+</body>
+</html>

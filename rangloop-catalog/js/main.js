@@ -2,7 +2,7 @@
    RangLoop — Main JavaScript
    ============================================================ */
 
-const INSTAGRAM_URL = "https://ig.me/m/rangloop.official";
+const INSTAGRAM_URL = "https://ig.me/m/rangloop.shop";
 
 // Utility: format price with Indian ₹ symbol
 function formatPrice(amount) {
@@ -11,6 +11,7 @@ function formatPrice(amount) {
 
 document.addEventListener('DOMContentLoaded', () => {
   initMobileMenu();
+  initMarquee();
   
   // Check which page we are on
   const isCatalogPage = document.getElementById('catalog-grid') !== null;
@@ -392,14 +393,12 @@ function openInstagramModal(messageText) {
   const textarea = document.getElementById('modal-text-content');
   const copyBtn = document.getElementById('btn-modal-copy-action');
   const closeBtn = document.getElementById('modal-close-btn');
+  const igBtn = document.getElementById('btn-modal-open-ig');
 
   if (!modal || !textarea) return;
 
   textarea.value = messageText;
   modal.classList.add('visible');
-
-  // Trigger redirection immediately in a new tab
-  window.open(INSTAGRAM_URL, '_blank', 'noopener,noreferrer');
 
   // Wire up close operations
   function closeModal() {
@@ -412,6 +411,13 @@ function openInstagramModal(messageText) {
       closeModal();
     }
   };
+
+  // Open Instagram DM button — redirect only when user clicks
+  if (igBtn) {
+    igBtn.onclick = function() {
+      window.open(INSTAGRAM_URL, '_blank', 'noopener,noreferrer');
+    };
+  }
 
   // Copy functionality
   copyBtn.onclick = function() {
@@ -447,3 +453,51 @@ function showCopyToast() {
     }
   }, 2000);
 }
+
+/* ============================================================
+   DYNAMIC INFINITE MARQUEE CLONER
+   ============================================================ */
+function initMarquee() {
+  const marquee = document.querySelector('.marquee');
+  if (!marquee) return;
+
+  const originalContent = marquee.querySelector('.marquee-content');
+  if (!originalContent) return;
+
+  // Measure content width (fallback to a sensible default if element is not rendered yet)
+  const contentWidth = originalContent.offsetWidth || 1200;
+  const viewportWidth = window.innerWidth;
+  
+  // We need enough copies to fill the screen width plus at least one extra copy to buffer the scroll
+  const neededCopies = Math.max(3, Math.ceil(viewportWidth / contentWidth) + 1);
+  
+  // Fetch existing marquee-content elements
+  const existingContents = marquee.querySelectorAll('.marquee-content');
+  const currentCount = existingContents.length;
+  
+  if (currentCount < neededCopies) {
+    // Add clones
+    for (let i = currentCount; i < neededCopies; i++) {
+      const clone = originalContent.cloneNode(true);
+      clone.setAttribute('aria-hidden', 'true');
+      marquee.appendChild(clone);
+    }
+  } else if (currentCount > neededCopies) {
+    // Remove extra clones, keeping at least 3
+    const limit = Math.max(3, neededCopies);
+    for (let i = currentCount - 1; i >= limit; i--) {
+      existingContents[i].remove();
+    }
+  }
+}
+
+// Run marquee initialization on window load to ensure accurate element dimensions
+window.addEventListener('load', initMarquee);
+
+// Handle window resizing or zoom level changes
+let marqueeResizeTimeout;
+window.addEventListener('resize', () => {
+  clearTimeout(marqueeResizeTimeout);
+  marqueeResizeTimeout = setTimeout(initMarquee, 150);
+});
+

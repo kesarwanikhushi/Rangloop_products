@@ -113,9 +113,14 @@ function renderCatalog(category) {
   if (!catalogGrid) return;
 
   // Filter products list
-  const filteredProducts = category === 'all' 
-    ? products 
-    : products.filter(p => p.category.toLowerCase() === category.toLowerCase());
+  let filteredProducts;
+  if (category === 'all') {
+    // Shuffle all products into a random mixed order
+    filteredProducts = [...products].sort(() => Math.random() - 0.5);
+  } else {
+    filteredProducts = products.filter(p => p.category.toLowerCase() === category.toLowerCase());
+  }
+
 
   if (filteredProducts.length === 0) {
     catalogGrid.classList.add('empty');
@@ -155,7 +160,7 @@ window.triggerDirectOrder = function(productId) {
   if (!product) return;
   
   // Construct dynamic order message (no size specified for general catalog card click)
-  const message = `Hi RangLoop! I want to order:\n${product.name}\nPrice: ${formatPrice(product.price)}\nSize: ___\nPlease send me a design mockup.`;
+  const message = `Hi RangLoop! I want to order:\n${product.name}\nPrice: ${formatPrice(product.price)}\nSize: ___`;
   
   openInstagramModal(message);
 };
@@ -201,12 +206,7 @@ function renderDetailNotFound() {
 
 function renderProductDetail(product) {
   const root = document.getElementById('detail-layout-root');
-  const breadcrumbCurrent = document.getElementById('breadcrumb-current');
   if (!root) return;
-
-  if (breadcrumbCurrent) {
-    breadcrumbCurrent.textContent = product.name;
-  }
 
   // Pre-select first color variant if available
   const hasColors = product.colors && product.colors.length > 0;
@@ -380,7 +380,7 @@ window.triggerDetailOrder = function() {
   const colorPart = activeColorObj ? `\nColor: ${activeColorObj.name}` : "";
   const sizePart = selectedSize ? `\nSize: ${selectedSize}` : "";
 
-  const message = `Hi RangLoop! I want to order:\n${activeDetailProduct.name}${colorPart}${sizePart}\nPrice: ${formatPrice(activeDetailProduct.price)}\nPlease send me a design mockup.`;
+  const message = `Hi RangLoop! I want to order:\n${activeDetailProduct.name}${colorPart}${sizePart}\nPrice: ${formatPrice(activeDetailProduct.price)}`;
 
   openInstagramModal(message);
 };

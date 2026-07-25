@@ -1211,9 +1211,381 @@ const products = [
         ]
       }
     ]
+  },
+
+  // ── 21 — Unbothered ───────────────────────────────────────
+  {
+    id: 21,
+    name: "Unbothered",
+    category: "Minimalist",
+    price: 549,
+    description: "Cool. Calm. Completely unbothered. This tee says it all without saying a word. Clean minimal type on premium cotton — for those who've mastered the art of not caring.",
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    colors: [
+      {
+        name: "Black",
+        hex: "#1a1a1a",
+        images: [
+          "images/tshirts/minimalist/unbothered/black/ChatGPT Image Jul 23, 2026, 12_47_21 AM.png"
+        ]
+      },
+      {
+        name: "Bottle Green",
+        hex: "#1a4731",
+        images: [
+          "images/tshirts/minimalist/unbothered/bottle green/ChatGPT Image Jul 23, 2026, 12_47_06 AM.png"
+        ]
+      },
+      {
+        name: "Maroon",
+        hex: "#7f1d1d",
+        images: [
+          "images/tshirts/minimalist/unbothered/maroon/ChatGPT Image Jul 23, 2026, 12_47_15 AM.png"
+        ]
+      }
+    ]
+  },
+
+  // ── 22 — Tired ────────────────────────────────────────────
+  {
+    id: 22,
+    name: "Tired",
+    category: "Minimalist",
+    price: 549,
+    description: "Honest. Raw. Relatable. Tired captures that feeling we all know too well — in the most stylish way possible. Minimal design, maximum mood. 100% cotton premium tee.",
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    colors: [
+      {
+        name: "Black",
+        hex: "#1a1a1a",
+        images: [
+          "images/tshirts/minimalist/tired/black/ChatGPT Image Jul 23, 2026, 01_01_19 AM.png"
+        ]
+      },
+      {
+        name: "Bottle Green",
+        hex: "#1a4731",
+        images: [
+          "images/tshirts/minimalist/tired/bottle green/ChatGPT Image Jul 23, 2026, 01_01_27 AM.png"
+        ]
+      },
+      {
+        name: "Maroon",
+        hex: "#7f1d1d",
+        images: [
+          "images/tshirts/minimalist/tired/maroon/ChatGPT Image Jul 23, 2026, 01_01_38 AM.png"
+        ]
+      },
+      {
+        name: "Purple",
+        hex: "#6b21a8",
+        images: [
+          "images/tshirts/minimalist/tired/purple/ChatGPT Image Jul 23, 2026, 01_01_32 AM.png"
+        ]
+      }
+    ]
+  },
+
+  // ── 23 — Peace or Chaos ───────────────────────────────────
+  {
+    id: 23,
+    name: "Peace or Chaos",
+    category: "Minimalist",
+    price: 549,
+    description: "Two sides. One tee. Peace or Chaos is a clean, minimalist design for people who exist between two extremes — and wouldn't have it any other way. Premium cotton, everyday comfort.",
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    colors: [
+      {
+        name: "Black",
+        hex: "#1a1a1a",
+        images: [
+          "images/tshirts/minimalist/peace or chaos/black/ChatGPT Image Jul 23, 2026, 01_06_58 AM.png"
+        ]
+      },
+      {
+        name: "Bottle Green",
+        hex: "#1a4731",
+        images: [
+          "images/tshirts/minimalist/peace or chaos/bottle green/ChatGPT Image Jul 23, 2026, 01_07_09 AM.png"
+        ]
+      },
+      {
+        name: "Olive Green",
+        hex: "#6b7c3a",
+        images: [
+          "images/tshirts/minimalist/peace or chaos/olive green/ChatGPT Image Jul 23, 2026, 01_07_14 AM.png"
+        ]
+      }
+    ]
+  },
+
+  // ── 24 — Unholy ───────────────────────────────────────────
+  {
+    id: 24,
+    name: "Unholy",
+    category: "Minimalist",
+    price: 549,
+    description: "A little dark. A little divine. Unholy is for those who walk the line between chaos and grace — minimal type, maximum statement. Premium cotton tee.",
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    colors: [
+      {
+        name: "Grey",
+        hex: "#9ca3af",
+        images: [
+          "images/tshirts/minimalist/unholy/grey/ChatGPT Image Jul 23, 2026, 12_51_12 AM - Copy.png"
+        ]
+      },
+      {
+        name: "White",
+        hex: "#f5f5f5",
+        images: [
+          "images/tshirts/minimalist/unholy/white/ChatGPT Image Jul 23, 2026, 12_51_31 AM (1).png"
+        ]
+      }
+    ]
+  },
+
+  // ── 25 — Who Cares ────────────────────────────────────────
+  {
+    id: 25,
+    name: "Who Cares",
+    category: "Minimalist",
+    price: 549,
+    description: "The answer to every unnecessary question. Who Cares is a minimalist tee designed for people who've stopped explaining themselves. Comfortable. Confident. Carefree.",
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    colors: [
+      {
+        name: "Black",
+        hex: "#1a1a1a",
+        images: [
+          "images/tshirts/minimalist/who cares/black/ChatGPT Image Jul 24, 2026, 01_11_21 PM.png"
+        ]
+      },
+      {
+        name: "Bottle Green",
+        hex: "#1a4731",
+        images: [
+          "images/tshirts/minimalist/who cares/bottle green/ChatGPT Image Jul 24, 2026, 01_11_28 PM.png"
+        ]
+      },
+      {
+        name: "Navy Blue",
+        hex: "#1a2a4a",
+        images: [
+          "images/tshirts/minimalist/who cares/navy blue/ChatGPT Image Jul 24, 2026, 01_11_35 PM.png"
+        ]
+      },
+      {
+        name: "Petrol Blue",
+        hex: "#1b4d6e",
+        images: [
+          "images/tshirts/minimalist/who cares/petrol blue/ChatGPT Image Jul 24, 2026, 01_11_41 PM.png"
+        ]
+      }
+    ]
+  },
+
+  // ── 26 — Paradox ──────────────────────────────────────────
+  {
+    id: 26,
+    name: "Paradox",
+    category: "Minimalist",
+    price: 549,
+    description: "Make sense? Never. Paradox is a minimal tee for the walking contradiction — the overthinker who underdoes, the introvert who overshares. Clean type, deep meaning.",
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    colors: [
+      {
+        name: "Black",
+        hex: "#1a1a1a",
+        images: [
+          "images/tshirts/minimalist/paradox/black/ChatGPT Image Jul 24, 2026, 01_18_30 PM.png"
+        ]
+      },
+      {
+        name: "Maroon",
+        hex: "#7f1d1d",
+        images: [
+          "images/tshirts/minimalist/paradox/maroon/ChatGPT Image Jul 24, 2026, 01_18_37 PM.png"
+        ]
+      },
+      {
+        name: "Purple",
+        hex: "#6b21a8",
+        images: [
+          "images/tshirts/minimalist/paradox/purple/ChatGPT Image Jul 24, 2026, 01_18_42 PM.png"
+        ]
+      }
+    ]
+  },
+
+  // ── 27 — Delulu ───────────────────────────────────────────
+  {
+    id: 27,
+    name: "Delulu",
+    category: "Minimalist",
+    price: 549,
+    description: "The delusion is the solution. Delulu is a playful minimalist tee for the dreamers, the optimists, and everyone who manifests first and asks questions never. 100% cotton.",
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    colors: [
+      {
+        name: "Black",
+        hex: "#1a1a1a",
+        images: [
+          "images/tshirts/minimalist/delulu/black/ChatGPT Image Jul 24, 2026, 01_03_48 PM.png"
+        ]
+      },
+      {
+        name: "Chocolate Brown",
+        hex: "#5c3d2e",
+        images: [
+          "images/tshirts/minimalist/delulu/chocolate brown/ChatGPT Image Jul 24, 2026, 01_04_13 PM.png"
+        ]
+      },
+      {
+        name: "Olive Green",
+        hex: "#6b7c3a",
+        images: [
+          "images/tshirts/minimalist/delulu/olive green/ChatGPT Image Jul 24, 2026, 01_04_06 PM.png"
+        ]
+      },
+      {
+        name: "Petrol Blue",
+        hex: "#1b4d6e",
+        images: [
+          "images/tshirts/minimalist/delulu/petrol blue/ChatGPT Image Jul 24, 2026, 01_04_00 PM.png"
+        ]
+      }
+    ]
+  },
+
+  // ── 28 — Peace Never an Option ────────────────────────────
+  {
+    id: 28,
+    name: "Peace Never an Option",
+    category: "Minimalist",
+    price: 549,
+    description: "For the restless. For the relentless. Peace Never an Option is a bold minimalist statement for those who thrive in the grind and wouldn't want it any other way.",
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    colors: [
+      {
+        name: "Black",
+        hex: "#1a1a1a",
+        images: [
+          "images/tshirts/minimalist/peace never an option/black/ChatGPT Image Jul 24, 2026, 01_36_17 PM.png"
+        ]
+      },
+      {
+        name: "Grey",
+        hex: "#9ca3af",
+        images: [
+          "images/tshirts/minimalist/peace never an option/grey/ChatGPT Image Jul 24, 2026, 01_36_33 PM.png"
+        ]
+      },
+      {
+        name: "Maroon",
+        hex: "#7f1d1d",
+        images: [
+          "images/tshirts/minimalist/peace never an option/maroon/ChatGPT Image Jul 24, 2026, 01_36_23 PM.png"
+        ]
+      },
+      {
+        name: "Navy",
+        hex: "#1e3a5f",
+        images: [
+          "images/tshirts/minimalist/peace never an option/navy/ChatGPT Image Jul 24, 2026, 01_36_29 PM.png"
+        ]
+      },
+      {
+        name: "Olive Green",
+        hex: "#6b7c3a",
+        images: [
+          "images/tshirts/minimalist/peace never an option/olive green/ChatGPT Image Jul 24, 2026, 01_36_40 PM.png"
+        ]
+      }
+    ]
+  },
+
+  // ── 29 — Anti Social ──────────────────────────────────────
+  {
+    id: 29,
+    name: "Anti Social",
+    category: "Minimalist",
+    price: 549,
+    description: "Socially exhausted. Intentionally minimal. Anti Social is for everyone who needs a tee that explains their whole personality before anyone even says hello. Premium cotton.",
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    colors: [
+      {
+        name: "Cream",
+        hex: "#f5efe0",
+        images: [
+          "images/tshirts/minimalist/anti social/cream/ChatGPT Image Jul 24, 2026, 01_27_17 PM.png"
+        ]
+      },
+      {
+        name: "Grey",
+        hex: "#9ca3af",
+        images: [
+          "images/tshirts/minimalist/anti social/grey/ChatGPT Image Jul 24, 2026, 01_27_11 PM.png"
+        ]
+      },
+      {
+        name: "Pastel Green",
+        hex: "#a8d5a2",
+        images: [
+          "images/tshirts/minimalist/anti social/pastel green/ChatGPT Image Jul 24, 2026, 01_27_29 PM.png"
+        ]
+      },
+      {
+        name: "White",
+        hex: "#f5f5f5",
+        images: [
+          "images/tshirts/minimalist/anti social/white/ChatGPT Image Jul 24, 2026, 01_27_05 PM.png"
+        ]
+      }
+    ]
+  },
+
+  // ── 30 — Drained ──────────────────────────────────────────
+  {
+    id: 30,
+    name: "Drained",
+    category: "Minimalist",
+    price: 549,
+    description: "Running on 2% battery and zero patience. Drained is the most honest tee in your wardrobe — clean minimal type for those who feel it every single day. Premium cotton.",
+    sizes: ["S", "M", "L", "XL", "XXL"],
+    colors: [
+      {
+        name: "Black",
+        hex: "#1a1a1a",
+        images: [
+          "images/tshirts/minimalist/drained/black/ChatGPT Image Jul 24, 2026, 01_42_19 PM.png"
+        ]
+      },
+      {
+        name: "Grey",
+        hex: "#9ca3af",
+        images: [
+          "images/tshirts/minimalist/drained/grey/ChatGPT Image Jul 24, 2026, 01_42_56 PM.png"
+        ]
+      },
+      {
+        name: "Navy Blue",
+        hex: "#1a2a4a",
+        images: [
+          "images/tshirts/minimalist/drained/navy blue/ChatGPT Image Jul 24, 2026, 01_42_31 PM.png"
+        ]
+      },
+      {
+        name: "Purple",
+        hex: "#6b21a8",
+        images: [
+          "images/tshirts/minimalist/drained/purple/ChatGPT Image Jul 24, 2026, 01_42_48 PM.png"
+        ]
+      }
+    ]
   }
 
-  // ← ADD YOUR NEXT T-SHIRT HERE (ids 21, 22, …)
+  // ← ADD YOUR NEXT T-SHIRT HERE (ids 31, 32, …)
   // Copy a block above, paste it here, change the id, name,
   // folder paths, and colours. Remember the comma after the
   // previous closing }.

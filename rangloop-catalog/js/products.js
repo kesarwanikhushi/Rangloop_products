@@ -1226,21 +1226,21 @@ const products = [
         name: "Black",
         hex: "#1a1a1a",
         images: [
-          "images/tshirts/minimalist/unbothered/black/ChatGPT Image Jul 23, 2026, 12_47_21 AM.png"
+          "images/tshirts/minimalist/unbothered/black/ChatGPT Image Jul 23, 2026, 12_47_21 AM.webp"
         ]
       },
       {
         name: "Bottle Green",
         hex: "#1a4731",
         images: [
-          "images/tshirts/minimalist/unbothered/bottle green/ChatGPT Image Jul 23, 2026, 12_47_06 AM.png"
+          "images/tshirts/minimalist/unbothered/bottle green/ChatGPT Image Jul 23, 2026, 12_47_06 AM.webp"
         ]
       },
       {
         name: "Maroon",
         hex: "#7f1d1d",
         images: [
-          "images/tshirts/minimalist/unbothered/maroon/ChatGPT Image Jul 23, 2026, 12_47_15 AM.png"
+          "images/tshirts/minimalist/unbothered/maroon/ChatGPT Image Jul 23, 2026, 12_47_15 AM.webp"
         ]
       }
     ]
@@ -1259,28 +1259,28 @@ const products = [
         name: "Black",
         hex: "#1a1a1a",
         images: [
-          "images/tshirts/minimalist/tired/black/ChatGPT Image Jul 23, 2026, 01_01_19 AM.png"
+          "images/tshirts/minimalist/tired/black/ChatGPT Image Jul 23, 2026, 01_01_19 AM.webp"
         ]
       },
       {
         name: "Bottle Green",
         hex: "#1a4731",
         images: [
-          "images/tshirts/minimalist/tired/bottle green/ChatGPT Image Jul 23, 2026, 01_01_27 AM.png"
+          "images/tshirts/minimalist/tired/bottle green/ChatGPT Image Jul 23, 2026, 01_01_27 AM.webp"
         ]
       },
       {
         name: "Maroon",
         hex: "#7f1d1d",
         images: [
-          "images/tshirts/minimalist/tired/maroon/ChatGPT Image Jul 23, 2026, 01_01_38 AM.png"
+          "images/tshirts/minimalist/tired/maroon/ChatGPT Image Jul 23, 2026, 01_01_38 AM.webp"
         ]
       },
       {
         name: "Purple",
         hex: "#6b21a8",
         images: [
-          "images/tshirts/minimalist/tired/purple/ChatGPT Image Jul 23, 2026, 01_01_32 AM.png"
+          "images/tshirts/minimalist/tired/purple/ChatGPT Image Jul 23, 2026, 01_01_32 AM.webp"
         ]
       }
     ]
@@ -1299,21 +1299,21 @@ const products = [
         name: "Black",
         hex: "#1a1a1a",
         images: [
-          "images/tshirts/minimalist/peace or chaos/black/ChatGPT Image Jul 23, 2026, 01_06_58 AM.png"
+          "images/tshirts/minimalist/peace or chaos/black/ChatGPT Image Jul 23, 2026, 01_06_58 AM.webp"
         ]
       },
       {
         name: "Bottle Green",
         hex: "#1a4731",
         images: [
-          "images/tshirts/minimalist/peace or chaos/bottle green/ChatGPT Image Jul 23, 2026, 01_07_09 AM.png"
+          "images/tshirts/minimalist/peace or chaos/bottle green/ChatGPT Image Jul 23, 2026, 01_07_09 AM.webp"
         ]
       },
       {
         name: "Olive Green",
         hex: "#6b7c3a",
         images: [
-          "images/tshirts/minimalist/peace or chaos/olive green/ChatGPT Image Jul 23, 2026, 01_07_14 AM.png"
+          "images/tshirts/minimalist/peace or chaos/olive green/ChatGPT Image Jul 23, 2026, 01_07_14 AM.webp"
         ]
       }
     ]
@@ -1332,14 +1332,14 @@ const products = [
         name: "Grey",
         hex: "#9ca3af",
         images: [
-          "images/tshirts/minimalist/unholy/grey/ChatGPT Image Jul 23, 2026, 12_51_12 AM - Copy.png"
+          "images/tshirts/minimalist/unholy/grey/ChatGPT Image Jul 23, 2026, 12_51_12 AM - Copy.webp"
         ]
       },
       {
         name: "White",
         hex: "#f5f5f5",
         images: [
-          "images/tshirts/minimalist/unholy/white/ChatGPT Image Jul 23, 2026, 12_51_31 AM (1).png"
+          "images/tshirts/minimalist/unholy/white/ChatGPT Image Jul 23, 2026, 12_51_31 AM (1).webp"
         ]
       }
     ]
@@ -1358,28 +1358,28 @@ const products = [
         name: "Black",
         hex: "#1a1a1a",
         images: [
-          "images/tshirts/minimalist/who cares/black/ChatGPT Image Jul 24, 2026, 01_11_21 PM.png"
+          "images/tshirts/minimalist/who cares/black/ChatGPT Image Jul 24, 2026, 01_11_21 PM.webp"
         ]
       },
       {
         name: "Bottle Green",
         hex: "#1a4731",
         images: [
-          "images/tshirts/minimalist/who cares/bottle green/ChatGPT Image Jul 24, 2026, 01_11_28 PM.png"
+          "images/tshirts/minimalist/who cares/bottle green/ChatGPT Image Jul 24, 2026, 01_11_28 PM.webp"
         ]
       },
       {
         name: "Navy Blue",
         hex: "#1a2a4a",
         images: [
-          "images/tshirts/minimalist/who cares/navy blue/ChatGPT Image Jul 24, 2026, 01_11_35 PM.png"
+          "images/tshirts/minimalist/who cares/navy blue/ChatGPT Image Jul 24, 2026, 01_11_35 PM.webp"
         ]
       },
       {
         name: "Petrol Blue",
         hex: "#1b4d6e",
         images: [
-          "images/tshirts/minimalist/who cares/petrol blue/ChatGPT Image Jul 24, 2026, 01_11_41 PM.png"
+          "images/tshirts/minimalist/who cares/petrol blue/ChatGPT Image Jul 24, 2026, 01_11_41 PM.webp"
         ]
       }
     ]
@@ -1398,21 +1398,21 @@ const products = [
         name: "Black",
         hex: "#1a1a1a",
         images: [
-          "images/tshirts/minimalist/paradox/black/ChatGPT Image Jul 24, 2026, 01_18_30 PM.png"
+          "images/tshirts/minimalist/paradox/black/ChatGPT Image Jul 24, 2026, 01_18_30 PM.webp"
         ]
       },
       {
         name: "Maroon",
         hex: "#7f1d1d",
         images: [
-          "images/tshirts/minimalist/paradox/maroon/ChatGPT Image Jul 24, 2026, 01_18_37 PM.png"
+          "images/tshirts/minimalist/paradox/maroon/ChatGPT Image Jul 24, 2026, 01_18_37 PM.webp"
         ]
       },
       {
         name: "Purple",
         hex: "#6b21a8",
         images: [
-          "images/tshirts/minimalist/paradox/purple/ChatGPT Image Jul 24, 2026, 01_18_42 PM.png"
+          "images/tshirts/minimalist/paradox/purple/ChatGPT Image Jul 24, 2026, 01_18_42 PM.webp"
         ]
       }
     ]
@@ -1431,28 +1431,28 @@ const products = [
         name: "Black",
         hex: "#1a1a1a",
         images: [
-          "images/tshirts/minimalist/delulu/black/ChatGPT Image Jul 24, 2026, 01_03_48 PM.png"
+          "images/tshirts/minimalist/delulu/black/ChatGPT Image Jul 24, 2026, 01_03_48 PM.webp"
         ]
       },
       {
         name: "Chocolate Brown",
         hex: "#5c3d2e",
         images: [
-          "images/tshirts/minimalist/delulu/chocolate brown/ChatGPT Image Jul 24, 2026, 01_04_13 PM.png"
+          "images/tshirts/minimalist/delulu/chocolate brown/ChatGPT Image Jul 24, 2026, 01_04_13 PM.webp"
         ]
       },
       {
         name: "Olive Green",
         hex: "#6b7c3a",
         images: [
-          "images/tshirts/minimalist/delulu/olive green/ChatGPT Image Jul 24, 2026, 01_04_06 PM.png"
+          "images/tshirts/minimalist/delulu/olive green/ChatGPT Image Jul 24, 2026, 01_04_06 PM.webp"
         ]
       },
       {
         name: "Petrol Blue",
         hex: "#1b4d6e",
         images: [
-          "images/tshirts/minimalist/delulu/petrol blue/ChatGPT Image Jul 24, 2026, 01_04_00 PM.png"
+          "images/tshirts/minimalist/delulu/petrol blue/ChatGPT Image Jul 24, 2026, 01_04_00 PM.webp"
         ]
       }
     ]
@@ -1471,35 +1471,35 @@ const products = [
         name: "Black",
         hex: "#1a1a1a",
         images: [
-          "images/tshirts/minimalist/peace never an option/black/ChatGPT Image Jul 24, 2026, 01_36_17 PM.png"
+          "images/tshirts/minimalist/peace never an option/black/ChatGPT Image Jul 24, 2026, 01_36_17 PM.webp"
         ]
       },
       {
         name: "Grey",
         hex: "#9ca3af",
         images: [
-          "images/tshirts/minimalist/peace never an option/grey/ChatGPT Image Jul 24, 2026, 01_36_33 PM.png"
+          "images/tshirts/minimalist/peace never an option/grey/ChatGPT Image Jul 24, 2026, 01_36_33 PM.webp"
         ]
       },
       {
         name: "Maroon",
         hex: "#7f1d1d",
         images: [
-          "images/tshirts/minimalist/peace never an option/maroon/ChatGPT Image Jul 24, 2026, 01_36_23 PM.png"
+          "images/tshirts/minimalist/peace never an option/maroon/ChatGPT Image Jul 24, 2026, 01_36_23 PM.webp"
         ]
       },
       {
         name: "Navy",
         hex: "#1e3a5f",
         images: [
-          "images/tshirts/minimalist/peace never an option/navy/ChatGPT Image Jul 24, 2026, 01_36_29 PM.png"
+          "images/tshirts/minimalist/peace never an option/navy/ChatGPT Image Jul 24, 2026, 01_36_29 PM.webp"
         ]
       },
       {
         name: "Olive Green",
         hex: "#6b7c3a",
         images: [
-          "images/tshirts/minimalist/peace never an option/olive green/ChatGPT Image Jul 24, 2026, 01_36_40 PM.png"
+          "images/tshirts/minimalist/peace never an option/olive green/ChatGPT Image Jul 24, 2026, 01_36_40 PM.webp"
         ]
       }
     ]
@@ -1518,28 +1518,28 @@ const products = [
         name: "Cream",
         hex: "#f5efe0",
         images: [
-          "images/tshirts/minimalist/anti social/cream/ChatGPT Image Jul 24, 2026, 01_27_17 PM.png"
+          "images/tshirts/minimalist/anti social/cream/ChatGPT Image Jul 24, 2026, 01_27_17 PM.webp"
         ]
       },
       {
         name: "Grey",
         hex: "#9ca3af",
         images: [
-          "images/tshirts/minimalist/anti social/grey/ChatGPT Image Jul 24, 2026, 01_27_11 PM.png"
+          "images/tshirts/minimalist/anti social/grey/ChatGPT Image Jul 24, 2026, 01_27_11 PM.webp"
         ]
       },
       {
         name: "Pastel Green",
         hex: "#a8d5a2",
         images: [
-          "images/tshirts/minimalist/anti social/pastel green/ChatGPT Image Jul 24, 2026, 01_27_29 PM.png"
+          "images/tshirts/minimalist/anti social/pastel green/ChatGPT Image Jul 24, 2026, 01_27_29 PM.webp"
         ]
       },
       {
         name: "White",
         hex: "#f5f5f5",
         images: [
-          "images/tshirts/minimalist/anti social/white/ChatGPT Image Jul 24, 2026, 01_27_05 PM.png"
+          "images/tshirts/minimalist/anti social/white/ChatGPT Image Jul 24, 2026, 01_27_05 PM.webp"
         ]
       }
     ]
@@ -1558,28 +1558,28 @@ const products = [
         name: "Black",
         hex: "#1a1a1a",
         images: [
-          "images/tshirts/minimalist/drained/black/ChatGPT Image Jul 24, 2026, 01_42_19 PM.png"
+          "images/tshirts/minimalist/drained/black/ChatGPT Image Jul 24, 2026, 01_42_19 PM.webp"
         ]
       },
       {
         name: "Grey",
         hex: "#9ca3af",
         images: [
-          "images/tshirts/minimalist/drained/grey/ChatGPT Image Jul 24, 2026, 01_42_56 PM.png"
+          "images/tshirts/minimalist/drained/grey/ChatGPT Image Jul 24, 2026, 01_42_56 PM.webp"
         ]
       },
       {
         name: "Navy Blue",
         hex: "#1a2a4a",
         images: [
-          "images/tshirts/minimalist/drained/navy blue/ChatGPT Image Jul 24, 2026, 01_42_31 PM.png"
+          "images/tshirts/minimalist/drained/navy blue/ChatGPT Image Jul 24, 2026, 01_42_31 PM.webp"
         ]
       },
       {
         name: "Purple",
         hex: "#6b21a8",
         images: [
-          "images/tshirts/minimalist/drained/purple/ChatGPT Image Jul 24, 2026, 01_42_48 PM.png"
+          "images/tshirts/minimalist/drained/purple/ChatGPT Image Jul 24, 2026, 01_42_48 PM.webp"
         ]
       }
     ]

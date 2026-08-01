@@ -52,8 +52,8 @@ const products = [
         images: [
           "images/tshirts/indian culture/Whispers of Earth/green/ChatGPT Image Jun 26, 2026, 03_05_21 PM.webp",
           "images/tshirts/indian culture/Whispers of Earth/green/ChatGPT Image Jun 26, 2026, 03_05_57 PM.webp",
-          "images/tshirts/indian culture/Whispers of Earth/green/Front_1_c_57.jpg",
-          "images/tshirts/indian culture/Whispers of Earth/green/Back_2_c_57.jpg"
+          "images/tshirts/indian culture/Whispers of Earth/green/Front_1_c_57.webp",
+          "images/tshirts/indian culture/Whispers of Earth/green/Back_2_c_57.webp"
         ]
       },
       {
@@ -62,8 +62,8 @@ const products = [
         images: [
           "images/tshirts/indian culture/Whispers of Earth/yellow/ChatGPT Image Jun 26, 2026, 03_05_15 PM.webp",
           "images/tshirts/indian culture/Whispers of Earth/yellow/ChatGPT Image Jun 26, 2026, 03_05_46 PM.webp",
-          "images/tshirts/indian culture/Whispers of Earth/yellow/Front_1_c_51.jpg",
-          "images/tshirts/indian culture/Whispers of Earth/yellow/Back_2_c_51.jpg"
+          "images/tshirts/indian culture/Whispers of Earth/yellow/Front_1_c_51.webp",
+          "images/tshirts/indian culture/Whispers of Earth/yellow/Back_2_c_51.webp"
         ]
       },
       {
@@ -72,8 +72,8 @@ const products = [
         images: [
           "images/tshirts/indian culture/Whispers of Earth/cream/ChatGPT Image Jun 26, 2026, 03_05_41 PM.webp",
           "images/tshirts/indian culture/Whispers of Earth/cream/ChatGPT Image Jun 26, 2026, 03_06_10 PM.webp",
-          "images/tshirts/indian culture/Whispers of Earth/cream/Front_1_c_48.jpg",
-          "images/tshirts/indian culture/Whispers of Earth/cream/Back_2_c_48.jpg"
+          "images/tshirts/indian culture/Whispers of Earth/cream/Front_1_c_48.webp",
+          "images/tshirts/indian culture/Whispers of Earth/cream/Back_2_c_48.webp"
         ]
       },
       {
@@ -82,15 +82,15 @@ const products = [
         images: [
           "images/tshirts/indian culture/Whispers of Earth/off white/ChatGPT Image Jun 26, 2026, 03_05_27 PM.webp",
           "images/tshirts/indian culture/Whispers of Earth/off white/ChatGPT Image Jun 26, 2026, 03_06_03 PM.webp",
-          "images/tshirts/indian culture/Whispers of Earth/off white/Front_1_c_61.jpg",
-          "images/tshirts/indian culture/Whispers of Earth/off white/Back_2_c_61.jpg"
+          "images/tshirts/indian culture/Whispers of Earth/off white/Front_1_c_61.webp",
+          "images/tshirts/indian culture/Whispers of Earth/off white/Back_2_c_61.webp"
         ]
       },
       {
         name: "White",
         hex: "#f5f5f5",
         images: [
-          "images/tshirts/indian culture/Whispers of Earth/white/Front_1_c_1.jpg"
+          "images/tshirts/indian culture/Whispers of Earth/white/Front_1_c_1.webp"
         ]
       },
       {
@@ -99,8 +99,8 @@ const products = [
         images: [
           "images/tshirts/indian culture/Whispers of Earth/black/ChatGPT Image Jun 26, 2026, 03_05_06 PM.webp",
           "images/tshirts/indian culture/Whispers of Earth/black/ChatGPT Image Jun 26, 2026, 03_05_36 PM.webp",
-          "images/tshirts/indian culture/Whispers of Earth/black/Front_1_c_2.jpg",
-          "images/tshirts/indian culture/Whispers of Earth/black/Back_2_c_2.jpg"
+          "images/tshirts/indian culture/Whispers of Earth/black/Front_1_c_2.webp",
+          "images/tshirts/indian culture/Whispers of Earth/black/Back_2_c_2.webp"
         ]
       }
     ]
@@ -158,8 +158,8 @@ const products = [
         images: [
           "images/tshirts/indian culture/Light & Shadow/navy/ChatGPT Image Jun 26, 2026, 01_27_09 PM.webp",
           "images/tshirts/indian culture/Light & Shadow/navy/ChatGPT Image Jun 26, 2026, 01_27_35 PM.webp",
-          "images/tshirts/indian culture/Light & Shadow/navy/Left_Pocket_3_c_3.jpg",
-          "images/tshirts/indian culture/Light & Shadow/navy/Back_2_c_3.jpg"
+          "images/tshirts/indian culture/Light & Shadow/navy/Left_Pocket_3_c_3.webp",
+          "images/tshirts/indian culture/Light & Shadow/navy/Back_2_c_3.webp"
         ]
       },
       {
@@ -168,8 +168,8 @@ const products = [
         images: [
           "images/tshirts/indian culture/Light & Shadow/black/ChatGPT Image Jun 26, 2026, 01_26_59 PM.webp",
           "images/tshirts/indian culture/Light & Shadow/black/ChatGPT Image Jun 26, 2026, 01_27_24 PM.webp",
-          "images/tshirts/indian culture/Light & Shadow/black/Left_Pocket_3_c_2.jpg",
-          "images/tshirts/indian culture/Light & Shadow/black/Back_2_c_2.jpg"
+          "images/tshirts/indian culture/Light & Shadow/black/Left_Pocket_3_c_2.webp",
+          "images/tshirts/indian culture/Light & Shadow/black/Back_2_c_2.webp"
         ]
       }
     ]
@@ -190,8 +190,8 @@ const products = [
         images: [
           "images/tshirts/indian culture/Ride with the Light/navy/back.webp",
           "images/tshirts/indian culture/Ride with the Light/navy/ChatGPT Image Jun 26, 2026, 01_40_33 PM.webp",
-          "images/tshirts/indian culture/Ride with the Light/navy/Left_Pocket_3_c_3.jpg",
-          "images/tshirts/indian culture/Ride with the Light/navy/Back_2_c_3.jpg"
+          "images/tshirts/indian culture/Ride with the Light/navy/Left_Pocket_3_c_3.webp",
+          "images/tshirts/indian culture/Ride with the Light/navy/Back_2_c_3.webp"
         ]
       },
       {
@@ -200,8 +200,8 @@ const products = [
         images: [
           "images/tshirts/indian culture/Ride with the Light/maroon/ChatGPT Image Jun 26, 2026, 01_42_36 PM.webp",
           "images/tshirts/indian culture/Ride with the Light/maroon/ChatGPT Image Jun 26, 2026, 01_40_42 PM.webp",
-          "images/tshirts/indian culture/Ride with the Light/maroon/Left_Pocket_3_c_25.jpg",
-          "images/tshirts/indian culture/Ride with the Light/maroon/Back_2_c_25.jpg"
+          "images/tshirts/indian culture/Ride with the Light/maroon/Left_Pocket_3_c_25.webp",
+          "images/tshirts/indian culture/Ride with the Light/maroon/Back_2_c_25.webp"
         ]
       },
       {
@@ -210,8 +210,8 @@ const products = [
         images: [
           "images/tshirts/indian culture/Ride with the Light/black/ChatGPT Image Jun 26, 2026, 01_40_52 PM.webp",
           "images/tshirts/indian culture/Ride with the Light/black/ChatGPT Image Jun 26, 2026, 01_40_22 PM.webp",
-          "images/tshirts/indian culture/Ride with the Light/black/Left_Pocket_3_c_2.jpg",
-          "images/tshirts/indian culture/Ride with the Light/black/Back_2_c_2.jpg"
+          "images/tshirts/indian culture/Ride with the Light/black/Left_Pocket_3_c_2.webp",
+          "images/tshirts/indian culture/Ride with the Light/black/Back_2_c_2.webp"
         ]
       }
     ]
@@ -231,95 +231,95 @@ const products = [
         hex: "#1a1a1a",
         images: [
           "images/tshirts/indian culture/Bhoota Kola/black/front.webp",
-          "images/tshirts/indian culture/Bhoota Kola/black/Front_1_c_2.jpg",
+          "images/tshirts/indian culture/Bhoota Kola/black/Front_1_c_2.webp",
           "images/tshirts/indian culture/Bhoota Kola/black/ChatGPT Image Jun 26, 2026, 02_44_24 PM.webp",
-          "images/tshirts/indian culture/Bhoota Kola/black/Back_2_c_2.jpg"
+          "images/tshirts/indian culture/Bhoota Kola/black/Back_2_c_2.webp"
         ]
       },
       {
         name: "Yellow",
         hex: "#facc15",
         images: [
-          "images/tshirts/indian culture/Bhoota Kola/yellow/Front_1_c_43.jpg",
+          "images/tshirts/indian culture/Bhoota Kola/yellow/Front_1_c_43.webp",
           "images/tshirts/indian culture/Bhoota Kola/yellow/ChatGPT Image Jun 26, 2026, 02_44_11 PM.webp",
           "images/tshirts/indian culture/Bhoota Kola/yellow/ChatGPT Image Jun 26, 2026, 02_45_13 PM.webp",
-          "images/tshirts/indian culture/Bhoota Kola/yellow/Back_2_c_43.jpg"
+          "images/tshirts/indian culture/Bhoota Kola/yellow/Back_2_c_43.webp"
         ]
       },
       {
         name: "Purple",
         hex: "#6b21a8",
         images: [
-          "images/tshirts/indian culture/Bhoota Kola/purple/Front_1_c_26.jpg",
+          "images/tshirts/indian culture/Bhoota Kola/purple/Front_1_c_26.webp",
           "images/tshirts/indian culture/Bhoota Kola/purple/ChatGPT Image Jun 26, 2026, 02_44_53 PM.webp",
           "images/tshirts/indian culture/Bhoota Kola/purple/ChatGPT Image Jun 26, 2026, 02_45_58 PM.webp",
-          "images/tshirts/indian culture/Bhoota Kola/purple/Back_2_c_26.jpg"
+          "images/tshirts/indian culture/Bhoota Kola/purple/Back_2_c_26.webp"
         ]
       },
       {
         name: "Blue",
         hex: "#2563eb",
         images: [
-          "images/tshirts/indian culture/Bhoota Kola/blue/Front_1_c_9.jpg",
+          "images/tshirts/indian culture/Bhoota Kola/blue/Front_1_c_9.webp",
           "images/tshirts/indian culture/Bhoota Kola/blue/ChatGPT Image Jun 26, 2026, 02_44_39 PM.webp",
           "images/tshirts/indian culture/Bhoota Kola/blue/ChatGPT Image Jun 26, 2026, 02_45_45 PM.webp",
-          "images/tshirts/indian culture/Bhoota Kola/blue/Back_2_c_9.jpg"
+          "images/tshirts/indian culture/Bhoota Kola/blue/Back_2_c_9.webp"
         ]
       },
       {
         name: "Maroon",
         hex: "#7f1d1d",
         images: [
-          "images/tshirts/indian culture/Bhoota Kola/maroon/Front_1_c_25.jpg",
+          "images/tshirts/indian culture/Bhoota Kola/maroon/Front_1_c_25.webp",
           "images/tshirts/indian culture/Bhoota Kola/maroon/ChatGPT Image Jun 26, 2026, 02_44_46 PM.webp",
           "images/tshirts/indian culture/Bhoota Kola/maroon/ChatGPT Image Jun 26, 2026, 02_45_51 PM.webp",
-          "images/tshirts/indian culture/Bhoota Kola/maroon/Back_2_c_25.jpg"
+          "images/tshirts/indian culture/Bhoota Kola/maroon/Back_2_c_25.webp"
         ]
       },
       {
         name: "Navy",
         hex: "#1e3a5f",
         images: [
-          "images/tshirts/indian culture/Bhoota Kola/navy/Front_1_c_3.jpg",
+          "images/tshirts/indian culture/Bhoota Kola/navy/Front_1_c_3.webp",
           "images/tshirts/indian culture/Bhoota Kola/navy/ChatGPT Image Jun 26, 2026, 02_44_33 PM.webp",
           "images/tshirts/indian culture/Bhoota Kola/navy/ChatGPT Image Jun 26, 2026, 02_45_38 PM.webp",
-          "images/tshirts/indian culture/Bhoota Kola/navy/Back_2_c_3.jpg"
+          "images/tshirts/indian culture/Bhoota Kola/navy/Back_2_c_3.webp"
         ]
       },
       {
         name: "Petrol Blue",
         hex: "#1b4d6e",
         images: [
-          "images/tshirts/indian culture/Bhoota Kola/petrol blue/Front_1_c_38.jpg",
+          "images/tshirts/indian culture/Bhoota Kola/petrol blue/Front_1_c_38.webp",
           "images/tshirts/indian culture/Bhoota Kola/petrol blue/ChatGPT Image Jun 26, 2026, 02_44_59 PM.webp",
           "images/tshirts/indian culture/Bhoota Kola/petrol blue/ChatGPT Image Jun 26, 2026, 02_45_26 PM.webp",
-          "images/tshirts/indian culture/Bhoota Kola/petrol blue/Back_2_c_38.jpg"
+          "images/tshirts/indian culture/Bhoota Kola/petrol blue/Back_2_c_38.webp"
         ]
       },
       {
         name: "Olive",
         hex: "#6b7c3a",
         images: [
-          "images/tshirts/indian culture/Bhoota Kola/olive/Front_1_c_41.jpg",
+          "images/tshirts/indian culture/Bhoota Kola/olive/Front_1_c_41.webp",
           "images/tshirts/indian culture/Bhoota Kola/olive/ChatGPT Image Jun 26, 2026, 02_45_06 PM.webp",
           "images/tshirts/indian culture/Bhoota Kola/olive/ChatGPT Image Jun 26, 2026, 02_45_32 PM.webp",
-          "images/tshirts/indian culture/Bhoota Kola/olive/Back_2_c_41.jpg"
+          "images/tshirts/indian culture/Bhoota Kola/olive/Back_2_c_41.webp"
         ]
       },
       {
         name: "Off White",
         hex: "#ece8e1",
         images: [
-          "images/tshirts/indian culture/Bhoota Kola/off white/Front_1_c_61.jpg",
-          "images/tshirts/indian culture/Bhoota Kola/off white/Back_2_c_61.jpg"
+          "images/tshirts/indian culture/Bhoota Kola/off white/Front_1_c_61.webp",
+          "images/tshirts/indian culture/Bhoota Kola/off white/Back_2_c_61.webp"
         ]
       },
       {
         name: "White",
         hex: "#f5f5f5",
         images: [
-          "images/tshirts/indian culture/Bhoota Kola/white/Front_1_c_1.jpg",
-          "images/tshirts/indian culture/Bhoota Kola/white/Back_2_c_1.jpg"
+          "images/tshirts/indian culture/Bhoota Kola/white/Front_1_c_1.webp",
+          "images/tshirts/indian culture/Bhoota Kola/white/Back_2_c_1.webp"
         ]
       }
     ]
@@ -361,8 +361,8 @@ const products = [
         images: [
           "images/tshirts/indian culture/Maa/purple/ChatGPT Image Jun 26, 2026, 03_52_28 PM.webp",
           "images/tshirts/indian culture/Maa/purple/ChatGPT Image Jun 26, 2026, 03_52_58 PM.webp",
-          "images/tshirts/indian culture/Maa/purple/Front_1_c_26.jpg",
-          "images/tshirts/indian culture/Maa/purple/Back_2_c_26.jpg"
+          "images/tshirts/indian culture/Maa/purple/Front_1_c_26.webp",
+          "images/tshirts/indian culture/Maa/purple/Back_2_c_26.webp"
         ]
       },
       {
@@ -371,8 +371,8 @@ const products = [
         images: [
           "images/tshirts/indian culture/Maa/petrol blue/ChatGPT Image Jun 26, 2026, 03_52_25 PM.webp",
           "images/tshirts/indian culture/Maa/petrol blue/ChatGPT Image Jun 26, 2026, 03_52_51 PM.webp",
-          "images/tshirts/indian culture/Maa/petrol blue/Front_1_c_38.jpg",
-          "images/tshirts/indian culture/Maa/petrol blue/Back_2_c_38.jpg"
+          "images/tshirts/indian culture/Maa/petrol blue/Front_1_c_38.webp",
+          "images/tshirts/indian culture/Maa/petrol blue/Back_2_c_38.webp"
         ]
       },
       {
@@ -381,8 +381,8 @@ const products = [
         images: [
           "images/tshirts/indian culture/Maa/olive/ChatGPT Image Jun 26, 2026, 03_52_19 PM.webp",
           "images/tshirts/indian culture/Maa/olive/ChatGPT Image Jun 26, 2026, 03_52_45 PM.webp",
-          "images/tshirts/indian culture/Maa/olive/Front_1_c_41.jpg",
-          "images/tshirts/indian culture/Maa/olive/Back_2_c_41.jpg"
+          "images/tshirts/indian culture/Maa/olive/Front_1_c_41.webp",
+          "images/tshirts/indian culture/Maa/olive/Back_2_c_41.webp"
         ]
       },
       {
@@ -391,8 +391,8 @@ const products = [
         images: [
           "images/tshirts/indian culture/Maa/maroon/ChatGPT Image Jun 26, 2026, 03_52_15 PM.webp",
           "images/tshirts/indian culture/Maa/maroon/ChatGPT Image Jun 26, 2026, 03_52_42 PM.webp",
-          "images/tshirts/indian culture/Maa/maroon/Front_1_c_25.jpg",
-          "images/tshirts/indian culture/Maa/maroon/Back_2_c_25.jpg"
+          "images/tshirts/indian culture/Maa/maroon/Front_1_c_25.webp",
+          "images/tshirts/indian culture/Maa/maroon/Back_2_c_25.webp"
         ]
       },
       {
@@ -401,16 +401,16 @@ const products = [
         images: [
           "images/tshirts/indian culture/Maa/white/ChatGPT Image Jun 26, 2026, 03_52_22 PM.webp",
           "images/tshirts/indian culture/Maa/white/ChatGPT Image Jun 26, 2026, 03_52_48 PM.webp",
-          "images/tshirts/indian culture/Maa/white/Front_1_c_1.jpg",
-          "images/tshirts/indian culture/Maa/white/Back_2_c_1.jpg"
+          "images/tshirts/indian culture/Maa/white/Front_1_c_1.webp",
+          "images/tshirts/indian culture/Maa/white/Back_2_c_1.webp"
         ]
       },
       {
         name: "Navy Blue",
         hex: "#1a2a4a",
         images: [
-          "images/tshirts/indian culture/Maa/navy blue/Front_1_c_3.jpg",
-          "images/tshirts/indian culture/Maa/navy blue/Back_2_c_3.jpg"
+          "images/tshirts/indian culture/Maa/navy blue/Front_1_c_3.webp",
+          "images/tshirts/indian culture/Maa/navy blue/Back_2_c_3.webp"
         ]
       },
       {
@@ -419,8 +419,8 @@ const products = [
         images: [
           "images/tshirts/indian culture/Maa/black/ChatGPT Image Jun 26, 2026, 03_52_11 PM.webp",
           "images/tshirts/indian culture/Maa/black/ChatGPT Image Jun 26, 2026, 03_52_38 PM.webp",
-          "images/tshirts/indian culture/Maa/black/Front_1_c_2.jpg",
-          "images/tshirts/indian culture/Maa/black/Back_2_c_2.jpg"
+          "images/tshirts/indian culture/Maa/black/Front_1_c_2.webp",
+          "images/tshirts/indian culture/Maa/black/Back_2_c_2.webp"
         ]
       }
     ]
@@ -441,8 +441,8 @@ const products = [
         images: [
           "images/tshirts/indian culture/Aham Agni/maroon/ChatGPT Image Jun 26, 2026, 03_40_51 PM.webp",
           "images/tshirts/indian culture/Aham Agni/maroon/ChatGPT Image Jun 26, 2026, 03_41_08 PM.webp",
-          "images/tshirts/indian culture/Aham Agni/maroon/Left_Pocket_3_c_25.jpg",
-          "images/tshirts/indian culture/Aham Agni/maroon/Back_2_c_25.jpg"
+          "images/tshirts/indian culture/Aham Agni/maroon/Left_Pocket_3_c_25.webp",
+          "images/tshirts/indian culture/Aham Agni/maroon/Back_2_c_25.webp"
         ]
       },
       {
@@ -451,16 +451,16 @@ const products = [
         images: [
           "images/tshirts/indian culture/Aham Agni/navy/ChatGPT Image Jun 26, 2026, 03_40_59 PM.webp",
           "images/tshirts/indian culture/Aham Agni/navy/ChatGPT Image Jun 26, 2026, 03_41_16 PM.webp",
-          "images/tshirts/indian culture/Aham Agni/navy/Left_Pocket_3_c_3.jpg",
-          "images/tshirts/indian culture/Aham Agni/navy/Back_2_c_3.jpg"
+          "images/tshirts/indian culture/Aham Agni/navy/Left_Pocket_3_c_3.webp",
+          "images/tshirts/indian culture/Aham Agni/navy/Back_2_c_3.webp"
         ]
       },
       {
         name: "Purple",
         hex: "#6b21a8",
         images: [
-          "images/tshirts/indian culture/Aham Agni/purple/Left_Pocket_3_c_26.jpg",
-          "images/tshirts/indian culture/Aham Agni/purple/Back_2_c_26.jpg"
+          "images/tshirts/indian culture/Aham Agni/purple/Left_Pocket_3_c_26.webp",
+          "images/tshirts/indian culture/Aham Agni/purple/Back_2_c_26.webp"
         ]
       },
       {
@@ -468,7 +468,7 @@ const products = [
         hex: "#f5efe0",
         images: [
           "images/tshirts/indian culture/Aham Agni/cream/ChatGPT Image Jun 26, 2026, 03_40_48 PM.webp",
-          "images/tshirts/indian culture/Aham Agni/cream/Back_2_c_61.jpg"
+          "images/tshirts/indian culture/Aham Agni/cream/Back_2_c_61.webp"
         ]
       },
       {
@@ -477,15 +477,15 @@ const products = [
         images: [
           "images/tshirts/indian culture/Aham Agni/white/ChatGPT Image Jun 26, 2026, 03_40_56 PM.webp",
           "images/tshirts/indian culture/Aham Agni/white/ChatGPT Image Jun 26, 2026, 03_41_13 PM.webp",
-          "images/tshirts/indian culture/Aham Agni/white/Left_Pocket_3_c_1.jpg",
-          "images/tshirts/indian culture/Aham Agni/white/Back_2_c_1.jpg"
+          "images/tshirts/indian culture/Aham Agni/white/Left_Pocket_3_c_1.webp",
+          "images/tshirts/indian culture/Aham Agni/white/Back_2_c_1.webp"
         ]
       },
       {
         name: "Grey",
         hex: "#9ca3af",
         images: [
-          "images/tshirts/indian culture/Aham Agni/grey/Back_2_c_4.jpg"
+          "images/tshirts/indian culture/Aham Agni/grey/Back_2_c_4.webp"
         ]
       },
       {
@@ -494,8 +494,8 @@ const products = [
         images: [
           "images/tshirts/indian culture/Aham Agni/black/ChatGPT Image Jun 26, 2026, 03_41_04 PM.webp",
           "images/tshirts/indian culture/Aham Agni/black/ChatGPT Image Jun 26, 2026, 03_41_19 PM.webp",
-          "images/tshirts/indian culture/Aham Agni/black/Left_Pocket_3_c_2.jpg",
-          "images/tshirts/indian culture/Aham Agni/black/Back_2_c_2.jpg"
+          "images/tshirts/indian culture/Aham Agni/black/Left_Pocket_3_c_2.webp",
+          "images/tshirts/indian culture/Aham Agni/black/Back_2_c_2.webp"
         ]
       }
     ]
@@ -516,8 +516,8 @@ const products = [
         images: [
           "images/tshirts/indian culture/Surya namaskar/cream/ChatGPT Image Jun 26, 2026, 04_21_02 PM.webp",
           "images/tshirts/indian culture/Surya namaskar/cream/ChatGPT Image Jun 26, 2026, 04_21_20 PM.webp",
-          "images/tshirts/indian culture/Surya namaskar/cream/Back_2_c_61.jpg",
-          "images/tshirts/indian culture/Surya namaskar/cream/default.jpg"
+          "images/tshirts/indian culture/Surya namaskar/cream/Back_2_c_61.webp",
+          "images/tshirts/indian culture/Surya namaskar/cream/default.webp"
         ]
       },
       {
@@ -526,8 +526,8 @@ const products = [
         images: [
           "images/tshirts/indian culture/Surya namaskar/white/ChatGPT Image Jun 26, 2026, 04_20_59 PM.webp",
           "images/tshirts/indian culture/Surya namaskar/white/ChatGPT Image Jun 26, 2026, 04_21_24 PM.webp",
-          "images/tshirts/indian culture/Surya namaskar/white/Front_1_c_1.jpg",
-          "images/tshirts/indian culture/Surya namaskar/white/Back_2_c_1.jpg"
+          "images/tshirts/indian culture/Surya namaskar/white/Front_1_c_1.webp",
+          "images/tshirts/indian culture/Surya namaskar/white/Back_2_c_1.webp"
         ]
       }
     ]
@@ -548,7 +548,7 @@ const products = [
         images: [
           "images/tshirts/indian culture/Different path Same roots/grey/ChatGPT Image Jun 26, 2026, 04_19_54 PM.webp",
           "images/tshirts/indian culture/Different path Same roots/grey/ChatGPT Image Jun 26, 2026, 04_20_13 PM.webp",
-          "images/tshirts/indian culture/Different path Same roots/grey/Back_2_c_4.jpg"
+          "images/tshirts/indian culture/Different path Same roots/grey/Back_2_c_4.webp"
         ]
       },
       {
@@ -557,8 +557,8 @@ const products = [
         images: [
           "images/tshirts/indian culture/Different path Same roots/cream/ChatGPT Image Jun 26, 2026, 04_19_59 PM.webp",
           "images/tshirts/indian culture/Different path Same roots/cream/ChatGPT Image Jun 26, 2026, 04_20_16 PM.webp",
-          "images/tshirts/indian culture/Different path Same roots/cream/Front_1_c_61.jpg",
-          "images/tshirts/indian culture/Different path Same roots/cream/Back_2_c_61.jpg"
+          "images/tshirts/indian culture/Different path Same roots/cream/Front_1_c_61.webp",
+          "images/tshirts/indian culture/Different path Same roots/cream/Back_2_c_61.webp"
         ]
       },
       {
@@ -567,8 +567,8 @@ const products = [
         images: [
           "images/tshirts/indian culture/Different path Same roots/white/ChatGPT Image Jun 26, 2026, 04_19_50 PM.webp",
           "images/tshirts/indian culture/Different path Same roots/white/ChatGPT Image Jun 26, 2026, 04_20_07 PM.webp",
-          "images/tshirts/indian culture/Different path Same roots/white/Front_1_c_1.jpg",
-          "images/tshirts/indian culture/Different path Same roots/white/Back_2_c_1.jpg"
+          "images/tshirts/indian culture/Different path Same roots/white/Front_1_c_1.webp",
+          "images/tshirts/indian culture/Different path Same roots/white/Back_2_c_1.webp"
         ]
       }
     ]
@@ -595,8 +595,8 @@ const products = [
         images: [
           "images/tshirts/anime/Stillness/white/ChatGPT Image Jul 5, 2026, 02_30_17 PM.webp",
           "images/tshirts/anime/Stillness/white/ChatGPT Image Jul 5, 2026, 02_29_54 PM.webp",
-          "images/tshirts/anime/Stillness/white/Left_Pocket_3_c_1.jpg",
-          "images/tshirts/anime/Stillness/white/Back_2_c_1.jpg"
+          "images/tshirts/anime/Stillness/white/Left_Pocket_3_c_1.webp",
+          "images/tshirts/anime/Stillness/white/Back_2_c_1.webp"
         ]
       },
       {
@@ -605,8 +605,8 @@ const products = [
         images: [
           "images/tshirts/anime/Stillness/baby pink/ChatGPT Image Jul 5, 2026, 02_30_00 PM.webp",
           "images/tshirts/anime/Stillness/baby pink/ChatGPT Image Jul 5, 2026, 02_30_22 PM.webp",
-          "images/tshirts/anime/Stillness/baby pink/Left_Pocket_3_c_45.jpg",
-          "images/tshirts/anime/Stillness/baby pink/Back_2_c_45.jpg"
+          "images/tshirts/anime/Stillness/baby pink/Left_Pocket_3_c_45.webp",
+          "images/tshirts/anime/Stillness/baby pink/Back_2_c_45.webp"
         ]
       },
       {
@@ -615,8 +615,8 @@ const products = [
         images: [
           "images/tshirts/anime/Stillness/lavender/ChatGPT Image Jul 5, 2026, 02_30_06 PM.webp",
           "images/tshirts/anime/Stillness/lavender/ChatGPT Image Jul 5, 2026, 02_30_30 PM.webp",
-          "images/tshirts/anime/Stillness/lavender/Left_Pocket_3_c_49.jpg",
-          "images/tshirts/anime/Stillness/lavender/Back_2_c_49.jpg"
+          "images/tshirts/anime/Stillness/lavender/Left_Pocket_3_c_49.webp",
+          "images/tshirts/anime/Stillness/lavender/Back_2_c_49.webp"
         ]
       },
       {
@@ -625,8 +625,8 @@ const products = [
         images: [
           "images/tshirts/anime/Stillness/coral/ChatGPT Image Jul 5, 2026, 02_30_11 PM.webp",
           "images/tshirts/anime/Stillness/coral/ChatGPT Image Jul 5, 2026, 02_30_35 PM.webp",
-          "images/tshirts/anime/Stillness/coral/Left_Pocket_3_c_52.jpg",
-          "images/tshirts/anime/Stillness/coral/Back_2_c_52.jpg"
+          "images/tshirts/anime/Stillness/coral/Left_Pocket_3_c_52.webp",
+          "images/tshirts/anime/Stillness/coral/Back_2_c_52.webp"
         ]
       },
       {
@@ -634,8 +634,8 @@ const products = [
         hex: "#f5efe0",
         images: [
           "images/tshirts/anime/Stillness/cream/ChatGPT Image Jul 5, 2026, 02_30_41 PM.webp",
-          "images/tshirts/anime/Stillness/cream/Left_Pocket_3_c_61.jpg",
-          "images/tshirts/anime/Stillness/cream/Back_2_c_61.jpg"
+          "images/tshirts/anime/Stillness/cream/Left_Pocket_3_c_61.webp",
+          "images/tshirts/anime/Stillness/cream/Back_2_c_61.webp"
         ]
       }
     ]
@@ -655,8 +655,8 @@ const products = [
         hex: "#f5f5f5",
         images: [
           "images/tshirts/anime/Ronin 2099/white/ChatGPT Image Jul 5, 2026, 02_16_07 PM.webp",
-          "images/tshirts/anime/Ronin 2099/white/Front_1_c_1.jpg",
-          "images/tshirts/anime/Ronin 2099/white/Back_2_c_1.jpg"
+          "images/tshirts/anime/Ronin 2099/white/Front_1_c_1.webp",
+          "images/tshirts/anime/Ronin 2099/white/Back_2_c_1.webp"
         ]
       },
       {
@@ -664,8 +664,8 @@ const products = [
         hex: "#9ca3af",
         images: [
           "images/tshirts/anime/Ronin 2099/grey/ChatGPT Image Jul 5, 2026, 02_16_13 PM.webp",
-          "images/tshirts/anime/Ronin 2099/grey/Front_1_c_4.jpg",
-          "images/tshirts/anime/Ronin 2099/grey/Back_2_c_4.jpg"
+          "images/tshirts/anime/Ronin 2099/grey/Front_1_c_4.webp",
+          "images/tshirts/anime/Ronin 2099/grey/Back_2_c_4.webp"
         ]
       },
       {
@@ -673,8 +673,8 @@ const products = [
         hex: "#98d4c8",
         images: [
           "images/tshirts/anime/Ronin 2099/mint/ChatGPT Image Jul 5, 2026, 02_15_54 PM.webp",
-          "images/tshirts/anime/Ronin 2099/mint/Front_1_c_53.jpg",
-          "images/tshirts/anime/Ronin 2099/mint/Back_2_c_53.jpg"
+          "images/tshirts/anime/Ronin 2099/mint/Front_1_c_53.webp",
+          "images/tshirts/anime/Ronin 2099/mint/Back_2_c_53.webp"
         ]
       },
       {
@@ -682,8 +682,8 @@ const products = [
         hex: "#f5efe0",
         images: [
           "images/tshirts/anime/Ronin 2099/cream/ChatGPT Image Jul 5, 2026, 02_16_01 PM.webp",
-          "images/tshirts/anime/Ronin 2099/cream/Front_1_c_61.jpg",
-          "images/tshirts/anime/Ronin 2099/cream/Back_2_c_61.jpg"
+          "images/tshirts/anime/Ronin 2099/cream/Front_1_c_61.webp",
+          "images/tshirts/anime/Ronin 2099/cream/Back_2_c_61.webp"
         ]
       },
       {
@@ -691,8 +691,8 @@ const products = [
         hex: "#1b4d6e",
         images: [
           "images/tshirts/anime/Ronin 2099/petrol blue/ChatGPT Image Jul 5, 2026, 02_16_27 PM.webp",
-          "images/tshirts/anime/Ronin 2099/petrol blue/Front_1_c_38.jpg",
-          "images/tshirts/anime/Ronin 2099/petrol blue/Back_2_c_38.jpg"
+          "images/tshirts/anime/Ronin 2099/petrol blue/Front_1_c_38.webp",
+          "images/tshirts/anime/Ronin 2099/petrol blue/Back_2_c_38.webp"
         ]
       },
       {
@@ -700,32 +700,32 @@ const products = [
         hex: "#dc2626",
         images: [
           "images/tshirts/anime/Ronin 2099/red/ChatGPT Image Jul 5, 2026, 02_16_20 PM.webp",
-          "images/tshirts/anime/Ronin 2099/red/Front_1_c_10.jpg",
-          "images/tshirts/anime/Ronin 2099/red/Back_2_c_10.jpg"
+          "images/tshirts/anime/Ronin 2099/red/Front_1_c_10.webp",
+          "images/tshirts/anime/Ronin 2099/red/Back_2_c_10.webp"
         ]
       },
       {
         name: "Lavender",
         hex: "#c4a9d1",
         images: [
-          "images/tshirts/anime/Ronin 2099/lavender/Front_1_c_49.jpg",
-          "images/tshirts/anime/Ronin 2099/lavender/Back_2_c_49.jpg"
+          "images/tshirts/anime/Ronin 2099/lavender/Front_1_c_49.webp",
+          "images/tshirts/anime/Ronin 2099/lavender/Back_2_c_49.webp"
         ]
       },
       {
         name: "Baby Pink",
         hex: "#f4a7b9",
         images: [
-          "images/tshirts/anime/Ronin 2099/baby pink/Front_1_c_45.jpg",
-          "images/tshirts/anime/Ronin 2099/baby pink/Back_2_c_45.jpg"
+          "images/tshirts/anime/Ronin 2099/baby pink/Front_1_c_45.webp",
+          "images/tshirts/anime/Ronin 2099/baby pink/Back_2_c_45.webp"
         ]
       },
       {
         name: "Coral",
         hex: "#e8735a",
         images: [
-          "images/tshirts/anime/Ronin 2099/coral/Front_1_c_52.jpg",
-          "images/tshirts/anime/Ronin 2099/coral/Back_2_c_52.jpg"
+          "images/tshirts/anime/Ronin 2099/coral/Front_1_c_52.webp",
+          "images/tshirts/anime/Ronin 2099/coral/Back_2_c_52.webp"
         ]
       }
     ]
@@ -746,8 +746,8 @@ const products = [
         images: [
           "images/tshirts/anime/Dragon/white/ChatGPT Image Jul 5, 2026, 02_03_51 PM.webp",
           "images/tshirts/anime/Dragon/white/ChatGPT Image Jul 5, 2026, 02_04_25 PM.webp",
-          "images/tshirts/anime/Dragon/white/Front_1_c_1.jpg",
-          "images/tshirts/anime/Dragon/white/Back_2_c_1.jpg"
+          "images/tshirts/anime/Dragon/white/Front_1_c_1.webp",
+          "images/tshirts/anime/Dragon/white/Back_2_c_1.webp"
         ]
       },
       {
@@ -756,8 +756,8 @@ const products = [
         images: [
           "images/tshirts/anime/Dragon/grey/ChatGPT Image Jul 5, 2026, 02_03_56 PM.webp",
           "images/tshirts/anime/Dragon/grey/ChatGPT Image Jul 5, 2026, 02_04_35 PM.webp",
-          "images/tshirts/anime/Dragon/grey/Front_1_c_4.jpg",
-          "images/tshirts/anime/Dragon/grey/Back_2_c_4.jpg"
+          "images/tshirts/anime/Dragon/grey/Front_1_c_4.webp",
+          "images/tshirts/anime/Dragon/grey/Back_2_c_4.webp"
         ]
       },
       {
@@ -766,8 +766,8 @@ const products = [
         images: [
           "images/tshirts/anime/Dragon/pink/ChatGPT Image Jul 5, 2026, 02_04_02 PM.webp",
           "images/tshirts/anime/Dragon/pink/ChatGPT Image Jul 5, 2026, 02_04_41 PM.webp",
-          "images/tshirts/anime/Dragon/pink/Front_1_c_45.jpg",
-          "images/tshirts/anime/Dragon/pink/Back_2_c_45.jpg"
+          "images/tshirts/anime/Dragon/pink/Front_1_c_45.webp",
+          "images/tshirts/anime/Dragon/pink/Back_2_c_45.webp"
         ]
       },
       {
@@ -776,8 +776,8 @@ const products = [
         images: [
           "images/tshirts/anime/Dragon/lavender/ChatGPT Image Jul 5, 2026, 02_04_09 PM.webp",
           "images/tshirts/anime/Dragon/lavender/ChatGPT Image Jul 5, 2026, 02_04_46 PM.webp",
-          "images/tshirts/anime/Dragon/lavender/Front_1_c_49.jpg",
-          "images/tshirts/anime/Dragon/lavender/Back_2_c_49.jpg"
+          "images/tshirts/anime/Dragon/lavender/Front_1_c_49.webp",
+          "images/tshirts/anime/Dragon/lavender/Back_2_c_49.webp"
         ]
       },
       {
@@ -786,8 +786,8 @@ const products = [
         images: [
           "images/tshirts/anime/Dragon/cream/ChatGPT Image Jul 5, 2026, 02_04_17 PM.webp",
           "images/tshirts/anime/Dragon/cream/ChatGPT Image Jul 5, 2026, 02_04_52 PM.webp",
-          "images/tshirts/anime/Dragon/cream/Front_1_c_61.jpg",
-          "images/tshirts/anime/Dragon/cream/Back_2_c_61.jpg"
+          "images/tshirts/anime/Dragon/cream/Front_1_c_61.webp",
+          "images/tshirts/anime/Dragon/cream/Back_2_c_61.webp"
         ]
       }
     ]
@@ -807,8 +807,8 @@ const products = [
         hex: "#1a1a1a",
         images: [
           "images/tshirts/anime/Devil/black/ChatGPT Image Jul 5, 2026, 01_35_03 AM.webp",
-          "images/tshirts/anime/Devil/black/Front_1_c_2.jpg",
-          "images/tshirts/anime/Devil/black/Back_2_c_2.jpg"
+          "images/tshirts/anime/Devil/black/Front_1_c_2.webp",
+          "images/tshirts/anime/Devil/black/Back_2_c_2.webp"
         ]
       },
       {
@@ -816,8 +816,8 @@ const products = [
         hex: "#1a2a4a",
         images: [
           "images/tshirts/anime/Devil/Navy blue/ChatGPT Image Jul 5, 2026, 01_35_09 AM.webp",
-          "images/tshirts/anime/Devil/Navy blue/Front_1_c_3.jpg",
-          "images/tshirts/anime/Devil/Navy blue/Back_2_c_3.jpg"
+          "images/tshirts/anime/Devil/Navy blue/Front_1_c_3.webp",
+          "images/tshirts/anime/Devil/Navy blue/Back_2_c_3.webp"
         ]
       },
       {
@@ -825,8 +825,8 @@ const products = [
         hex: "#2d6a4f",
         images: [
           "images/tshirts/anime/Devil/Bottle Green/ChatGPT Image Jul 5, 2026, 01_35_16 AM.webp",
-          "images/tshirts/anime/Devil/Bottle Green/Front_1_c_8.jpg",
-          "images/tshirts/anime/Devil/Bottle Green/Back_2_c_8.jpg"
+          "images/tshirts/anime/Devil/Bottle Green/Front_1_c_8.webp",
+          "images/tshirts/anime/Devil/Bottle Green/Back_2_c_8.webp"
         ]
       },
       {
@@ -834,8 +834,8 @@ const products = [
         hex: "#7f1d1d",
         images: [
           "images/tshirts/anime/Devil/maroon/ChatGPT Image Jul 5, 2026, 01_35_21 AM.webp",
-          "images/tshirts/anime/Devil/maroon/Front_1_c_25.jpg",
-          "images/tshirts/anime/Devil/maroon/Back_2_c_41.jpg"
+          "images/tshirts/anime/Devil/maroon/Front_1_c_25.webp",
+          "images/tshirts/anime/Devil/maroon/Back_2_c_41.webp"
         ]
       },
       {
@@ -843,8 +843,8 @@ const products = [
         hex: "#6b7c3a",
         images: [
           "images/tshirts/anime/Devil/Olive green/ChatGPT Image Jul 5, 2026, 01_35_26 AM.webp",
-          "images/tshirts/anime/Devil/Olive green/Front_1_c_41.jpg",
-          "images/tshirts/anime/Devil/Olive green/Back_2_c_41.jpg"
+          "images/tshirts/anime/Devil/Olive green/Front_1_c_41.webp",
+          "images/tshirts/anime/Devil/Olive green/Back_2_c_41.webp"
         ]
       }
     ]
@@ -865,8 +865,8 @@ const products = [
         images: [
           "images/tshirts/anime/Sakura Season/white/ChatGPT Image Jul 5, 2026, 01_22_46 AM.webp",
           "images/tshirts/anime/Sakura Season/white/ChatGPT Image Jul 5, 2026, 01_23_10 AM.webp",
-          "images/tshirts/anime/Sakura Season/white/Front_1_c_1.jpg",
-          "images/tshirts/anime/Sakura Season/white/Back_2_c_1.jpg"
+          "images/tshirts/anime/Sakura Season/white/Front_1_c_1.webp",
+          "images/tshirts/anime/Sakura Season/white/Back_2_c_1.webp"
         ]
       },
       {
@@ -875,8 +875,8 @@ const products = [
         images: [
           "images/tshirts/anime/Sakura Season/lavender/ChatGPT Image Jul 5, 2026, 01_22_55 AM.webp",
           "images/tshirts/anime/Sakura Season/lavender/ChatGPT Image Jul 5, 2026, 01_23_15 AM.webp",
-          "images/tshirts/anime/Sakura Season/lavender/Front_1_c_49.jpg",
-          "images/tshirts/anime/Sakura Season/lavender/Back_2_c_49.jpg"
+          "images/tshirts/anime/Sakura Season/lavender/Front_1_c_49.webp",
+          "images/tshirts/anime/Sakura Season/lavender/Back_2_c_49.webp"
         ]
       },
       {
@@ -885,8 +885,8 @@ const products = [
         images: [
           "images/tshirts/anime/Sakura Season/mint/ChatGPT Image Jul 5, 2026, 01_23_00 AM.webp",
           "images/tshirts/anime/Sakura Season/mint/ChatGPT Image Jul 5, 2026, 01_23_20 AM.webp",
-          "images/tshirts/anime/Sakura Season/mint/Front_1_c_53.jpg",
-          "images/tshirts/anime/Sakura Season/mint/Back_2_c_53.jpg"
+          "images/tshirts/anime/Sakura Season/mint/Front_1_c_53.webp",
+          "images/tshirts/anime/Sakura Season/mint/Back_2_c_53.webp"
         ]
       },
       {
@@ -895,8 +895,8 @@ const products = [
         images: [
           "images/tshirts/anime/Sakura Season/cream/ChatGPT Image Jul 5, 2026, 01_23_05 AM.webp",
           "images/tshirts/anime/Sakura Season/cream/ChatGPT Image Jul 5, 2026, 01_23_25 AM.webp",
-          "images/tshirts/anime/Sakura Season/cream/Front_1_c_61.jpg",
-          "images/tshirts/anime/Sakura Season/cream/Back_2_c_61.jpg"
+          "images/tshirts/anime/Sakura Season/cream/Front_1_c_61.webp",
+          "images/tshirts/anime/Sakura Season/cream/Back_2_c_61.webp"
         ]
       }
     ]
@@ -917,8 +917,8 @@ const products = [
         images: [
           "images/tshirts/anime/I don't need anyone to save me/black/ChatGPT Image Jul 5, 2026, 12_58_09 AM.webp",
           "images/tshirts/anime/I don't need anyone to save me/black/ChatGPT Image Jul 5, 2026, 12_57_33 AM.webp",
-          "images/tshirts/anime/I don't need anyone to save me/black/Front_1_c_2.jpg",
-          "images/tshirts/anime/I don't need anyone to save me/black/Back_2_c_2.jpg"
+          "images/tshirts/anime/I don't need anyone to save me/black/Front_1_c_2.webp",
+          "images/tshirts/anime/I don't need anyone to save me/black/Back_2_c_2.webp"
         ]
       },
       {
@@ -927,8 +927,8 @@ const products = [
         images: [
           "images/tshirts/anime/I don't need anyone to save me/navy blue/ChatGPT Image Jul 5, 2026, 12_57_42 AM.webp",
           "images/tshirts/anime/I don't need anyone to save me/navy blue/ChatGPT Image Jul 5, 2026, 12_58_14 AM.webp",
-          "images/tshirts/anime/I don't need anyone to save me/navy blue/Front_1_c_3.jpg",
-          "images/tshirts/anime/I don't need anyone to save me/navy blue/Back_2_c_3.jpg"
+          "images/tshirts/anime/I don't need anyone to save me/navy blue/Front_1_c_3.webp",
+          "images/tshirts/anime/I don't need anyone to save me/navy blue/Back_2_c_3.webp"
         ]
       },
       {
@@ -937,8 +937,8 @@ const products = [
         images: [
           "images/tshirts/anime/I don't need anyone to save me/bottle green/ChatGPT Image Jul 5, 2026, 12_57_48 AM.webp",
           "images/tshirts/anime/I don't need anyone to save me/bottle green/ChatGPT Image Jul 5, 2026, 12_58_20 AM.webp",
-          "images/tshirts/anime/I don't need anyone to save me/bottle green/Front_1_c_8.jpg",
-          "images/tshirts/anime/I don't need anyone to save me/bottle green/Back_2_c_8.jpg"
+          "images/tshirts/anime/I don't need anyone to save me/bottle green/Front_1_c_8.webp",
+          "images/tshirts/anime/I don't need anyone to save me/bottle green/Back_2_c_8.webp"
         ]
       },
       {
@@ -947,8 +947,8 @@ const products = [
         images: [
           "images/tshirts/anime/I don't need anyone to save me/maroon/ChatGPT Image Jul 5, 2026, 12_57_53 AM.webp",
           "images/tshirts/anime/I don't need anyone to save me/maroon/ChatGPT Image Jul 5, 2026, 12_58_28 AM.webp",
-          "images/tshirts/anime/I don't need anyone to save me/maroon/Front_1_c_25.jpg",
-          "images/tshirts/anime/I don't need anyone to save me/maroon/Back_2_c_25.jpg"
+          "images/tshirts/anime/I don't need anyone to save me/maroon/Front_1_c_25.webp",
+          "images/tshirts/anime/I don't need anyone to save me/maroon/Back_2_c_25.webp"
         ]
       },
       {
@@ -957,8 +957,8 @@ const products = [
         images: [
           "images/tshirts/anime/I don't need anyone to save me/olive green/ChatGPT Image Jul 5, 2026, 12_58_01 AM.webp",
           "images/tshirts/anime/I don't need anyone to save me/olive green/ChatGPT Image Jul 5, 2026, 12_58_42 AM.webp",
-          "images/tshirts/anime/I don't need anyone to save me/olive green/Front_1_c_41.jpg",
-          "images/tshirts/anime/I don't need anyone to save me/olive green/Back_2_c_41.jpg"
+          "images/tshirts/anime/I don't need anyone to save me/olive green/Front_1_c_41.webp",
+          "images/tshirts/anime/I don't need anyone to save me/olive green/Back_2_c_41.webp"
         ]
       }
     ]
@@ -979,8 +979,8 @@ const products = [
         images: [
           "images/tshirts/anime/Power is earned not given/white/ChatGPT Image Jul 5, 2026, 01_09_07 AM.webp",
           "images/tshirts/anime/Power is earned not given/white/ChatGPT Image Jul 5, 2026, 01_09_26 AM.webp",
-          "images/tshirts/anime/Power is earned not given/white/Front_1_c_1.jpg",
-          "images/tshirts/anime/Power is earned not given/white/Back_2_c_1.jpg"
+          "images/tshirts/anime/Power is earned not given/white/Front_1_c_1.webp",
+          "images/tshirts/anime/Power is earned not given/white/Back_2_c_1.webp"
         ]
       },
       {
@@ -989,8 +989,8 @@ const products = [
         images: [
           "images/tshirts/anime/Power is earned not given/grey/ChatGPT Image Jul 5, 2026, 01_09_13 AM.webp",
           "images/tshirts/anime/Power is earned not given/grey/ChatGPT Image Jul 5, 2026, 01_09_34 AM.webp",
-          "images/tshirts/anime/Power is earned not given/grey/Front_1_c_4.jpg",
-          "images/tshirts/anime/Power is earned not given/grey/Back_2_c_4.jpg"
+          "images/tshirts/anime/Power is earned not given/grey/Front_1_c_4.webp",
+          "images/tshirts/anime/Power is earned not given/grey/Back_2_c_4.webp"
         ]
       },
       {
@@ -999,8 +999,8 @@ const products = [
         images: [
           "images/tshirts/anime/Power is earned not given/cream/ChatGPT Image Jul 5, 2026, 01_09_19 AM.webp",
           "images/tshirts/anime/Power is earned not given/cream/ChatGPT Image Jul 5, 2026, 01_09_40 AM.webp",
-          "images/tshirts/anime/Power is earned not given/cream/Front_1_c_61.jpg",
-          "images/tshirts/anime/Power is earned not given/cream/Back_2_c_61.jpg"
+          "images/tshirts/anime/Power is earned not given/cream/Front_1_c_61.webp",
+          "images/tshirts/anime/Power is earned not given/cream/Back_2_c_61.webp"
         ]
       }
     ]
@@ -1021,8 +1021,8 @@ const products = [
         images: [
           "images/tshirts/anime/King of Curses/black/ChatGPT Image Jul 1, 2026, 02_26_56 PM.webp",
           "images/tshirts/anime/King of Curses/black/ChatGPT Image Jul 1, 2026, 02_27_29 PM.webp",
-          "images/tshirts/anime/King of Curses/black/Front_1_c_2.jpg",
-          "images/tshirts/anime/King of Curses/black/Back_2_c_2.jpg"
+          "images/tshirts/anime/King of Curses/black/Front_1_c_2.webp",
+          "images/tshirts/anime/King of Curses/black/Back_2_c_2.webp"
         ]
       },
       {
@@ -1031,8 +1031,8 @@ const products = [
         images: [
           "images/tshirts/anime/King of Curses/navy blue/ChatGPT Image Jul 1, 2026, 02_27_01 PM.webp",
           "images/tshirts/anime/King of Curses/navy blue/ChatGPT Image Jul 1, 2026, 02_27_37 PM.webp",
-          "images/tshirts/anime/King of Curses/navy blue/Front_1_c_3.jpg",
-          "images/tshirts/anime/King of Curses/navy blue/Back_2_c_3.jpg"
+          "images/tshirts/anime/King of Curses/navy blue/Front_1_c_3.webp",
+          "images/tshirts/anime/King of Curses/navy blue/Back_2_c_3.webp"
         ]
       },
       {
@@ -1041,8 +1041,8 @@ const products = [
         images: [
           "images/tshirts/anime/King of Curses/grey/ChatGPT Image Jul 1, 2026, 02_27_06 PM.webp",
           "images/tshirts/anime/King of Curses/grey/ChatGPT Image Jul 1, 2026, 02_27_42 PM.webp",
-          "images/tshirts/anime/King of Curses/grey/Front_1_c_4.jpg",
-          "images/tshirts/anime/King of Curses/grey/Back_2_c_4.jpg"
+          "images/tshirts/anime/King of Curses/grey/Front_1_c_4.webp",
+          "images/tshirts/anime/King of Curses/grey/Back_2_c_4.webp"
         ]
       },
       {
@@ -1051,8 +1051,8 @@ const products = [
         images: [
           "images/tshirts/anime/King of Curses/maroon/ChatGPT Image Jul 1, 2026, 02_27_11 PM.webp",
           "images/tshirts/anime/King of Curses/maroon/ChatGPT Image Jul 1, 2026, 02_27_54 PM.webp",
-          "images/tshirts/anime/King of Curses/maroon/Front_1_c_25.jpg",
-          "images/tshirts/anime/King of Curses/maroon/Back_2_c_25.jpg"
+          "images/tshirts/anime/King of Curses/maroon/Front_1_c_25.webp",
+          "images/tshirts/anime/King of Curses/maroon/Back_2_c_25.webp"
         ]
       },
       {
@@ -1061,8 +1061,8 @@ const products = [
         images: [
           "images/tshirts/anime/King of Curses/lavender/ChatGPT Image Jul 1, 2026, 02_27_16 PM.webp",
           "images/tshirts/anime/King of Curses/lavender/ChatGPT Image Jul 1, 2026, 02_28_01 PM.webp",
-          "images/tshirts/anime/King of Curses/lavender/Front_1_c_49.jpg",
-          "images/tshirts/anime/King of Curses/lavender/Back_2_c_49.jpg"
+          "images/tshirts/anime/King of Curses/lavender/Front_1_c_49.webp",
+          "images/tshirts/anime/King of Curses/lavender/Back_2_c_49.webp"
         ]
       },
       {
@@ -1071,8 +1071,8 @@ const products = [
         images: [
           "images/tshirts/anime/King of Curses/white/ChatGPT Image Jul 1, 2026, 02_27_21 PM.webp",
           "images/tshirts/anime/King of Curses/white/ChatGPT Image Jul 1, 2026, 02_28_12 PM.webp",
-          "images/tshirts/anime/King of Curses/white/Front_1_c_1.jpg",
-          "images/tshirts/anime/King of Curses/white/Back_2_c_1.jpg"
+          "images/tshirts/anime/King of Curses/white/Front_1_c_1.webp",
+          "images/tshirts/anime/King of Curses/white/Back_2_c_1.webp"
         ]
       },
       {
@@ -1081,8 +1081,8 @@ const products = [
         images: [
           "images/tshirts/anime/King of Curses/royal blue/ChatGPT Image Jul 1, 2026, 02_26_44 PM.webp",
           "images/tshirts/anime/King of Curses/royal blue/ChatGPT Image Jul 1, 2026, 02_27_48 PM.webp",
-          "images/tshirts/anime/King of Curses/royal blue/Front_1_c_9.jpg",
-          "images/tshirts/anime/King of Curses/royal blue/Back_2_c_9.jpg"
+          "images/tshirts/anime/King of Curses/royal blue/Front_1_c_9.webp",
+          "images/tshirts/anime/King of Curses/royal blue/Back_2_c_9.webp"
         ]
       },
       {
@@ -1091,8 +1091,8 @@ const products = [
         images: [
           "images/tshirts/anime/King of Curses/cream/ChatGPT Image Jul 1, 2026, 02_26_51 PM.webp",
           "images/tshirts/anime/King of Curses/cream/ChatGPT Image Jul 1, 2026, 02_28_06 PM.webp",
-          "images/tshirts/anime/King of Curses/cream/Front_1_c_61.jpg",
-          "images/tshirts/anime/King of Curses/cream/Back_2_c_61.jpg"
+          "images/tshirts/anime/King of Curses/cream/Front_1_c_61.webp",
+          "images/tshirts/anime/King of Curses/cream/Back_2_c_61.webp"
         ]
       }
     ]
@@ -1113,8 +1113,8 @@ const products = [
         images: [
           "images/tshirts/anime/Satoru Gojo/white/ChatGPT Image Jul 1, 2026, 01_21_18 PM.webp",
           "images/tshirts/anime/Satoru Gojo/white/ChatGPT Image Jul 1, 2026, 01_26_27 PM.webp",
-          "images/tshirts/anime/Satoru Gojo/white/Front_1_c_1.jpg",
-          "images/tshirts/anime/Satoru Gojo/white/Back_2_c_1.jpg"
+          "images/tshirts/anime/Satoru Gojo/white/Front_1_c_1.webp",
+          "images/tshirts/anime/Satoru Gojo/white/Back_2_c_1.webp"
         ]
       },
       {
@@ -1123,8 +1123,8 @@ const products = [
         images: [
           "images/tshirts/anime/Satoru Gojo/cream/ChatGPT Image Jul 1, 2026, 01_26_23 PM.webp",
           "images/tshirts/anime/Satoru Gojo/cream/ChatGPT Image Jul 1, 2026, 01_26_34 PM.webp",
-          "images/tshirts/anime/Satoru Gojo/cream/Front_1_c_61.jpg",
-          "images/tshirts/anime/Satoru Gojo/cream/Back_2_c_61.jpg"
+          "images/tshirts/anime/Satoru Gojo/cream/Front_1_c_61.webp",
+          "images/tshirts/anime/Satoru Gojo/cream/Back_2_c_61.webp"
         ]
       }
     ]
@@ -1144,8 +1144,8 @@ const products = [
         hex: "#1a1a1a",
         images: [
           "images/tshirts/anime/Ryomen Sukuna/black/ChatGPT Image Jul 1, 2026, 01_50_34 PM.webp",
-          "images/tshirts/anime/Ryomen Sukuna/black/Front_1_c_2.jpg",
-          "images/tshirts/anime/Ryomen Sukuna/black/Back_2_c_2.jpg"
+          "images/tshirts/anime/Ryomen Sukuna/black/Front_1_c_2.webp",
+          "images/tshirts/anime/Ryomen Sukuna/black/Back_2_c_2.webp"
         ]
       },
       {
@@ -1153,8 +1153,8 @@ const products = [
         hex: "#1a2a4a",
         images: [
           "images/tshirts/anime/Ryomen Sukuna/navy blue/ChatGPT Image Jul 1, 2026, 01_50_40 PM.webp",
-          "images/tshirts/anime/Ryomen Sukuna/navy blue/Front_1_c_3.jpg",
-          "images/tshirts/anime/Ryomen Sukuna/navy blue/Back_2_c_3.jpg"
+          "images/tshirts/anime/Ryomen Sukuna/navy blue/Front_1_c_3.webp",
+          "images/tshirts/anime/Ryomen Sukuna/navy blue/Back_2_c_3.webp"
         ]
       },
       {
@@ -1162,7 +1162,7 @@ const products = [
         hex: "#9ca3af",
         images: [
           "images/tshirts/anime/Ryomen Sukuna/grey/ChatGPT Image Jul 1, 2026, 01_50_46 PM.webp",
-          "images/tshirts/anime/Ryomen Sukuna/grey/Back_2_c_4.jpg"
+          "images/tshirts/anime/Ryomen Sukuna/grey/Back_2_c_4.webp"
         ]
       },
       {
@@ -1170,8 +1170,8 @@ const products = [
         hex: "#7f1d1d",
         images: [
           "images/tshirts/anime/Ryomen Sukuna/maroon/ChatGPT Image Jul 1, 2026, 01_50_53 PM.webp",
-          "images/tshirts/anime/Ryomen Sukuna/maroon/Front_1_c_25.jpg",
-          "images/tshirts/anime/Ryomen Sukuna/maroon/Back_2_c_25.jpg"
+          "images/tshirts/anime/Ryomen Sukuna/maroon/Front_1_c_25.webp",
+          "images/tshirts/anime/Ryomen Sukuna/maroon/Back_2_c_25.webp"
         ]
       },
       {
@@ -1179,8 +1179,8 @@ const products = [
         hex: "#6b7c3a",
         images: [
           "images/tshirts/anime/Ryomen Sukuna/olive green/ChatGPT Image Jul 1, 2026, 01_50_59 PM.webp",
-          "images/tshirts/anime/Ryomen Sukuna/olive green/Front_1_c_41.jpg",
-          "images/tshirts/anime/Ryomen Sukuna/olive green/Back_2_c_41.jpg"
+          "images/tshirts/anime/Ryomen Sukuna/olive green/Front_1_c_41.webp",
+          "images/tshirts/anime/Ryomen Sukuna/olive green/Back_2_c_41.webp"
         ]
       },
       {
@@ -1188,8 +1188,8 @@ const products = [
         hex: "#c4a9d1",
         images: [
           "images/tshirts/anime/Ryomen Sukuna/lavender/ChatGPT Image Jul 1, 2026, 01_51_05 PM.webp",
-          "images/tshirts/anime/Ryomen Sukuna/lavender/Front_1_c_49.jpg",
-          "images/tshirts/anime/Ryomen Sukuna/lavender/Back_2_c_49.jpg"
+          "images/tshirts/anime/Ryomen Sukuna/lavender/Front_1_c_49.webp",
+          "images/tshirts/anime/Ryomen Sukuna/lavender/Back_2_c_49.webp"
         ]
       },
       {
@@ -1197,8 +1197,8 @@ const products = [
         hex: "#f5efe0",
         images: [
           "images/tshirts/anime/Ryomen Sukuna/cream/ChatGPT Image Jul 1, 2026, 01_51_11 PM.webp",
-          "images/tshirts/anime/Ryomen Sukuna/cream/Front_1_c_61.jpg",
-          "images/tshirts/anime/Ryomen Sukuna/cream/Back_2_c_61.jpg"
+          "images/tshirts/anime/Ryomen Sukuna/cream/Front_1_c_61.webp",
+          "images/tshirts/anime/Ryomen Sukuna/cream/Back_2_c_61.webp"
         ]
       },
       {
@@ -1206,8 +1206,8 @@ const products = [
         hex: "#f5f5f5",
         images: [
           "images/tshirts/anime/Ryomen Sukuna/white/ChatGPT Image Jul 1, 2026, 01_50_26 PM.webp",
-          "images/tshirts/anime/Ryomen Sukuna/white/Front_1_c_1.jpg",
-          "images/tshirts/anime/Ryomen Sukuna/white/Back_2_c_1.jpg"
+          "images/tshirts/anime/Ryomen Sukuna/white/Front_1_c_1.webp",
+          "images/tshirts/anime/Ryomen Sukuna/white/Back_2_c_1.webp"
         ]
       }
     ]
@@ -1585,8 +1585,242 @@ const products = [
     ]
   }
 
-  // ← ADD YOUR NEXT T-SHIRT HERE (ids 31, 32, …)
+    // ─────────────────────────────────────────────────────────
+  // HOME & LIFESTYLE COLLECTION  (ids 31 – 36)
+  // ─────────────────────────────────────────────────────────
+  //
+  // FOLDER STRUCTURE FOR NEW PRODUCTS:
+  //   images/lifestyle/stoles/set-of-2/<variant name>/<image file>
+  //   images/lifestyle/stoles/set-of-3/<variant name>/<image file>
+  //   images/lifestyle/scrunchies/<variant name>/<image file>
+  //   images/lifestyle/mugs/single/<variant name>/<image file>
+  //   images/lifestyle/mugs/set-of-2/<variant name>/<image file>
+  //   images/lifestyle/coasters/<variant name>/<image file>
+  //
+  // HOW TO ADD IMAGES:
+  //   1. Create the folder (e.g. images/lifestyle/stoles/set-of-2/set-1/)
+  //   2. Drop your photos in there (must be .webp format)
+  //   3. Add the path to the images[] array below
+  //   4. Save & refresh. Done!
+  //
+  // ─────────────────────────────────────────────────────────
+
+  ,
+
+  // ── 31 — Stoles (Set of 2) ────────────────────────────────
+  {
+    id: 31,
+    name: "Stoles (Set of 2)",
+    category: "Home & Lifestyle",
+    price: 500,
+    description: "Elegant and lightweight. Our handcrafted stoles in curated sets of 2 are designed to add a beautiful layer of color and style to any attire. Soft texture, premium drape. Available in 3 unique sets.",
+    colors: [
+      {
+        name: "Set 1",
+        hex: "#c8a97e",
+        images: [
+          // Add your Set 1 images here, e.g.:
+          // "images/lifestyle/stoles/set-of-2/set-1/front.webp"
+        ]
+      },
+      {
+        name: "Set 2",
+        hex: "#8b6c5c",
+        images: [
+          // Add your Set 2 images here
+        ]
+      },
+      {
+        name: "Set 3",
+        hex: "#5a7a6e",
+        images: [
+          // Add your Set 3 images here
+        ]
+      }
+    ]
+  },
+
+  // ── 32 — Stoles (Set of 3) ────────────────────────────────
+  {
+    id: 32,
+    name: "Stoles (Set of 3)",
+    category: "Home & Lifestyle",
+    price: 700,
+    description: "Versatility at its best. Our handcrafted stoles in curated sets of 3 provide endless options to style, match, and color coordinate. Exquisitely soft fabric, perfect for gifting. Available in 3 unique sets.",
+    colors: [
+      {
+        name: "Set 1",
+        hex: "#c8a97e",
+        images: [
+          // Add your Set 1 images here, e.g.:
+          // "images/lifestyle/stoles/set-of-3/set-1/front.webp"
+        ]
+      },
+      {
+        name: "Set 2",
+        hex: "#8b6c5c",
+        images: [
+          // Add your Set 2 images here
+        ]
+      },
+      {
+        name: "Set 3",
+        hex: "#5a7a6e",
+        images: [
+          // Add your Set 3 images here
+        ]
+      }
+    ]
+  },
+
+  // ── 33 — Scrunchies (Set of 3) ────────────────────────────
+  {
+    id: 33,
+    name: "Scrunchies (Set of 3)",
+    category: "Home & Lifestyle",
+    price: 300,
+    description: "Add a soft touch to your style. Handcrafted sets of 3 scrunchies made with premium, hair-friendly fabrics. Curated color palettes that look incredibly stylish in your hair or on your wrist. Available in 3 unique sets.",
+    colors: [
+      {
+        name: "Set 1",
+        hex: "#e8a0bf",
+        images: [
+          // Add your Set 1 images here, e.g.:
+          // "images/lifestyle/scrunchies/set-1/front.webp"
+        ]
+      },
+      {
+        name: "Set 2",
+        hex: "#a78bca",
+        images: [
+          // Add your Set 2 images here
+        ]
+      },
+      {
+        name: "Set 3",
+        hex: "#7bc8a4",
+        images: [
+          // Add your Set 3 images here
+        ]
+      }
+    ]
+  },
+
+  // ── 34 — Mugs (Single) ────────────────────────────────────
+  {
+    id: 34,
+    name: "Mugs (Single)",
+    category: "Home & Lifestyle",
+    price: 180,
+    description: "Start your morning with original art. Features beautiful, durable prints on premium 330ml ceramic. Microwave and dishwasher safe, perfect for your favorite brew or as a thoughtful gift. 6 unique designs to choose from.",
+    colors: [
+      {
+        name: "Design 1",
+        hex: "#c97b5a",
+        images: [
+          // Add your Design 1 images here, e.g.:
+          // "images/lifestyle/mugs/single/design-1/front.webp"
+        ]
+      },
+      {
+        name: "Design 2",
+        hex: "#5a8a7a",
+        images: [
+          // Add your Design 2 images here
+        ]
+      },
+      {
+        name: "Design 3",
+        hex: "#7a6a9a",
+        images: [
+          // Add your Design 3 images here
+        ]
+      },
+      {
+        name: "Design 4",
+        hex: "#9a7a4a",
+        images: [
+          // Add your Design 4 images here
+        ]
+      },
+      {
+        name: "Design 5",
+        hex: "#6a8a5a",
+        images: [
+          // Add your Design 5 images here
+        ]
+      },
+      {
+        name: "Design 6",
+        hex: "#8a5a6a",
+        images: [
+          // Add your Design 6 images here
+        ]
+      }
+    ]
+  },
+
+  // ── 35 — Mugs (Set of 2) ──────────────────────────────────
+  {
+    id: 35,
+    name: "Mugs (Set of 2)",
+    category: "Home & Lifestyle",
+    price: 350,
+    description: "Double the joy. Share your brew in style with our matching pair sets. Premium 330ml ceramic mugs with coordinating original illustrations. Highly durable, microwave and dishwasher safe. 2 unique pairs available.",
+    colors: [
+      {
+        name: "Set 1",
+        hex: "#d4a96a",
+        images: [
+          // Add your Set 1 images here, e.g.:
+          // "images/lifestyle/mugs/set-of-2/set-1/front.webp"
+        ]
+      },
+      {
+        name: "Set 2",
+        hex: "#5c3d2e",
+        images: [
+          // Add your Set 2 images here
+        ]
+      }
+    ]
+  },
+
+  // ── 36 — Coasters (Set of 6) ──────────────────────────────
+  {
+    id: 36,
+    name: "Coasters (Set of 6)",
+    category: "Home & Lifestyle",
+    price: 600,
+    description: "Protect your spaces, express your style. Set of 6 cork-backed coasters featuring distinctive, colorful art prints. Heat resistant, waterproof, and highly durable. Comes in 3 unique style sets.",
+    colors: [
+      {
+        name: "Set 1",
+        hex: "#c8a46a",
+        images: [
+          // Add your Set 1 images here, e.g.:
+          // "images/lifestyle/coasters/set-1/preview.webp"
+        ]
+      },
+      {
+        name: "Set 2",
+        hex: "#6a8ac8",
+        images: [
+          // Add your Set 2 images here
+        ]
+      },
+      {
+        name: "Set 3",
+        hex: "#8ac86a",
+        images: [
+          // Add your Set 3 images here
+        ]
+      }
+    ]
+  }
+
+  // ← ADD YOUR NEXT PRODUCT HERE (ids 37, 38, …)
   // Copy a block above, paste it here, change the id, name,
-  // folder paths, and colours. Remember the comma after the
+  // folder paths, and variants. Remember the comma after the
   // previous closing }.
 ];

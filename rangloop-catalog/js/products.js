@@ -1619,22 +1619,25 @@ const products = [
         name: "Set 1",
         hex: "#c8a97e",
         images: [
-          // Add your Set 1 images here, e.g.:
-          // "images/lifestyle/stoles/set-of-2/set-1/front.webp"
+          "images/lifestyle/stoles/set-of-2/set-1/image.png",
+          "images/lifestyle/stoles/set-of-2/set-1/ChatGPT Image Aug 1, 2026, 01_03_27 PM.png",
+          "images/lifestyle/stoles/set-of-2/set-1/ChatGPT Image Aug 1, 2026, 01_06_32 PM.png"
         ]
       },
       {
         name: "Set 2",
         hex: "#8b6c5c",
         images: [
-          // Add your Set 2 images here
+          "images/lifestyle/stoles/set-of-2/set-2/image.png",
+          "images/lifestyle/stoles/set-of-2/set-2/ChatGPT Image Aug 1, 2026, 01_16_16 PM.png",
+          "images/lifestyle/stoles/set-of-2/set-2/ChatGPT Image Aug 1, 2026, 01_18_56 PM.png"
         ]
       },
       {
         name: "Set 3",
         hex: "#5a7a6e",
         images: [
-          // Add your Set 3 images here
+          "images/lifestyle/stoles/set-of-2/set-3/image.png"
         ]
       }
     ]
@@ -1652,22 +1655,27 @@ const products = [
         name: "Set 1",
         hex: "#c8a97e",
         images: [
-          // Add your Set 1 images here, e.g.:
-          // "images/lifestyle/stoles/set-of-3/set-1/front.webp"
+          "images/lifestyle/stoles/set-of-3/set-1/ChatGPT Image Aug 1, 2026, 01_03_27 PM.png",
+          "images/lifestyle/stoles/set-of-3/set-1/ChatGPT Image Aug 1, 2026, 01_18_56 PM.png",
+          "images/lifestyle/stoles/set-of-3/set-1/ChatGPT Image Aug 1, 2026, 01_28_30 PM.png",
+          "images/lifestyle/stoles/set-of-3/set-1/ChatGPT Image Aug 1, 2026, 01_33_10 PM.png"
         ]
       },
       {
         name: "Set 2",
         hex: "#8b6c5c",
         images: [
-          // Add your Set 2 images here
+          "images/lifestyle/stoles/set-of-3/set-2/ChatGPT Image Aug 1, 2026, 01_06_32 PM.png",
+          "images/lifestyle/stoles/set-of-3/set-2/ChatGPT Image Aug 1, 2026, 01_16_16 PM.png",
+          "images/lifestyle/stoles/set-of-3/set-2/ChatGPT Image Aug 1, 2026, 01_28_30 PM.png",
+          "images/lifestyle/stoles/set-of-3/set-2/image.png"
         ]
       },
       {
         name: "Set 3",
         hex: "#5a7a6e",
         images: [
-          // Add your Set 3 images here
+          "images/lifestyle/stoles/set-of-3/set-3/image.png"
         ]
       }
     ]
@@ -1726,43 +1734,42 @@ const products = [
         name: "Design 1",
         hex: "#c97b5a",
         images: [
-          // Add your Design 1 images here, e.g.:
-          // "images/lifestyle/mugs/single/design-1/front.webp"
+          "images/lifestyle/mugs/single/design-1/Front_1_c_26 (2).jpg"
         ]
       },
       {
         name: "Design 2",
         hex: "#5a8a7a",
         images: [
-          // Add your Design 2 images here
+          "images/lifestyle/mugs/single/design-2/Front_1_c_26 (3).jpg"
         ]
       },
       {
         name: "Design 3",
         hex: "#7a6a9a",
         images: [
-          // Add your Design 3 images here
+          "images/lifestyle/mugs/single/design-3/Front_1_c_26 (5).jpg"
         ]
       },
       {
         name: "Design 4",
         hex: "#9a7a4a",
         images: [
-          // Add your Design 4 images here
+          "images/lifestyle/mugs/single/design-4/Front_1_c_26 (6).jpg"
         ]
       },
       {
         name: "Design 5",
         hex: "#6a8a5a",
         images: [
-          // Add your Design 5 images here
+          "images/lifestyle/mugs/single/design-5/Front_1_c_26 (7).jpg"
         ]
       },
       {
         name: "Design 6",
         hex: "#8a5a6a",
         images: [
-          // Add your Design 6 images here
+          "images/lifestyle/mugs/single/design-6/Front_1_c_26.jpg"
         ]
       }
     ]
@@ -1780,15 +1787,18 @@ const products = [
         name: "Set 1",
         hex: "#d4a96a",
         images: [
-          // Add your Set 1 images here, e.g.:
-          // "images/lifestyle/mugs/set-of-2/set-1/front.webp"
+          "images/lifestyle/mugs/set-of-2/set-1/Front_1_c_26 (7).jpg",
+          "images/lifestyle/mugs/set-of-2/set-1/Front_1_c_26.jpg",
+          "images/lifestyle/mugs/set-of-2/set-1/image.png"
         ]
       },
       {
         name: "Set 2",
         hex: "#5c3d2e",
         images: [
-          // Add your Set 2 images here
+          "images/lifestyle/mugs/set-of-2/set-2/Front_1_c_26 (3).jpg",
+          "images/lifestyle/mugs/set-of-2/set-2/Front_1_c_26 (5).jpg",
+          "images/lifestyle/mugs/set-of-2/set-2/image.png"
         ]
       }
     ]

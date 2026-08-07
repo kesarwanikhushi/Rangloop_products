@@ -1685,22 +1685,30 @@ const products = [
         name: "Set 1",
         hex: "#e8a0bf",
         images: [
-          // Add your Set 1 images here, e.g.:
-          // "images/lifestyle/scrunchies/set-1/front.webp"
+          "images/lifestyle/scrunchies/set-1/image.webp",
+          "images/lifestyle/scrunchies/set-1/Left_Pocket_3_c_17 (3).webp",
+          "images/lifestyle/scrunchies/set-1/Left_Pocket_3_c_17 (4).webp",
+          "images/lifestyle/scrunchies/set-1/Left_Pocket_3_c_17 (5).webp"
         ]
       },
       {
         name: "Set 2",
         hex: "#a78bca",
         images: [
-          // Add your Set 2 images here
+          "images/lifestyle/scrunchies/set-2/image.webp",
+          "images/lifestyle/scrunchies/set-2/Left_Pocket_3_c_17.webp",
+          "images/lifestyle/scrunchies/set-2/Left_Pocket_3_c_17 (3).webp",
+          "images/lifestyle/scrunchies/set-2/Left_Pocket_3_c_17 (5).webp"
         ]
       },
       {
         name: "Set 3",
         hex: "#7bc8a4",
         images: [
-          // Add your Set 3 images here
+          "images/lifestyle/scrunchies/set-3/image.webp",
+          "images/lifestyle/scrunchies/set-3/Left_Pocket_3_c_17.webp",
+          "images/lifestyle/scrunchies/set-3/Left_Pocket_3_c_17 (2).webp",
+          "images/lifestyle/scrunchies/set-3/Left_Pocket_3_c_17 (4).webp"
         ]
       }
     ]
@@ -1798,22 +1806,21 @@ const products = [
         name: "Set 1",
         hex: "#c8a46a",
         images: [
-          // Add your Set 1 images here, e.g.:
-          // "images/lifestyle/coasters/set-1/preview.webp"
+          "images/lifestyle/coasters/set-1/Front_1_c_22 (2).webp"
         ]
       },
       {
         name: "Set 2",
         hex: "#6a8ac8",
         images: [
-          // Add your Set 2 images here
+          "images/lifestyle/coasters/set-2/Front_1_c_22 (3).webp"
         ]
       },
       {
         name: "Set 3",
         hex: "#8ac86a",
         images: [
-          // Add your Set 3 images here
+          "images/lifestyle/coasters/set-3/Front_1_c_22.webp"
         ]
       }
     ]

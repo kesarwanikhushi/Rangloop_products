@@ -108,6 +108,40 @@ function updateFilterPills(activeCategory) {
   });
 }
 
+function shouldExpandIntoVariantCards(product) {
+  return product
+    && product.category
+    && product.category.toLowerCase() === 'home & lifestyle'
+    && Array.isArray(product.colors)
+    && product.colors.length > 1;
+}
+
+function buildCatalogItems(productsList) {
+  return productsList.flatMap(product => {
+    if (!shouldExpandIntoVariantCards(product)) {
+      return [{ product, variantIndex: null, variant: null }];
+    }
+
+    return product.colors
+      .map((variant, variantIndex) => ({ product, variantIndex, variant }))
+      .filter(item => Array.isArray(item.variant.images) && item.variant.images.length > 0);
+  });
+}
+
+function getCatalogCardImage(product, variantIndex) {
+  const fallbackImage = 'images/logo/logo.webp';
+
+  if (variantIndex !== null && product.colors && product.colors[variantIndex] && product.colors[variantIndex].images && product.colors[variantIndex].images.length > 0) {
+    return product.colors[variantIndex].images[0];
+  }
+
+  if (product.colors && product.colors.length > 0 && product.colors[0].images && product.colors[0].images.length > 0) {
+    return product.colors[0].images[0];
+  }
+
+  return fallbackImage;
+}
+
 function renderCatalog(category) {
   const catalogGrid = document.getElementById('catalog-grid');
   if (!catalogGrid) return;
@@ -121,33 +155,43 @@ function renderCatalog(category) {
     filteredProducts = products.filter(p => p.category.toLowerCase() === category.toLowerCase());
   }
 
+  const catalogItems = buildCatalogItems(filteredProducts);
 
-  if (filteredProducts.length === 0) {
+  if (category === 'all') {
+    catalogItems.sort(() => Math.random() - 0.5);
+  }
+
+
+  if (catalogItems.length === 0) {
     catalogGrid.classList.add('empty');
     catalogGrid.innerHTML = `<p class="empty-state">No products found in this category.</p>`;
     return;
   }
 
   catalogGrid.classList.remove('empty');
-  catalogGrid.innerHTML = filteredProducts.map(product => {
-    // Get first image
-    let firstImage = "images/logo/logo.webp"; // fallback
-    if (product.colors && product.colors.length > 0 && product.colors[0].images && product.colors[0].images.length > 0) {
-      firstImage = product.colors[0].images[0];
-    }
+  catalogGrid.innerHTML = catalogItems.map(item => {
+    const { product, variantIndex, variant } = item;
+    const firstImage = getCatalogCardImage(product, variantIndex);
+    const cardName = variant ? `${product.name}` : product.name;
+    const variantLabel = variant ? `<p class="card-variant">${variant.name}</p>` : '';
+    const productLink = variantIndex !== null ? `product.html?id=${product.id}&color=${variantIndex}` : `product.html?id=${product.id}`;
+    const orderButton = variantIndex !== null
+      ? `onclick="triggerDirectOrder(${product.id}, ${variantIndex})"`
+      : `onclick="triggerDirectOrder(${product.id})"`;
 
     return `
       <div class="product-card" data-id="${product.id}">
-        <a href="product.html?id=${product.id}" class="card-img-wrap-link">
+        <a href="${productLink}" class="card-img-wrap-link">
           <div class="card-img-wrap">
-            <img src="${firstImage}" alt="${product.name}" loading="lazy">
+            <img src="${firstImage}" alt="${variant ? `${product.name} ${variant.name}` : product.name}" loading="lazy">
           </div>
         </a>
         <div class="card-body">
           <span class="card-category">${product.category}</span>
-          <h3 class="card-name"><a href="product.html?id=${product.id}">${product.name}</a></h3>
+          <h3 class="card-name"><a href="${productLink}">${cardName}</a></h3>
+          ${variantLabel}
           <p class="card-price">${formatPrice(product.price)}</p>
-          <button class="btn-card-order" onclick="triggerDirectOrder(${product.id})">Order via Instagram</button>
+          <button class="btn-card-order" ${orderButton}>Order via Instagram</button>
         </div>
       </div>
     `;
@@ -155,12 +199,15 @@ function renderCatalog(category) {
 }
 
 // Global scope function for card direct order triggers
-window.triggerDirectOrder = function(productId) {
+window.triggerDirectOrder = function(productId, variantIndex = null) {
   const product = products.find(p => p.id === productId);
   if (!product) return;
+
+  const variant = variantIndex !== null && product.colors && product.colors[variantIndex] ? product.colors[variantIndex] : null;
   
   // Construct dynamic order message (no size specified for general catalog card click)
-  const message = `Hi RangLoop! I want to order:\n${product.name}\nPrice: ${formatPrice(product.price)}\nSize: ___`;
+  const variantPart = variant ? `\nSet: ${variant.name}` : '';
+  const message = `Hi RangLoop! I want to order:\n${product.name}${variantPart}\nPrice: ${formatPrice(product.price)}\nSize: ___`;
   
   openInstagramModal(message);
 };
@@ -175,6 +222,8 @@ let activeColorObj = null;
 function initDetailPage() {
   const urlParams = new URLSearchParams(window.location.search);
   const productId = parseInt(urlParams.get('id'));
+  const colorParam = urlParams.get('color') ?? urlParams.get('variant');
+  const requestedColorIndex = Number.isFinite(Number.parseInt(colorParam, 10)) ? Number.parseInt(colorParam, 10) : 0;
   
   if (!productId || isNaN(productId)) {
     renderDetailNotFound();
@@ -188,7 +237,7 @@ function initDetailPage() {
   }
 
   activeDetailProduct = product;
-  renderProductDetail(product);
+  renderProductDetail(product, requestedColorIndex);
 }
 
 function renderDetailNotFound() {
@@ -204,13 +253,14 @@ function renderDetailNotFound() {
   }
 }
 
-function renderProductDetail(product) {
+function renderProductDetail(product, initialColorIndex = 0) {
   const root = document.getElementById('detail-layout-root');
   if (!root) return;
 
   // Pre-select first color variant if available
   const hasColors = product.colors && product.colors.length > 0;
-  activeColorObj = hasColors ? product.colors[0] : null;
+  const safeColorIndex = hasColors ? Math.min(Math.max(initialColorIndex, 0), product.colors.length - 1) : 0;
+  activeColorObj = hasColors ? product.colors[safeColorIndex] : null;
   const initialImages = activeColorObj ? activeColorObj.images : [];
   const mainImage = initialImages.length > 0 ? initialImages[0] : "images/logo/logo.webp";
 

@@ -1632,13 +1632,6 @@ const products = [
           "images/lifestyle/stoles/set-of-2/set-2/ChatGPT Image Aug 1, 2026, 01_16_16 PM.png",
           "images/lifestyle/stoles/set-of-2/set-2/ChatGPT Image Aug 1, 2026, 01_18_56 PM.png"
         ]
-      },
-      {
-        name: "Set 3",
-        hex: "#5a7a6e",
-        images: [
-          "images/lifestyle/stoles/set-of-2/set-3/image.png"
-        ]
       }
     ]
   },
@@ -1669,13 +1662,6 @@ const products = [
           "images/lifestyle/stoles/set-of-3/set-2/ChatGPT Image Aug 1, 2026, 01_16_16 PM.png",
           "images/lifestyle/stoles/set-of-3/set-2/ChatGPT Image Aug 1, 2026, 01_28_30 PM.png",
           "images/lifestyle/stoles/set-of-3/set-2/image.png"
-        ]
-      },
-      {
-        name: "Set 3",
-        hex: "#5a7a6e",
-        images: [
-          "images/lifestyle/stoles/set-of-3/set-3/image.png"
         ]
       }
     ]

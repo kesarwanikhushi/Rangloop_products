@@ -44,7 +44,14 @@ const products = [
     category: "Indian Culture",
     price: 599,
     description: "Rooted in nature, worn with intention. Whispers of Earth carries the quiet language of the land — earthy tones, organic vibes, and a design that speaks before you do. 100% cotton, comfortable fit.",
-    sizes: ["S", "M", "L", "XL", "XXL"],
+    sizes: ["XS", "S", "M", "L", "XL", "2XL"],
+    sizeChart: {
+      headers: ["XS", "S", "M", "L", "XL", "2XL"],
+      rows: [
+        { label: "Chest (Inch)", values: [36, 38, 40, 42, 44, 46] },
+        { label: "Length (Inch)", values: [25, 26, 27, 28, 30, 32] }
+      ]
+    },
     colors: [
       {
         name: "Green",
@@ -113,7 +120,14 @@ const products = [
     category: "Indian Culture",
     price: 599,
     description: "Unfiltered. Unapologetic. Raw and Rooted is for those who are grounded in who they are. Bold graphics, earthy energy — this tee is a statement of identity. Premium soft-touch fabric.",
-    sizes: ["S", "M", "L", "XL", "XXL"],
+    sizes: ["XS", "S", "M", "L", "XL", "2XL"],
+    sizeChart: {
+      headers: ["XS", "S", "M", "L", "XL", "2XL"],
+      rows: [
+        { label: "Chest (Inch)", values: [36, 38, 40, 42, 44, 46] },
+        { label: "Length (Inch)", values: [25, 26, 27, 28, 29, 30] }
+      ]
+    },
     colors: [
       {
         name: "Purple",
@@ -332,7 +346,14 @@ const products = [
     category: "Indian Culture",
     price: 549,
     description: "Lead with courage. The Lion tee channels raw power and quiet confidence. A bold, artistic rendition of the king of the jungle — crafted for those who carry their pride with grace. Heavy-weight cotton.",
-    sizes: ["S", "M", "L", "XL", "XXL"],
+    sizes: ["XS", "S", "M", "L", "XL", "2XL"],
+    sizeChart: {
+      headers: ["XS", "S", "M", "L", "XL", "2XL"],
+      rows: [
+        { label: "Chest (Inch)", values: [36, 38, 40, 42, 44, 46] },
+        { label: "Length (Inch)", values: [25, 26, 27, 28, 30, 32] }
+      ]
+    },
     colors: [
       {
         name: "Black",
@@ -800,7 +821,14 @@ const products = [
     category: "Anime",
     price: 649,
     description: "Every devil has a story. Devil is a raw, dark design that doesn't apologize for what it is — powerful, unsettling, and impossible to ignore. For those who embrace the shadow side. Soft-touch premium fabric.",
-    sizes: ["S", "M", "L", "XL", "XXL"],
+    sizes: ["XS", "S", "M", "L", "XL", "2XL"],
+    sizeChart: {
+      headers: ["XS", "S", "M", "L", "XL", "2XL"],
+      rows: [
+        { label: "Chest (Inch)", values: [39, 41, 43, 45, 47, 49] },
+        { label: "Length (Inch)", values: [27, 28, 29, 30, 31, 32] }
+      ]
+    },
     colors: [
       {
         name: "Black",
@@ -909,7 +937,14 @@ const products = [
     category: "Anime",
     price: 599,
     description: "Self-reliance. Inner strength. This tee is a declaration — raw, personal, and unapologetic. For those who've learned to be their own hero. No saviour. No rescue. Just you. Unisex fit.",
-    sizes: ["S", "M", "L", "XL", "XXL"],
+    sizes: ["XS", "S", "M", "L", "XL", "2XL"],
+    sizeChart: {
+      headers: ["XS", "S", "M", "L", "XL", "2XL"],
+      rows: [
+        { label: "Chest (Inch)", values: [39, 41, 43, 45, 47, 49] },
+        { label: "Length (Inch)", values: [27, 28, 29, 30, 31, 32] }
+      ]
+    },
     colors: [
       {
         name: "Black",
@@ -1220,7 +1255,14 @@ const products = [
     category: "Minimalist",
     price: 549,
     description: "Cool. Calm. Completely unbothered. This tee says it all without saying a word. Clean minimal type on premium cotton — for those who've mastered the art of not caring.",
-    sizes: ["S", "M", "L", "XL", "XXL"],
+    sizes: ["XS", "S", "M", "L", "XL", "2XL"],
+    sizeChart: {
+      headers: ["XS", "S", "M", "L", "XL", "2XL"],
+      rows: [
+        { label: "Chest (Inch)", values: [39, 41, 43, 45, 47, 49] },
+        { label: "Length (Inch)", values: [27, 28, 29, 30, 31, 32] }
+      ]
+    },
     colors: [
       {
         name: "Black",
@@ -1326,7 +1368,14 @@ const products = [
     category: "Minimalist",
     price: 549,
     description: "A little dark. A little divine. Unholy is for those who walk the line between chaos and grace — minimal type, maximum statement. Premium cotton tee.",
-    sizes: ["S", "M", "L", "XL", "XXL"],
+    sizes: ["XS", "S", "M", "L", "XL", "2XL"],
+    sizeChart: {
+      headers: ["XS", "S", "M", "L", "XL", "2XL"],
+      rows: [
+        { label: "Chest (Inch)", values: [40, 42, 44, 46, 48, 50] },
+        { label: "Length (Inch)", values: [27, 28, 29, 30, 31, 32] }
+      ]
+    },
     colors: [
       {
         name: "Grey",

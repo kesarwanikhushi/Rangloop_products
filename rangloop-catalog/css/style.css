@@ -1108,6 +1108,44 @@ img {
   border: 1px solid var(--burgundy);
 }
 
+.detail-sizechart-wrap {
+  margin-bottom: 28px;
+  background: #fff;
+  padding: 18px;
+  border-radius: 10px;
+  box-shadow: var(--shadow-warm);
+}
+
+.detail-sizechart-title {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.detail-sizechart-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.detail-sizechart-table th,
+.detail-sizechart-table td {
+  text-align: center;
+  padding: 12px 10px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-secondary);
+}
+
+.detail-sizechart-table thead th {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.detail-sizechart-table tbody td:first-child {
+  text-align: left;
+  font-weight: 600;
+}
+
 .detail-size-pill.inactive {
   background-color: var(--cream);
   color: var(--burgundy);

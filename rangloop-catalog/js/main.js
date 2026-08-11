@@ -39,6 +39,8 @@ function initMobileMenu() {
     document.body.style.overflow = 'hidden'; // Prevent background scrolling
   }
 
+  
+
   function closeMenu() {
     mobileMenu.classList.remove('active');
     document.body.style.overflow = '';
@@ -296,14 +298,60 @@ function renderProductDetail(product, initialColorIndex = 0) {
   }
 
   // Sizes list HTML
+  // Default size chart to use for products that don't define their own
+  const defaultSizeChart = {
+    headers: ["XS", "S", "M", "L", "XL", "2XL"],
+    rows: [
+      { label: "Chest (Inch)", values: [40, 42, 44, 46, 48, 50] },
+      { label: "Length (Inch)", values: [27, 28, 29, 30, 31, 32] },
+      { label: "Shoulder (Inch)", values: [18, 19, 20, 21, 22, 23] }
+    ]
+  };
+
+  // Decide which size list to show: product.sizes if product provides a full list,
+  // otherwise fall back to the default chart headers when a size chart will be shown.
+  const sizesToDisplay = (product.sizes && product.sizes.length > 0)
+    ? (product.sizeChart ? product.sizes : defaultSizeChart.headers)
+    : [];
+
   let sizesHTML = "";
-  if (product.sizes && product.sizes.length > 0) {
+  if (sizesToDisplay && sizesToDisplay.length > 0) {
     sizesHTML = `
       <div class="detail-sizes-label">SIZES AVAILABLE</div>
       <div class="detail-sizes-row" id="detail-sizes-row">
-        ${product.sizes.map(size => `
+        ${sizesToDisplay.map(size => `
           <button class="detail-size-pill inactive" data-size="${size}" onclick="selectDetailSize(this, '${size}')">${size}</button>
         `).join('')}
+      </div>
+    `;
+  }
+
+  // Size chart HTML (use product.sizeChart if present, otherwise fall back to default)
+  const activeSizeChart = (product.sizeChart && product.sizeChart.headers && product.sizeChart.rows)
+    ? product.sizeChart
+    : (product.sizes ? defaultSizeChart : null);
+
+  let sizeChartHTML = "";
+  if (activeSizeChart) {
+    sizeChartHTML = `
+      <div class="detail-sizechart-wrap">
+        <h4 class="detail-sizechart-title">SIZE CHART (INCH)</h4>
+        <table class="detail-sizechart-table">
+          <thead>
+            <tr>
+              <th style="text-align:left; padding-left:8px;">Size</th>
+              ${activeSizeChart.headers.map(h => `<th>${h}</th>`).join('')}
+            </tr>
+          </thead>
+          <tbody>
+            ${activeSizeChart.rows.map(row => `
+              <tr>
+                <td style="font-weight:600; padding-right:12px;">${row.label}</td>
+                ${row.values.map(v => `<td>${v}</td>`).join('')}
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>
       </div>
     `;
   }
@@ -323,6 +371,7 @@ function renderProductDetail(product, initialColorIndex = 0) {
       
       ${colorsHTML}
       ${sizesHTML}
+      ${sizeChartHTML}
       
       <p class="detail-description">${product.description}</p>
       
